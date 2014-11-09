@@ -20,6 +20,8 @@ public:
 	CFilePath_Base& operator = (const CFilePath_Base& f){ Assign(f); return *this; }
 
 	//İ’è
+	void SetFullPath(const wchar_t* fpath){ SetPath(fpath); } // b’èAlias ###íœ—\’è
+	void SetDirPath(const wchar_t* fdir){ SetDir(fdir); } // b’èAlias ###íœ—\’è
 	void SetPath(const wchar_t* fpath);
 	void SetPath(const wchar_t* fdir,const wchar_t* ftitle);
 	void SetDir(const wchar_t* fdir);
@@ -27,6 +29,8 @@ public:
 	void SetExt(const wchar_t* ext);
 
 	//æ“¾
+	const wchar_t* GetFullPath() const { return GetPath(); } // b’èAlias ###íœ—\’è
+	const wchar_t* GetDirPath() const { return GetDir(); } // b’èAlias ###íœ—\’è
 	const wchar_t* GetPath() const;
 	const wchar_t* GetDir() const;
 	const wchar_t* GetTitle() const;
