@@ -1,0 +1,313 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="分離可">
+      <UniqueIdentifier>{25ac1fd4-a447-4735-a71c-f4b03e317b5f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="分離可\game">
+      <UniqueIdentifier>{6624a6e8-a818-47f1-9366-9d4a76f6ba20}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="分離可\opengl">
+      <UniqueIdentifier>{e8343439-9635-412c-9ff7-ee1bbf3bc7db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="分離可\opengl\math">
+      <UniqueIdentifier>{59610e61-8a3c-421a-a488-db660a63c463}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="分離可\media">
+      <UniqueIdentifier>{6cfdcb39-6226-4e0d-91ea-e844aac34c6c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本">
+      <UniqueIdentifier>{499c75d1-7b48-4d12-b5bd-dd3f96d8ed5e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\id">
+      <UniqueIdentifier>{b54bc054-c04b-4c10-bf1b-1ed4b47abe1f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\sdk">
+      <UniqueIdentifier>{8640f765-da2f-415c-ac28-22e8d685a5e4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\std">
+      <UniqueIdentifier>{855d7ed8-da99-4f61-8c0f-2277a30d0628}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\util">
+      <UniqueIdentifier>{ac62aa46-52a5-4202-992e-6d69f69c4e10}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\util\base">
+      <UniqueIdentifier>{fe70f5f6-f3dc-4bf9-8fe4-d2461e5d78d8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\util\value">
+      <UniqueIdentifier>{1836a381-a770-4fa5-89cb-f2155a20d6e1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\util\consle">
+      <UniqueIdentifier>{a51e3e21-a877-4366-899d-57ecd6f9a6f9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\util\container">
+      <UniqueIdentifier>{0074d2c2-3547-4d75-b405-92441636ca29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\util\conf">
+      <UniqueIdentifier>{25423a04-3738-4628-bb79-b65f91b4e193}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\design">
+      <UniqueIdentifier>{a439ef60-7735-4b4c-89d2-702ecc080eac}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\design\chain">
+      <UniqueIdentifier>{fafe2142-708e-414f-bd89-f9e31f915302}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="基本\common">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\game\Sprite.cpp">
+      <Filter>分離可\game</Filter>
+    </ClCompile>
+    <ClCompile Include="..\opengl\math\Vec3.cpp">
+      <Filter>分離可\opengl\math</Filter>
+    </ClCompile>
+    <ClCompile Include="..\media\MciSound.cpp">
+      <Filter>分離可\media</Filter>
+    </ClCompile>
+    <ClCompile Include="..\std\mem.cpp">
+      <Filter>基本\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\std\myexception.cpp">
+      <Filter>基本\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\std\StdError.cpp">
+      <Filter>基本\std</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\BitSet.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CCommandLine.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CCommandLine_Old.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CDateTime.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CIdGenerator.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CIntFormat.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CPersonalTime.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\file.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\mem.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\rand.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\SingleCursor.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\std.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\TimeWatch.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\Input.cpp">
+      <Filter>基本\util\consle</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CIniFile.cpp">
+      <Filter>基本\util\conf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\util\CJson.cpp">
+      <Filter>基本\util\conf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\design\_design_test.cpp">
+      <Filter>基本\design</Filter>
+    </ClCompile>
+    <ClCompile Include="..\design\CNamable.cpp">
+      <Filter>基本\design</Filter>
+    </ClCompile>
+    <ClCompile Include="..\design\CObserver.cpp">
+      <Filter>基本\design</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\CAppInfo.cpp">
+      <Filter>基本\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\common\sys.cpp">
+      <Filter>基本\common</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\%40%40c2lib\util\CConfFile.cpp">
+      <Filter>基本\util\conf</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\%40%40c2lib\util\array.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\game\Sprite.h">
+      <Filter>分離可\game</Filter>
+    </ClInclude>
+    <ClInclude Include="..\opengl\math\Vec3.h">
+      <Filter>分離可\opengl\math</Filter>
+    </ClInclude>
+    <ClInclude Include="..\media\MciSound.h">
+      <Filter>分離可\media</Filter>
+    </ClInclude>
+    <ClInclude Include="..\id\class.h">
+      <Filter>基本\id</Filter>
+    </ClInclude>
+    <ClInclude Include="..\id\error.h">
+      <Filter>基本\id</Filter>
+    </ClInclude>
+    <ClInclude Include="..\id\menu.h">
+      <Filter>基本\id</Filter>
+    </ClInclude>
+    <ClInclude Include="..\id\res.h">
+      <Filter>基本\id</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\lib_win.h">
+      <Filter>基本\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\sdk\libfwd_win.h">
+      <Filter>基本\sdk</Filter>
+    </ClInclude>
+    <ClInclude Include="..\std\_required.h">
+      <Filter>基本\std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\std\mem.h">
+      <Filter>基本\std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\std\myexception.h">
+      <Filter>基本\std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\std\StdError.h">
+      <Filter>基本\std</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\_required.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\AbTable.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\array.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\BitSet.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CCommandLine.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CCommandLine_Old.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CDateTime.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CIdGenerator.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CIntFormat.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CPersonalTime.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\file.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\mem.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\rand.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\SingleCursor.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\static_vector.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\std.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\TimeWatch.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\base\Obj2.h">
+      <Filter>基本\util\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\base\Obj3.h">
+      <Filter>基本\util\base</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\loop.h">
+      <Filter>基本\util\value</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\Input.h">
+      <Filter>基本\util\consle</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\list_ex.h">
+      <Filter>基本\util\container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\TStaticQueue.h">
+      <Filter>基本\util\container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\vector_ex.h">
+      <Filter>基本\util\container</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CIniFile.h">
+      <Filter>基本\util\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\CJson.h">
+      <Filter>基本\util\conf</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\CNamable.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\CObserver.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\DefOrClass.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\THeap.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\TInstanceHolder.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\TSingleInstance.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\TSingleton.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\Chain.h">
+      <Filter>基本\design\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\ChainEx.h">
+      <Filter>基本\design\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\util\SimpleChain.h">
+      <Filter>基本\design\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\design\TChain.h">
+      <Filter>基本\design\chain</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\_required.h">
+      <Filter>基本\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\CAppInfo.h">
+      <Filter>基本\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\common\sys.h">
+      <Filter>基本\common</Filter>
+    </ClInclude>
+    <ClInclude Include="..\c2lib.h" />
+    <ClInclude Include="..\..\%40%40c2lib\util\CConfFile.h">
+      <Filter>基本\util\conf</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
