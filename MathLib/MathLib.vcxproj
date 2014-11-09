@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{E8893C8D-E97A-42C6-9602-99BC807255C8}</ProjectGuid>
+    <RootNamespace>MathLib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../%40%40c2lib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../%40%40c2lib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <DisableSpecificWarnings>4996</DisableSpecificWarnings>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_fwd.h" />
+    <ClInclude Include="src\_required.h" />
+    <ClInclude Include="src\Calc.h" />
+    <ClInclude Include="src\Mtx.h" />
+    <ClInclude Include="src\Mtx34.h" />
+    <ClInclude Include="src\Mtx44.h" />
+    <ClInclude Include="src\range.h" />
+    <ClInclude Include="src\Align.h" />
+    <ClInclude Include="src\BoxSize.h" />
+    <ClInclude Include="src\CRect.h" />
+    <ClInclude Include="src\CVec2.h" />
+    <ClInclude Include="src\Angle.h" />
+    <ClInclude Include="src\Compass.h" />
+    <ClInclude Include="src\Course.h" />
+    <ClInclude Include="src\Dir.h" />
+    <ClInclude Include="src\Quad2.h" />
+    <ClInclude Include="src\SegLine3.h" />
+    <ClInclude Include="src\Vec3.h" />
+    <ClInclude Include="src\Aabb3.h" />
+    <ClInclude Include="src\Line3.h" />
+    <ClInclude Include="src\Obb3.h" />
+    <ClInclude Include="src\Plane3.h" />
+    <ClInclude Include="src\Segment3.h" />
+    <ClInclude Include="src\Intersect3.h" />
+    <ClInclude Include="src\Transformer3.h" />
+    <ClInclude Include="MathLib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Calc.cpp" />
+    <ClCompile Include="src\Mtx.cpp" />
+    <ClCompile Include="src\Mtx34.cpp" />
+    <ClCompile Include="src\Mtx44.cpp" />
+    <ClCompile Include="src\TRange.cpp" />
+    <ClCompile Include="src\Align.cpp" />
+    <ClCompile Include="src\BoxSize.cpp" />
+    <ClCompile Include="src\CRect.cpp" />
+    <ClCompile Include="src\CVec2.cpp" />
+    <ClCompile Include="src\Angle.cpp" />
+    <ClCompile Include="src\Compass.cpp" />
+    <ClCompile Include="src\Course.cpp" />
+    <ClCompile Include="src\Dir.cpp" />
+    <ClCompile Include="src\Quad2.cpp" />
+    <ClCompile Include="src\SegLine3.cpp" />
+    <ClCompile Include="src\Vec3.cpp" />
+    <ClCompile Include="src\Aabb3.cpp" />
+    <ClCompile Include="src\Line3.cpp" />
+    <ClCompile Include="src\Obb3.cpp" />
+    <ClCompile Include="src\Plane3.cpp" />
+    <ClCompile Include="src\Segment3.cpp" />
+    <ClCompile Include="src\Intersect3.cpp" />
+    <ClCompile Include="src\Transformer3.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

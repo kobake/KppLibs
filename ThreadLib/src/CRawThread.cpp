@@ -1,0 +1,73 @@
+#include "common/_required.h"
+#include "CRawThread.h"
+
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+//                       èâä˙âªÇ∆èIóπ                          //
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+CRawThread::~CRawThread()
+{
+	if(m_hThread){
+		::CloseHandle(m_hThread);
+		m_hThread = NULL;
+	}
+}
+
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+//                           ìØä˙                              //
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+
+bool CRawThread::WaitForThreadEnd(int nTimeout) const
+{
+	if(m_hThread){
+		DWORD dwTimeout = (nTimeout<0)?INFINITE:nTimeout;
+		DWORD dwResult = ::WaitForSingleObject(m_hThread, dwTimeout);
+		if(dwResult == WAIT_OBJECT_0){
+			return true;
+		}
+		else if(dwResult == WAIT_TIMEOUT){
+			return false;
+		}
+		else if(dwResult == WAIT_FAILED){ //ì‰ÇÃÉGÉâÅ[
+			DWORD err = ::GetLastError();
+			return false;
+		}
+		else{
+			return false;
+		}
+	}
+	else{
+		//äÆóπÇµÇ´Ç¡ÇƒÇ¢ÇÈÇ∆Ç›Ç»Ç∑
+		return true;
+	}
+}
+
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+//                           ëÄçÏ                              //
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+void CRawThread::Suspend()
+{
+	CRITICAL_ENTER(m_cCritical);
+	SuspendThread(m_hThread);
+}
+
+void CRawThread::Resume()
+{
+	CRITICAL_ENTER(m_cCritical);
+	ResumeThread(m_hThread);
+}
+
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+//                           ëÆê´                              //
+// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
+//
+void CRawThread::SetPriority(EPriority ePriority)
+{
+	CRITICAL_ENTER(m_cCritical);
+	::SetThreadPriority(m_hThread, (int)ePriority);
+}
+
+CRawThread::EPriority CRawThread::GetPriority() const
+{
+	CRITICAL_ENTER(m_cCritical);
+	return (EPriority)::GetThreadPriority(m_hThread);
+}

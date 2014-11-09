@@ -1,0 +1,131 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{2B67C9E7-1E05-461C-BD03-FEB6E7F48D38}</ProjectGuid>
+    <RootNamespace>NetworkLib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../%40%40c2lib;../StringLib;../LogLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>./bin/$(ProjectName)D.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../%40%40c2lib;../StringLib;../LogLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>./bin/$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_head.h" />
+    <ClInclude Include="src\_lib.h" />
+    <ClInclude Include="src\_lib_wininet.h" />
+    <ClInclude Include="src\_lib_wsock32.h" />
+    <ClInclude Include="src\_required.h" />
+    <ClInclude Include="src\CHost.h" />
+    <ClInclude Include="src\CIpAddress.h" />
+    <ClInclude Include="src\Net.h" />
+    <ClInclude Include="src\Mail.h" />
+    <ClInclude Include="src\Pop3.h" />
+    <ClInclude Include="src\Smtp.h" />
+    <ClInclude Include="src\CFtp.h" />
+    <ClInclude Include="src\CFtp2.h" />
+    <ClInclude Include="src\CHttp.h" />
+    <ClInclude Include="src\EHttpStatusCode.h" />
+    <ClInclude Include="src\CHttpRequest.h" />
+    <ClInclude Include="src\CInternet.h" />
+    <ClInclude Include="src\CInternetSession.h" />
+    <ClInclude Include="src\CUrl.h" />
+    <ClInclude Include="src\CDataSocket.h" />
+    <ClInclude Include="src\CSocket.h" />
+    <ClInclude Include="src\CSocketAddress.h" />
+    <ClInclude Include="src\FilterSocket.h" />
+    <ClInclude Include="NetworkLib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CHost.cpp" />
+    <ClCompile Include="src\CIpAddress.cpp" />
+    <ClCompile Include="src\Net.cpp" />
+    <ClCompile Include="src\Mail.cpp" />
+    <ClCompile Include="src\Pop3.cpp" />
+    <ClCompile Include="src\Smtp.cpp" />
+    <ClCompile Include="src\CFtp.cpp" />
+    <ClCompile Include="src\CFtp2.cpp" />
+    <ClCompile Include="src\CHttp.cpp" />
+    <ClCompile Include="src\CHttpRequest.cpp" />
+    <ClCompile Include="src\CInternet.cpp" />
+    <ClCompile Include="src\CInternetSession.cpp" />
+    <ClCompile Include="src\CUrl.cpp" />
+    <ClCompile Include="src\CDataSocket.cpp" />
+    <ClCompile Include="src\CSocket.cpp" />
+    <ClCompile Include="src\CSocketAddress.cpp" />
+    <ClCompile Include="src\FilterSocket.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

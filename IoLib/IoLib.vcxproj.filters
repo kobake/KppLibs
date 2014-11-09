@@ -1,0 +1,141 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\base">
+      <UniqueIdentifier>{3b5388ff-4308-41c8-986f-9402c04aa88e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\directory">
+      <UniqueIdentifier>{cdfe83f8-4c2c-45fb-8a19-5a02c2a86236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\stream">
+      <UniqueIdentifier>{6630064c-78c2-4904-8fbe-b1350ca589bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\stream\concrete">
+      <UniqueIdentifier>{119d314d-3485-4846-abc5-15e6c988b924}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\stream\util">
+      <UniqueIdentifier>{4feeeebf-f43c-48b6-8cd8-844b1d4b77d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\path">
+      <UniqueIdentifier>{49af6bc2-dc21-4cdd-86cd-03a81696a94c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_required.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFile.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFileSystem.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Io.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\InputData.h">
+      <Filter>ソース ファイル\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OutputData.h">
+      <Filter>ソース ファイル\base</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFolder.h">
+      <Filter>ソース ファイル\directory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FileFind.h">
+      <Filter>ソース ファイル\directory</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CInputStream.h">
+      <Filter>ソース ファイル\stream</Filter>
+    </ClInclude>
+    <ClInclude Include="src\COutputStream.h">
+      <Filter>ソース ファイル\stream</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFileStream.h">
+      <Filter>ソース ファイル\stream\concrete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CMemoryStream.h">
+      <Filter>ソース ファイル\stream\concrete</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CDataStream.h">
+      <Filter>ソース ファイル\stream\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CJavaStream.h">
+      <Filter>ソース ファイル\stream\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CTextStream.h">
+      <Filter>ソース ファイル\stream\util</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFilePath.h">
+      <Filter>ソース ファイル\path</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CProtocolPath.h">
+      <Filter>ソース ファイル\path</Filter>
+    </ClInclude>
+    <ClInclude Include="IoLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CFile.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFileSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Io.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\InputData.cpp">
+      <Filter>ソース ファイル\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OutputData.cpp">
+      <Filter>ソース ファイル\base</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFolder.cpp">
+      <Filter>ソース ファイル\directory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FileFind.cpp">
+      <Filter>ソース ファイル\directory</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CInputStream.cpp">
+      <Filter>ソース ファイル\stream</Filter>
+    </ClCompile>
+    <ClCompile Include="src\COutputStream.cpp">
+      <Filter>ソース ファイル\stream</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFileStream.cpp">
+      <Filter>ソース ファイル\stream\concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CMemoryStream.cpp">
+      <Filter>ソース ファイル\stream\concrete</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CDataStream.cpp">
+      <Filter>ソース ファイル\stream\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CJavaStream.cpp">
+      <Filter>ソース ファイル\stream\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CTextStream.cpp">
+      <Filter>ソース ファイル\stream\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFilePath.cpp">
+      <Filter>ソース ファイル\path</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CProtocolPath.cpp">
+      <Filter>ソース ファイル\path</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

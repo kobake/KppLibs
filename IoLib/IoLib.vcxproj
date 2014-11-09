@@ -1,0 +1,119 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{BB458969-5AC9-4F24-8EC0-E0440CCFDA70}</ProjectGuid>
+    <RootNamespace>IoLib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../@@c2lib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../@@c2lib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_required.h" />
+    <ClInclude Include="src\CFile.h" />
+    <ClInclude Include="src\CFileSystem.h" />
+    <ClInclude Include="src\Io.h" />
+    <ClInclude Include="src\InputData.h" />
+    <ClInclude Include="src\OutputData.h" />
+    <ClInclude Include="src\CFolder.h" />
+    <ClInclude Include="src\FileFind.h" />
+    <ClInclude Include="src\CInputStream.h" />
+    <ClInclude Include="src\COutputStream.h" />
+    <ClInclude Include="src\CFileStream.h" />
+    <ClInclude Include="src\CMemoryStream.h" />
+    <ClInclude Include="src\CDataStream.h" />
+    <ClInclude Include="src\CJavaStream.h" />
+    <ClInclude Include="src\CTextStream.h" />
+    <ClInclude Include="src\CFilePath.h" />
+    <ClInclude Include="src\CProtocolPath.h" />
+    <ClInclude Include="IoLib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CFile.cpp" />
+    <ClCompile Include="src\CFileSystem.cpp" />
+    <ClCompile Include="src\Io.cpp" />
+    <ClCompile Include="src\InputData.cpp" />
+    <ClCompile Include="src\OutputData.cpp" />
+    <ClCompile Include="src\CFolder.cpp" />
+    <ClCompile Include="src\FileFind.cpp" />
+    <ClCompile Include="src\CInputStream.cpp" />
+    <ClCompile Include="src\COutputStream.cpp" />
+    <ClCompile Include="src\CFileStream.cpp" />
+    <ClCompile Include="src\CMemoryStream.cpp" />
+    <ClCompile Include="src\CDataStream.cpp" />
+    <ClCompile Include="src\CJavaStream.cpp" />
+    <ClCompile Include="src\CTextStream.cpp" />
+    <ClCompile Include="src\CFilePath.cpp" />
+    <ClCompile Include="src\CProtocolPath.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

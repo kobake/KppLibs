@@ -1,0 +1,139 @@
+<?xml version="1.0"?>
+<status>
+<target
+   path="D:\myhome\log">
+<entry
+   path="D:\myhome\log">
+<wc-status
+   props="none"
+   item="normal"
+   revision="2">
+<commit
+   revision="2">
+<author>kobake</author>
+<date>2010-11-06T04:39:41.491240Z</date>
+</commit>
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\再配達">
+<wc-status
+   props="none"
+   item="unversioned">
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\IRCクライアントメモ.txt">
+<wc-status
+   props="none"
+   item="unversioned">
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\タワーチケット購入記録.pdf">
+<wc-status
+   props="none"
+   item="unversioned">
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\国勢調査_20101001.pdf">
+<wc-status
+   props="none"
+   item="unversioned">
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\jikken.gokigen.com契約.pdf">
+<wc-status
+   props="none"
+   item="unversioned">
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\国勢調査_20101001_2.pdf">
+<wc-status
+   props="none"
+   item="unversioned">
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\IRCサーバ構築メモ.txt">
+<wc-status
+   props="none"
+   item="modified"
+   revision="2">
+<commit
+   revision="2">
+<author>kobake</author>
+<date>2010-11-06T04:39:41.491240Z</date>
+</commit>
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\server">
+<wc-status
+   props="none"
+   item="normal"
+   revision="2">
+<commit
+   revision="2">
+<author>kobake</author>
+<date>2010-11-06T04:39:41.491240Z</date>
+</commit>
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\server2">
+<wc-status
+   props="none"
+   item="normal"
+   revision="2">
+<commit
+   revision="2">
+<author>kobake</author>
+<date>2010-11-06T04:39:41.491240Z</date>
+</commit>
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\clamwin">
+<wc-status
+   props="none"
+   item="normal"
+   revision="68">
+<commit
+   revision="68">
+<author>kobake</author>
+<date>2010-12-29T16:35:02.859452Z</date>
+</commit>
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\skype">
+<wc-status
+   props="none"
+   item="normal"
+   revision="2">
+<commit
+   revision="2">
+<author>kobake</author>
+<date>2010-11-06T04:39:41.491240Z</date>
+</commit>
+</wc-status>
+</entry>
+<entry
+   path="D:\myhome\log\ipmsg_cave.log">
+<wc-status
+   props="none"
+   item="normal"
+   revision="2">
+<commit
+   revision="2">
+<author>kobake</author>
+<date>2010-11-06T04:39:41.491240Z</date>
+</commit>
+</wc-status>
+</entry>
+</target>
+</status>

@@ -1,0 +1,125 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{16A423CF-992A-4567-BC05-6E25C6309B6A}</ProjectGuid>
+    <RootNamespace>ThreadLib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../%40%40c2lib;../../_lib/boost_1_39_0;../LogLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>./bin/$(ProjectName)D.lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../%40%40c2lib;../../_lib/boost_1_39_0;../LogLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>./bin/$(ProjectName).lib</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='DebugDLL|Win32'">
+    <ClCompile>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CCriticalSection.cpp" />
+    <ClCompile Include="src\CEvent.cpp" />
+    <ClCompile Include="src\CMutex.cpp" />
+    <ClCompile Include="src\CPipe.cpp" />
+    <ClCompile Include="src\CSharedMemory.cpp" />
+    <ClCompile Include="src\ThreadUtil.cpp" />
+    <ClCompile Include="src\CRawThread.cpp" />
+    <ClCompile Include="src\CThread.cpp" />
+    <ClCompile Include="src\CThread2.cpp" />
+    <ClCompile Include="src\CModule.cpp" />
+    <ClCompile Include="src\CMyProcess.cpp" />
+    <ClCompile Include="src\CProcess.cpp" />
+    <ClCompile Include="src\CProcessWatcher.cpp" />
+    <ClCompile Include="src\CThreadInfo.cpp" />
+    <ClCompile Include="src\CProcess2.cpp" />
+    <ClCompile Include="src\CProcessManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CCriticalSection.h" />
+    <ClInclude Include="src\CEvent.h" />
+    <ClInclude Include="src\CMutex.h" />
+    <ClInclude Include="src\CPipe.h" />
+    <ClInclude Include="src\CSharedMemory.h" />
+    <ClInclude Include="src\CThreadQueue.h" />
+    <ClInclude Include="src\threading.h" />
+    <ClInclude Include="src\ThreadUtil.h" />
+    <ClInclude Include="src\CRawThread.h" />
+    <ClInclude Include="src\CThread.h" />
+    <ClInclude Include="src\CThread2.h" />
+    <ClInclude Include="src\CModule.h" />
+    <ClInclude Include="src\CMyProcess.h" />
+    <ClInclude Include="src\CProcess.h" />
+    <ClInclude Include="src\CProcessWatcher.h" />
+    <ClInclude Include="src\CThreadInfo.h" />
+    <ClInclude Include="src\CProcess2.h" />
+    <ClInclude Include="src\CProcessManager.h" />
+    <ClInclude Include="ThreadLib.h" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

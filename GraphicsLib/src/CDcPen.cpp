@@ -1,0 +1,46 @@
+#include "common/_required.h"
+#include "CDcPen.h"
+
+
+CDcPen::CDcPen(HDC _hdc)
+: hdc(_hdc)
+{
+	hpnOrg=NULL;
+	hpnSelect=NULL;
+	_update();
+}
+
+CDcPen::~CDcPen()
+{
+	//ïúå≥
+	SelectObject(hdc,hpnOrg);
+
+	//îjä¸
+	DeleteObject(hpnSelect);
+}
+
+void CDcPen::_update()
+{
+	const State& state=getState();
+
+	//êVÇµÇ≠çÏê¨ÇµÅAëIë
+	HPEN hpnNew=CreatePen(
+		state.style==Inside?PS_INSIDEFRAME:PS_SOLID,
+		state.width,
+		state.color.win_color()
+	);
+	HPEN hpnOld=(HPEN)SelectObject(hdc,hpnNew);
+
+	//èââÒ
+	if(hpnOrg==NULL){
+		hpnOrg=hpnOld;
+		hpnSelect=hpnNew;
+	}
+	//ÇªÇÍà»ç~
+	else{
+		DeleteObject(hpnSelect);
+		hpnSelect=hpnNew;
+	}
+}
+
+

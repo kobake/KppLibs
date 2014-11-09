@@ -1,0 +1,39 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LayoutLib", "LayoutLib.vcproj", "{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LayoutSample", "LayoutSample\LayoutSample.vcproj", "{60AF6FB6-05C5-4B0F-B081-016A089FD85E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C} = {FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		DebugDLL|Win32 = DebugDLL|Win32
+		Release|Win32 = Release|Win32
+		ReleaseDLL|Win32 = ReleaseDLL|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.Debug|Win32.Build.0 = Debug|Win32
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.DebugDLL|Win32.ActiveCfg = DebugDLL|Win32
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.DebugDLL|Win32.Build.0 = DebugDLL|Win32
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.Release|Win32.ActiveCfg = Release|Win32
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.Release|Win32.Build.0 = Release|Win32
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.ReleaseDLL|Win32.ActiveCfg = ReleaseDLL|Win32
+		{FA3A3074-EBD9-43D3-9905-EDAB1040BD2C}.ReleaseDLL|Win32.Build.0 = ReleaseDLL|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.Debug|Win32.ActiveCfg = Debug|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.Debug|Win32.Build.0 = Debug|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.DebugDLL|Win32.ActiveCfg = DebugDLL|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.DebugDLL|Win32.Build.0 = DebugDLL|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.Release|Win32.ActiveCfg = Release|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.Release|Win32.Build.0 = Release|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.ReleaseDLL|Win32.ActiveCfg = ReleaseDLL|Win32
+		{60AF6FB6-05C5-4B0F-B081-016A089FD85E}.ReleaseDLL|Win32.Build.0 = ReleaseDLL|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

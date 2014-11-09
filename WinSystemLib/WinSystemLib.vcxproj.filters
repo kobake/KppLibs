@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\shell">
+      <UniqueIdentifier>{1b9eeef3-32bb-4d00-8593-65c1c6102081}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\dlg">
+      <UniqueIdentifier>{e717ea05-a382-4004-8c37-9f17c33d3ca8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\registry">
+      <UniqueIdentifier>{1074dafe-6dfb-4634-8f3e-d81ac6e4ac82}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\gr">
+      <UniqueIdentifier>{53cc24e8-7828-40cb-b89a-b91cdb598786}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\helper">
+      <UniqueIdentifier>{32ab3734-b526-498e-ba2d-96629c01a1cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\mixer">
+      <UniqueIdentifier>{d7b791c3-7bd6-422a-baa5-2ecbd0b28f83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\res">
+      <UniqueIdentifier>{0dd49b74-1af5-4e32-a45f-c00b2649e6e6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\window">
+      <UniqueIdentifier>{2e15f5d0-20e6-4c40-bea4-21c64a7c4b52}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\window\1_基本">
+      <UniqueIdentifier>{06b8c3a5-d942-4f9c-8d5b-4f9a845ea7a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\window\2_準基本">
+      <UniqueIdentifier>{9681ce33-e8d1-4e83-8adc-800e82b43aae}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\window\3_派生">
+      <UniqueIdentifier>{f751ea79-0c19-4c86-a829-d8ef99da9910}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\window2">
+      <UniqueIdentifier>{c31be2c2-a676-4c99-8151-75b3b31692a7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_fwd.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_required.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CAccelerator.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Cast.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CClipboard.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CDropFiles.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CTimer.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CTrayIcon.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CWinError.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CWinSystem.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ini.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Module.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mymsg.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Process.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\reg.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\WinException.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\CContextMenu.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\CEnumIdList.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\CFileShell.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\CItemIdList.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\CMalloc.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\CShellFolder.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\CVariant.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\shared_shell_ptr.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\shell\shells.h">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dlg\FileDialog.h">
+      <Filter>ソース ファイル\dlg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\dlg\FolderDialog.h">
+      <Filter>ソース ファイル\dlg</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\_required.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\CRegException.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\CRegHive.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\CRegKey.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\CRegPath.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\CRegType.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\CRegValue.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\registry\OldValue.h">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\gr\Type.h">
+      <Filter>ソース ファイル\gr</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CWindowSubclass.h">
+      <Filter>ソース ファイル\helper</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mixer\_required.h">
+      <Filter>ソース ファイル\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mixer\Mixer.h">
+      <Filter>ソース ファイル\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mixer\MixerControl.h">
+      <Filter>ソース ファイル\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mixer\MixerLine.h">
+      <Filter>ソース ファイル\mixer</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CIconLoader.h">
+      <Filter>ソース ファイル\res</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Menu.h">
+      <Filter>ソース ファイル\res</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\_required.h">
+      <Filter>ソース ファイル\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\CWindowClass.h">
+      <Filter>ソース ファイル\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\Desktop.h">
+      <Filter>ソース ファイル\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\HwndPlus.h">
+      <Filter>ソース ファイル\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\Screen.h">
+      <Filter>ソース ファイル\window</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\CRawWindow.h">
+      <Filter>ソース ファイル\window\1_基本</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\CRawDialog.h">
+      <Filter>ソース ファイル\window\2_準基本</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\CDialogPanel.h">
+      <Filter>ソース ファイル\window\3_派生</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window\CWindow.h">
+      <Filter>ソース ファイル\window\3_派生</Filter>
+    </ClInclude>
+    <ClInclude Include="src\window2\_required.h">
+      <Filter>ソース ファイル\window2</Filter>
+    </ClInclude>
+    <ClInclude Include="WinSystemLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CAccelerator.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Cast.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CClipboard.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CDropFiles.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CTimer.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CTrayIcon.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CWinError.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CWinSystem.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Module.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Process.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\WinException.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\CContextMenu.cpp">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\CEnumIdList.cpp">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\CFileShell.cpp">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\CItemIdList.cpp">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\CMalloc.cpp">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\CShellFolder.cpp">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\shell\CVariant.cpp">
+      <Filter>ソース ファイル\shell</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dlg\FileDialog.cpp">
+      <Filter>ソース ファイル\dlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\dlg\FolderDialog.cpp">
+      <Filter>ソース ファイル\dlg</Filter>
+    </ClCompile>
+    <ClCompile Include="src\registry\CRegHive.cpp">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\registry\CRegKey.cpp">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\registry\CRegPath.cpp">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\registry\CRegType.cpp">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\registry\CRegValue.cpp">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\registry\OldValue.cpp">
+      <Filter>ソース ファイル\registry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CWindowSubclass.cpp">
+      <Filter>ソース ファイル\helper</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mixer\Mixer.cpp">
+      <Filter>ソース ファイル\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mixer\MixerControl.cpp">
+      <Filter>ソース ファイル\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mixer\MixerLine.cpp">
+      <Filter>ソース ファイル\mixer</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CIconLoader.cpp">
+      <Filter>ソース ファイル\res</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Menu.cpp">
+      <Filter>ソース ファイル\res</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\CWindowClass.cpp">
+      <Filter>ソース ファイル\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\Desktop.cpp">
+      <Filter>ソース ファイル\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\HwndPlus.cpp">
+      <Filter>ソース ファイル\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\Screen.cpp">
+      <Filter>ソース ファイル\window</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\CRawWindow.cpp">
+      <Filter>ソース ファイル\window\1_基本</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\CRawDialog.cpp">
+      <Filter>ソース ファイル\window\2_準基本</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\CDialogPanel.cpp">
+      <Filter>ソース ファイル\window\3_派生</Filter>
+    </ClCompile>
+    <ClCompile Include="src\window\CWindow.cpp">
+      <Filter>ソース ファイル\window\3_派生</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\thread">
+      <UniqueIdentifier>{616f19f0-ac55-466e-aad2-dc9ac79fe5db}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\info">
+      <UniqueIdentifier>{b2d82fae-601e-4cd6-8ba3-72bfc3295881}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\process">
+      <UniqueIdentifier>{2d2ba715-cb4d-46cb-b8df-677853227ba6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CCriticalSection.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CEvent.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CMutex.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CPipe.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CSharedMemory.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\ThreadUtil.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CRawThread.cpp">
+      <Filter>ソース ファイル\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CThread.cpp">
+      <Filter>ソース ファイル\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CThread2.cpp">
+      <Filter>ソース ファイル\thread</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CModule.cpp">
+      <Filter>ソース ファイル\info</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CMyProcess.cpp">
+      <Filter>ソース ファイル\info</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CProcess.cpp">
+      <Filter>ソース ファイル\info</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CProcessWatcher.cpp">
+      <Filter>ソース ファイル\info</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CThreadInfo.cpp">
+      <Filter>ソース ファイル\info</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CProcess2.cpp">
+      <Filter>ソース ファイル\process</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CProcessManager.cpp">
+      <Filter>ソース ファイル\process</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\CCriticalSection.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CEvent.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CMutex.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CPipe.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CSharedMemory.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CThreadQueue.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\threading.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\ThreadUtil.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CRawThread.h">
+      <Filter>ソース ファイル\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CThread.h">
+      <Filter>ソース ファイル\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CThread2.h">
+      <Filter>ソース ファイル\thread</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CModule.h">
+      <Filter>ソース ファイル\info</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CMyProcess.h">
+      <Filter>ソース ファイル\info</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CProcess.h">
+      <Filter>ソース ファイル\info</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CProcessWatcher.h">
+      <Filter>ソース ファイル\info</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CThreadInfo.h">
+      <Filter>ソース ファイル\info</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CProcess2.h">
+      <Filter>ソース ファイル\process</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CProcessManager.h">
+      <Filter>ソース ファイル\process</Filter>
+    </ClInclude>
+    <ClInclude Include="ThreadLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>

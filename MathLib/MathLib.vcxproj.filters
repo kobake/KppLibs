@@ -1,0 +1,189 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\1d">
+      <UniqueIdentifier>{4cf5ec8e-31a5-4bed-a741-ed463f330109}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\2d">
+      <UniqueIdentifier>{5901c341-72f4-4350-87fd-f31474629e4d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\2d\dir">
+      <UniqueIdentifier>{16cdbd18-464f-4638-b4a7-f0ef01a6bb80}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\2d\ext">
+      <UniqueIdentifier>{e1ae3069-6ed0-46d8-987a-29f9e7556a81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\3d">
+      <UniqueIdentifier>{019480b6-d117-4fc2-a2fc-817a3fcb6080}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\3d\ext">
+      <UniqueIdentifier>{bc0337c3-6fbb-44b8-a8d6-b9d63a2a4754}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\3d\tool">
+      <UniqueIdentifier>{3ac2dc2c-8b49-439c-8cb2-f1f490bb0500}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_fwd.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_required.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Calc.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mtx.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mtx34.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mtx44.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\range.h">
+      <Filter>ソース ファイル\1d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Align.h">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\BoxSize.h">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CRect.h">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CVec2.h">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Angle.h">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Compass.h">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Course.h">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Dir.h">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Quad2.h">
+      <Filter>ソース ファイル\2d\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="src\SegLine3.h">
+      <Filter>ソース ファイル\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Vec3.h">
+      <Filter>ソース ファイル\3d</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Aabb3.h">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Line3.h">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Obb3.h">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Plane3.h">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Segment3.h">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Intersect3.h">
+      <Filter>ソース ファイル\3d\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Transformer3.h">
+      <Filter>ソース ファイル\3d\tool</Filter>
+    </ClInclude>
+    <ClInclude Include="MathLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Calc.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mtx.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mtx34.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mtx44.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\TRange.cpp">
+      <Filter>ソース ファイル\1d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Align.cpp">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\BoxSize.cpp">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CRect.cpp">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CVec2.cpp">
+      <Filter>ソース ファイル\2d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Angle.cpp">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Compass.cpp">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Course.cpp">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Dir.cpp">
+      <Filter>ソース ファイル\2d\dir</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Quad2.cpp">
+      <Filter>ソース ファイル\2d\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="src\SegLine3.cpp">
+      <Filter>ソース ファイル\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Vec3.cpp">
+      <Filter>ソース ファイル\3d</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Aabb3.cpp">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Line3.cpp">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Obb3.cpp">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Plane3.cpp">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Segment3.cpp">
+      <Filter>ソース ファイル\3d\ext</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Intersect3.cpp">
+      <Filter>ソース ファイル\3d\tool</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Transformer3.cpp">
+      <Filter>ソース ファイル\3d\tool</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

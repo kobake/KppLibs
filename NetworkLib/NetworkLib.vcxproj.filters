@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\mail">
+      <UniqueIdentifier>{62bb6c90-4268-4214-9345-db7ea7381546}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\protocol">
+      <UniqueIdentifier>{a7539b0c-6bf6-4f21-911c-b596b76d98de}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\protocol\http_post">
+      <UniqueIdentifier>{d1ecad4e-ac7d-4c08-8ddb-2b9906fe8015}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\socket">
+      <UniqueIdentifier>{6f76ad8d-ac8c-4a90-9712-43d83e05309b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_head.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_lib.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_lib_wininet.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_lib_wsock32.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_required.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHost.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CIpAddress.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Net.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Mail.h">
+      <Filter>ソース ファイル\mail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pop3.h">
+      <Filter>ソース ファイル\mail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Smtp.h">
+      <Filter>ソース ファイル\mail</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFtp.h">
+      <Filter>ソース ファイル\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFtp2.h">
+      <Filter>ソース ファイル\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHttp.h">
+      <Filter>ソース ファイル\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\EHttpStatusCode.h">
+      <Filter>ソース ファイル\protocol</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CHttpRequest.h">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CInternet.h">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CInternetSession.h">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CUrl.h">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CDataSocket.h">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CSocket.h">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CSocketAddress.h">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FilterSocket.h">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClInclude>
+    <ClInclude Include="NetworkLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CHost.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CIpAddress.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Net.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Mail.cpp">
+      <Filter>ソース ファイル\mail</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pop3.cpp">
+      <Filter>ソース ファイル\mail</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Smtp.cpp">
+      <Filter>ソース ファイル\mail</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFtp.cpp">
+      <Filter>ソース ファイル\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFtp2.cpp">
+      <Filter>ソース ファイル\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHttp.cpp">
+      <Filter>ソース ファイル\protocol</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CHttpRequest.cpp">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CInternet.cpp">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CInternetSession.cpp">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CUrl.cpp">
+      <Filter>ソース ファイル\protocol\http_post</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CDataSocket.cpp">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CSocket.cpp">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CSocketAddress.cpp">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FilterSocket.cpp">
+      <Filter>ソース ファイル\socket</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>

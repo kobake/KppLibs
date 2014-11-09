@@ -1,0 +1,17 @@
+#pragma once
+
+#include "src/CFile.h"
+#include "src/CFilePath.h"
+#include "src/CInputStream.h"
+#include "src/COutputStream.h"
+#include "src/CJavaStream.h"
+#include "src/CMemoryStream.h"
+#include "src/CTextStream.h"
+#include "src/FileFind.h"
+#include "src/InputData.h"
+#include "src/Io.h"
+#include "src/OutputData.h"
+#include "src/CFileStream.h"
+#include "src/CFolder.h"
+#include "src/CFileSystem.h"
+#include "src/CProtocolPath.h"

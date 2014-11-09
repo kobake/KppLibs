@@ -1,0 +1,7 @@
+*.txt
+*.pdb
+Debug
+DebugDLL
+Release
+ReleaseDLL
+bin

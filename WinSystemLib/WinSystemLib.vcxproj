@@ -1,0 +1,179 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{4EE1CFB9-DB66-4E57-B0A4-4C567FA1962A}</ProjectGuid>
+    <RootNamespace>WinSystemLib</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>StaticLibrary</ConfigurationType>
+    <CharacterSet>Unicode</CharacterSet>
+    <PlatformToolset>Windows7.1SDK</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.40219.1</_ProjectFileVersion>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Configuration)\</IntDir>
+    <OutDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Configuration)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>../../~Lib/%40%40c2lib;../../_lib/boost_1_46_1;../../~Lib/IoLib;../../~Lib/StringLib;../../~Lib/DebugLib;../../~Lib/LogLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <AdditionalIncludeDirectories>../../~Lib/%40%40c2lib;../../_lib/boost_1_46_1;../../~Lib/IoLib;../../~Lib/StringLib;../../~Lib/DebugLib;../../~Lib/LogLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <PrecompiledHeader>
+      </PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+    </ClCompile>
+    <Lib>
+      <OutputFile>$(OutDir)$(TargetName)$(TargetExt)</OutputFile>
+    </Lib>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_fwd.h" />
+    <ClInclude Include="src\_required.h" />
+    <ClInclude Include="src\CAccelerator.h" />
+    <ClInclude Include="src\Cast.h" />
+    <ClInclude Include="src\CClipboard.h" />
+    <ClInclude Include="src\CDropFiles.h" />
+    <ClInclude Include="src\CTimer.h" />
+    <ClInclude Include="src\CTrayIcon.h" />
+    <ClInclude Include="src\CWinError.h" />
+    <ClInclude Include="src\CWinSystem.h" />
+    <ClInclude Include="src\ini.h" />
+    <ClInclude Include="src\Module.h" />
+    <ClInclude Include="src\mymsg.h" />
+    <ClInclude Include="src\Process.h" />
+    <ClInclude Include="src\reg.h" />
+    <ClInclude Include="src\WinException.h" />
+    <ClInclude Include="src\shell\CContextMenu.h" />
+    <ClInclude Include="src\shell\CEnumIdList.h" />
+    <ClInclude Include="src\shell\CFileShell.h" />
+    <ClInclude Include="src\shell\CItemIdList.h" />
+    <ClInclude Include="src\shell\CMalloc.h" />
+    <ClInclude Include="src\shell\CShellFolder.h" />
+    <ClInclude Include="src\shell\CVariant.h" />
+    <ClInclude Include="src\shell\shared_shell_ptr.h" />
+    <ClInclude Include="src\shell\shells.h" />
+    <ClInclude Include="src\dlg\FileDialog.h" />
+    <ClInclude Include="src\dlg\FolderDialog.h" />
+    <ClInclude Include="src\registry\_required.h" />
+    <ClInclude Include="src\registry\CRegException.h" />
+    <ClInclude Include="src\registry\CRegHive.h" />
+    <ClInclude Include="src\registry\CRegKey.h" />
+    <ClInclude Include="src\registry\CRegPath.h" />
+    <ClInclude Include="src\registry\CRegType.h" />
+    <ClInclude Include="src\registry\CRegValue.h" />
+    <ClInclude Include="src\registry\OldValue.h" />
+    <ClInclude Include="src\gr\Type.h" />
+    <ClInclude Include="src\CWindowSubclass.h" />
+    <ClInclude Include="src\mixer\_required.h" />
+    <ClInclude Include="src\mixer\Mixer.h" />
+    <ClInclude Include="src\mixer\MixerControl.h" />
+    <ClInclude Include="src\mixer\MixerLine.h" />
+    <ClInclude Include="src\CIconLoader.h" />
+    <ClInclude Include="src\Menu.h" />
+    <ClInclude Include="src\window\_required.h" />
+    <ClInclude Include="src\window\CWindowClass.h" />
+    <ClInclude Include="src\window\Desktop.h" />
+    <ClInclude Include="src\window\HwndPlus.h" />
+    <ClInclude Include="src\window\Screen.h" />
+    <ClInclude Include="src\window\CRawWindow.h" />
+    <ClInclude Include="src\window\CRawDialog.h" />
+    <ClInclude Include="src\window\CDialogPanel.h" />
+    <ClInclude Include="src\window\CWindow.h" />
+    <ClInclude Include="src\window2\_required.h" />
+    <ClInclude Include="WinSystemLib.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\CAccelerator.cpp" />
+    <ClCompile Include="src\Cast.cpp" />
+    <ClCompile Include="src\CClipboard.cpp" />
+    <ClCompile Include="src\CDropFiles.cpp" />
+    <ClCompile Include="src\CTimer.cpp" />
+    <ClCompile Include="src\CTrayIcon.cpp" />
+    <ClCompile Include="src\CWinError.cpp" />
+    <ClCompile Include="src\CWinSystem.cpp" />
+    <ClCompile Include="src\Module.cpp" />
+    <ClCompile Include="src\Process.cpp" />
+    <ClCompile Include="src\WinException.cpp" />
+    <ClCompile Include="src\shell\CContextMenu.cpp" />
+    <ClCompile Include="src\shell\CEnumIdList.cpp" />
+    <ClCompile Include="src\shell\CFileShell.cpp" />
+    <ClCompile Include="src\shell\CItemIdList.cpp" />
+    <ClCompile Include="src\shell\CMalloc.cpp" />
+    <ClCompile Include="src\shell\CShellFolder.cpp" />
+    <ClCompile Include="src\shell\CVariant.cpp" />
+    <ClCompile Include="src\dlg\FileDialog.cpp" />
+    <ClCompile Include="src\dlg\FolderDialog.cpp" />
+    <ClCompile Include="src\registry\CRegHive.cpp" />
+    <ClCompile Include="src\registry\CRegKey.cpp" />
+    <ClCompile Include="src\registry\CRegPath.cpp" />
+    <ClCompile Include="src\registry\CRegType.cpp" />
+    <ClCompile Include="src\registry\CRegValue.cpp" />
+    <ClCompile Include="src\registry\OldValue.cpp" />
+    <ClCompile Include="src\CWindowSubclass.cpp" />
+    <ClCompile Include="src\mixer\Mixer.cpp" />
+    <ClCompile Include="src\mixer\MixerControl.cpp" />
+    <ClCompile Include="src\mixer\MixerLine.cpp" />
+    <ClCompile Include="src\CIconLoader.cpp" />
+    <ClCompile Include="src\Menu.cpp" />
+    <ClCompile Include="src\window\CWindowClass.cpp" />
+    <ClCompile Include="src\window\Desktop.cpp" />
+    <ClCompile Include="src\window\HwndPlus.cpp" />
+    <ClCompile Include="src\window\Screen.cpp" />
+    <ClCompile Include="src\window\CRawWindow.cpp" />
+    <ClCompile Include="src\window\CRawDialog.cpp" />
+    <ClCompile Include="src\window\CDialogPanel.cpp" />
+    <ClCompile Include="src\window\CWindow.cpp" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

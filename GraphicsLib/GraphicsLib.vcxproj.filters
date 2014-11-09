@@ -1,0 +1,138 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ソース ファイル">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="ソース ファイル\オブジェクト">
+      <UniqueIdentifier>{dca11d2b-1e16-4617-af37-b0ea71ed4089}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\イメージ">
+      <UniqueIdentifier>{ab8acb3f-5661-425f-b2f5-38e5112eb488}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\描画先">
+      <UniqueIdentifier>{e3f360da-f2f0-4688-8aa1-4f8ee5a79fd8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Type">
+      <UniqueIdentifier>{c4806f45-6e4b-4e2a-a922-9285f2d5cbf7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="リソース ファイル">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\_fwd.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\_required.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Brush.h">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CDcPen.h">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CFont.h">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CGdiObj.h">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Pen.h">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CBitmap.h">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CDib.h">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CIcon.h">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CImage.h">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CDcGraphics.h">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CDcGraphics2.h">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClInclude>
+    <ClInclude Include="src\FilterGraphics.h">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClInclude>
+    <ClInclude Include="src\GeoGraphics.h">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Graphics.h">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClInclude>
+    <ClInclude Include="src\OffsetGraphics.h">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CColor.h">
+      <Filter>ソース ファイル\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Type.h">
+      <Filter>ソース ファイル\Type</Filter>
+    </ClInclude>
+    <ClInclude Include="GraphicsLib.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\Brush.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CDcPen.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CFont.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Pen.cpp">
+      <Filter>ソース ファイル\オブジェクト</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CBitmap.cpp">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CDib.cpp">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CIcon.cpp">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CImage.cpp">
+      <Filter>ソース ファイル\イメージ</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CDcGraphics.cpp">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CDcGraphics2.cpp">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClCompile>
+    <ClCompile Include="src\FilterGraphics.cpp">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClCompile>
+    <ClCompile Include="src\GeoGraphics.cpp">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Graphics.cpp">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClCompile>
+    <ClCompile Include="src\OffsetGraphics.cpp">
+      <Filter>ソース ファイル\描画先</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CColor.cpp">
+      <Filter>ソース ファイル\Type</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
