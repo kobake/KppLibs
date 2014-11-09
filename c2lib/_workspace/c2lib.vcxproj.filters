@@ -138,10 +138,10 @@
     <ClCompile Include="..\common\sys.cpp">
       <Filter>基本\common</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\%40%40c2lib\util\CConfFile.cpp">
+    <ClCompile Include="..\util\CConfFile.cpp">
       <Filter>基本\util\conf</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\%40%40c2lib\util\array.cpp">
+    <ClCompile Include="..\util\array.cpp">
       <Filter>基本\util</Filter>
     </ClCompile>
   </ItemGroup>
@@ -306,7 +306,7 @@
       <Filter>基本\common</Filter>
     </ClInclude>
     <ClInclude Include="..\c2lib.h" />
-    <ClInclude Include="..\..\%40%40c2lib\util\CConfFile.h">
+    <ClInclude Include="..\util\CConfFile.h">
       <Filter>基本\util\conf</Filter>
     </ClInclude>
   </ItemGroup>
