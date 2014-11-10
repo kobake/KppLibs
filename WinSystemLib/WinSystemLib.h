@@ -23,3 +23,4 @@
 #include "src/ini.h"
 
 #include "src/CTrayIcon.h"
+#include "src/Cast.h"

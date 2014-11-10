@@ -19,11 +19,19 @@
 */
 class CCommandLine : public TSingleton<CCommandLine>{
 public:
+	void						Initialize(const wchar_t* str);
 	void						Initialize(int argc, wchar_t* argv[]);
+	void						Initialize(const std::vector<std::wstring>& args);
+	
 	// ƒtƒ‰ƒO //
 	bool						GetFlagBool(const wchar_t* szKey) const;
 	int							FindParam(const wchar_t* szKey) const;
 	std::wstring				GetFlagString(const wchar_t* szKey) const;
+
+	// C //
+	int							argc() const;
+	const wchar_t**				argv() const;
+
 	// ’l //
 	std::wstring				GetParam(int iIndex) const;
 	std::wstring				GetValuedParam(int iIndex) const;
