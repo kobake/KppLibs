@@ -5,10 +5,11 @@
 //#include "DibTransfer.h"
 //#include "DcTransfer.h"
 #include "CFont.h"
-#include <gr/Type.h> //WinSystemLib
+// #include <gr/Type.h> //WinSystemLib
+#include <WinSystemLib.h>
 #include <StringLib.h>
 #include "CImage.h"
-#include <Cast.h> //WinSystemLib
+// #include <Cast.h> //WinSystemLib
 #include "std/myexception.h"
 using namespace util;
 using namespace math;

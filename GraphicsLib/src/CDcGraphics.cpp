@@ -1,6 +1,7 @@
 #include "common/_required.h"
 #include "CDcGraphics.h"
-#include <Cast.h> //WinSystemLib
+// #include <Cast.h> //WinSystemLib
+#include <WinSystemLib.h>
 #include "CDib.h"
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
