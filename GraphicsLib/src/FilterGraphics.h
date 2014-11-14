@@ -2,8 +2,6 @@
 
 #include "Graphics.h"
 
-namespace gr{
-
 class FilterGraphics : public Graphics{
 public:
 	//デバッグ時通知
@@ -20,7 +18,7 @@ public:
 	//色
 	virtual void SetColor(const CColor& color){ return g->SetColor(color); }
 	//イメージ
-	virtual void drawImage(const t_Point& ptDst,const gr::CImage& imgSrc,const t_Rect& rcSrc){ return g->drawImage(ptDst,imgSrc,rcSrc); }
+	virtual void drawImage(const t_Point& ptDst,const CImage& imgSrc,const t_Rect& rcSrc){ return g->drawImage(ptDst,imgSrc,rcSrc); }
 	//クリップ
 	virtual void setClip(const t_Rect& rc){ return g->setClip(rc); }
 	virtual void removeClip(){ return g->removeClip(); }
@@ -39,5 +37,3 @@ public:
 private:
 	Graphics* g;
 };
-
-} //namespace gr

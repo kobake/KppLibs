@@ -37,7 +37,7 @@ private:
 	int log_h;
 };
 
-class CDcGraphics2 : public ::gr::Graphics, public CImage{
+class CDcGraphics2 : public Graphics, public CImage{
 public:
 	enum Type{
 		TYPE_COMPATIBLE,

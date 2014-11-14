@@ -2,6 +2,7 @@
 
 #include <IoLib.h> // CFilePath
 #include <windows.h>
+#include <CommDlg.h>
 
 class FileDialog{
 public:

@@ -5,6 +5,8 @@
 #include <vector>
 #include <string>
 #include <DebugLib.h>
+#include <Windows.h>
+#include <CommDlg.h>
 using namespace std;
 using namespace math;
 

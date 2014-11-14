@@ -3,8 +3,6 @@
 #include "FilterGraphics.h"
 #include "Type.h"
 
-namespace gr{
-
 class OffsetGraphics : public FilterGraphics{
 public:
 	//コンストラクタ・デストラクタ
@@ -14,7 +12,7 @@ public:
 	void setOffset(const t_Point& off){ offset=off; }
 	t_Point getOffset() const{ return offset; }
 	//イメージ
-	virtual void drawImage(const t_Point& ptDst,const gr::CImage& imgSrc,const t_Rect& rcSrc){ return FilterGraphics::drawImage(ptDst+offset,imgSrc,rcSrc); }
+	virtual void drawImage(const t_Point& ptDst,const CImage& imgSrc,const t_Rect& rcSrc){ return FilterGraphics::drawImage(ptDst+offset,imgSrc,rcSrc); }
 	//クリップ
 	virtual void setClip(const t_Rect& rc){ return FilterGraphics::setClip(rc+offset); }
 	//直線
@@ -32,6 +30,3 @@ public:
 private:
 	t_Point offset;
 };
-
-
-} //namespace gr

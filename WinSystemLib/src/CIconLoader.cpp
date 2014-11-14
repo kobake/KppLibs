@@ -1,6 +1,7 @@
 #include "common/_required.h"
 #include "CIconLoader.h"
 #include <string>
+#include <ShellAPI.h>
 using namespace std;
 
 HICON CIconLoader::LoadIconOfFolder()

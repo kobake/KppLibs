@@ -2,6 +2,3 @@
 #include "FilterGraphics.h"
 
 
-namespace gr{
-
-} //namespace gr

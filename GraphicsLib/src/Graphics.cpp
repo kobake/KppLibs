@@ -8,8 +8,6 @@ using namespace util;
 #include <vector>
 using namespace math;
 
-namespace gr{
-
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 //                       ƒfƒoƒbƒOŽž’Ê’m                        //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
@@ -73,12 +71,12 @@ CBoxSize Graphics::fontSize(const wchar_t* str)
 
 
 
-void Graphics::drawImage(t_Point& ptDst,const gr::CImage& imgSrc)
+void Graphics::drawImage(t_Point& ptDst,const CImage& imgSrc)
 {
 	drawImage(ptDst,imgSrc,math::CRect(imgSrc.GetSize()));
 }
 
-void Graphics::drawImage(const t_Point& ptDst,const gr::CImage& imgSrc,const t_Rect& ptSrc,const math::Align& align)
+void Graphics::drawImage(const t_Point& ptDst,const CImage& imgSrc,const t_Rect& ptSrc,const math::Align& align)
 {
 	drawImage(align.adjust(ptDst,imgSrc.GetSize()),imgSrc);
 }
@@ -181,5 +179,3 @@ vector<wstring> Graphics::_splitString(const wchar_t* str,int area_width) //###‚
 	}
 	return ret;
 }
-
-} //namespace gr

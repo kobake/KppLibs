@@ -7,6 +7,7 @@
 #include "common/CAppInfo.h"
 #include <LogLib.h>
 #include <StringLib.h>
+#include <Windows.h>
 #include <mmsystem.h>
 #include <time.h>
 

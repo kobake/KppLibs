@@ -5,7 +5,6 @@
 //#include "DibTransfer.h"
 //#include "DcTransfer.h"
 #include "CFont.h"
-// #include <gr/Type.h> //WinSystemLib
 #include <WinSystemLib.h>
 #include <StringLib.h>
 #include "CImage.h"

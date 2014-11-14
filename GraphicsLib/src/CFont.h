@@ -31,8 +31,6 @@ private:
 	int m_nValue;
 };
 
-namespace gr{
-
 class CFont : public CGdiObj{
 public:
 	//コンストラクタ・デストラクタ
@@ -45,7 +43,3 @@ public:
 private:
 	HFONT m_hFont;
 };
-
-} // namespace gr
-
-using namespace gr;

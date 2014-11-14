@@ -5,6 +5,7 @@
 #include <shlobj.h>
 #include "../CClipboard.h"
 #include <StringLib.h>
+#include <ShellAPI.h>
 
 using namespace std;
 

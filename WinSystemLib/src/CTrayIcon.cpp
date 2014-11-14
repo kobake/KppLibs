@@ -1,6 +1,7 @@
 #include "_required.h"
 #include "CTrayIcon.h"
 #include <StringLib.h>
+#include <ShellAPI.h>
 using namespace util;
 
 

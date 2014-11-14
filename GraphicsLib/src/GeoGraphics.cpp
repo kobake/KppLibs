@@ -2,8 +2,6 @@
 #include "GeoGraphics.h"
 
 
-namespace gr{
-
 //éläpå`
 void GeoGraphics::drawQuad(const Quad2& quad)
 {
@@ -15,6 +13,3 @@ void GeoGraphics::fillQuad(const Quad2& quad)
 {
 	not_support(L"fillQuad");
 }
-
-
-} //namespace gr

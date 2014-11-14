@@ -4,7 +4,6 @@
 #include "../../MathLib/MathLib.h"
 #include <windows.h>
 
-namespace gr{
 
 //!イメージクラス。
 /*!
@@ -53,7 +52,3 @@ public:
 
 class DcImage{
 };
-
-} //namespace gr
-
-using namespace ::gr;

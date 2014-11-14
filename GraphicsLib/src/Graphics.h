@@ -10,8 +10,7 @@ using namespace std;
 #include "Pen.h"
 #include "_fwd.h"
 class FontInfo;
-
-namespace gr{
+class CImage;
 
 //装飾
 enum Decoration{
@@ -52,7 +51,7 @@ public:
 	//                           描画                              //
 	// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 	//イメージ
-	virtual void drawImage(const t_Point& ptDst,const gr::CImage& imgSrc,const t_Rect& rcSrc)		{ not_support(L"drawImage"); }
+	virtual void drawImage(const t_Point& ptDst,const CImage& imgSrc,const t_Rect& rcSrc)		{ not_support(L"drawImage"); }
 
 	//点
 	virtual void SetPixel(const t_Point& pt0)								{ not_support(L"SetPixel"); }
@@ -81,8 +80,8 @@ public:
 	int fontHeight();
 	int fontWidth(const wchar_t* str);
 	math::CBoxSize fontSize(const wchar_t* str);
-	void drawImage(t_Point& ptDst,const gr::CImage& imgSrc);
-	void drawImage(const t_Point& ptDst,const gr::CImage& imgSrc,const t_Rect& ptSrc,const math::Align& align);
+	void drawImage(t_Point& ptDst,const CImage& imgSrc);
+	void drawImage(const t_Point& ptDst,const CImage& imgSrc,const t_Rect& ptSrc,const math::Align& align);
 	//文字列ラッパー
 	void drawString(const wchar_t* str,const t_Point& pos,const math::Align& align);
 	void drawStringEx(const wchar_t* str,const t_Point& pos,Decoration dec,const math::Align& align);
@@ -105,4 +104,3 @@ private:
 
 
 
-} //namespace gr
