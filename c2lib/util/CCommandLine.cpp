@@ -1,3 +1,4 @@
+ï»¿#pragma execution_character_set("utf-8")
 #include "CCommandLine.h"
 
 void CCommandLine::Initialize(const wchar_t* _str)
@@ -6,31 +7,43 @@ void CCommandLine::Initialize(const wchar_t* _str)
 	std::vector<wchar_t> vbuf(n + 1);
 	std::vector<std::wstring> args;
 	wchar_t* buf = &vbuf[0];
+	wcscpy_s(buf, n + 1, _str);
 	wchar_t* p = buf;
-	while(1){
-		// ƒXƒy[ƒX“Ç‚İ”ò‚Î‚µ
+	while(*p){
+		// ã‚¹ãƒšãƒ¼ã‚¹èª­ã¿é£›ã°ã— //
 		if(*p == L' ')p++;
 
-		// ƒ_ƒuƒ‹ƒNƒH[ƒe[ƒVƒ‡ƒ““Ç‚İ”ò‚Î‚µ
+		// ãƒ€ãƒ–ãƒ«ã‚¯ã‚©ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³èª­ã¿é£›ã°ã— //
 		wchar_t sep = L' ';
 		if(*p == L'"'){
 			p++;
 			sep = L'"';
 		}
 
-		// ’PŒê’Šo
+		// å˜èªæŠ½å‡º //
 		wchar_t* q = wcschr(p, sep);
 		if(!q)q = wcschr(p, L'\0');
 		std::wstring arg(p, q);
 
-		// ÅŒã‚Ìƒ_ƒuƒ‹ƒNƒH[ƒe[ƒVƒ‡ƒ““Ç‚İ”ò‚Î‚µ
+		// æœ€å¾Œã®ãƒ€ãƒ–ãƒ«ã‚¯ã‚©ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³èª­ã¿é£›ã°ã— //
 		if(*q == L'"'){
 			q++;
 		}
 		p = q;
 
-		// ’Ç‰Á
-		args.push_back(arg);
+		// è¿½åŠ  //
+		bool ok = false;
+		if(arg.length() == 0){
+			if(sep == L'"'){ // ç©ºæ–‡å­—åˆ—ã§ã‚‚ã€ãƒ€ãƒ–ãƒ«ã‚¯ã‚©ãƒ¼ãƒ†ãƒ¼ã‚·ãƒ§ãƒ³ã§å›²ã¾ã‚Œã¦ã„ã‚Œã°è¿½åŠ å¯¾è±¡ã¨ã™ã‚‹ //
+				ok = true;
+			}
+		}
+		else{
+			ok = true;
+		}
+		if(ok){
+			args.push_back(arg);
+		}
 	}
 	Initialize(args);
 }
@@ -41,8 +54,8 @@ int CCommandLine::argc() const
 
 }
 
-// ¦ˆê“xŒÄ‚ñ‚¾‚çŸˆÈ~‚©‚ç‚Í“à—e‚ª•Ï‚í‚ç‚È‚¢‚±‚Æ‚É’ˆÓB
-//   ‚ ‚ÆAm_vParameters‚Ì“à—e‚ª•Ï‚í‚Á‚½‚çA‚±‚ê‚Ì–ß‚è’l‚Í‰ó‚ê‚é‚±‚Æ‚É’ˆÓBi«—ˆ‘Î‰—\’èj
+// â€»ä¸€åº¦å‘¼ã‚“ã ã‚‰æ¬¡ä»¥é™ã‹ã‚‰ã¯å†…å®¹ãŒå¤‰ã‚ã‚‰ãªã„ã“ã¨ã«æ³¨æ„ã€‚ //
+//   ã‚ã¨ã€m_vParametersã®å†…å®¹ãŒå¤‰ã‚ã£ãŸã‚‰ã€ã“ã‚Œã®æˆ»ã‚Šå€¤ã¯å£Šã‚Œã‚‹ã“ã¨ã«æ³¨æ„ã€‚ï¼ˆå°†æ¥å¯¾å¿œäºˆå®šï¼‰ //
 const wchar_t** CCommandLine::argv() const
 {
 	int n = (int)m_vParameters.size();
@@ -70,16 +83,16 @@ void CCommandLine::Initialize(const std::vector<std::wstring>& args)
 		if(0){
 		}
 //		if(argv[i][0] == L'/'){
-//			// ƒIƒvƒVƒ‡ƒ“ //
+//			// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ //
 //		}
 		else if(args[i][0] == L'-' && args[i][1] == L'-'){
-			// ƒIƒvƒVƒ‡ƒ“ //
+			// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ //
 		}
 		else if(args[i][0] == L'-' && args[i][1] != L'-'){
-			// ƒIƒvƒVƒ‡ƒ“ //
+			// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ //
 		}
 		else if(args[i][0] == L'/'){
-			// ƒIƒvƒVƒ‡ƒ“ //
+			// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ //
 		}
 		else{
 			m_vValuedParameters.push_back(args[i]);
@@ -93,7 +106,7 @@ bool CCommandLine::GetFlagBool(const wchar_t* szKey) const
 }
 
 /*
-	szKey c "/hoge"
+	szKey â€¦ "/hoge"
 */
 std::wstring CCommandLine::GetFlagString(const wchar_t* szKey) const
 {
