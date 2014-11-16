@@ -1,11 +1,11 @@
-#include "mystring.h"
+#include "mystring_funcs.h"
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
 #include <stdarg.h>
 #include <ctype.h>
 #include "util/std.h"
-#include "mywstring.h"
+#include "mywstring_funcs.h"
 #include "wchar.h"
 
 #include <vector>

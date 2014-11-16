@@ -1,110 +1,51 @@
-#pragma once
+ï»¿#pragma once
 
-#include <stdarg.h>
+// ã‚†ã¨ã‚Šæ–‡å­—åˆ—ã‚¯ãƒ©ã‚¹
+
 #include <string>
 #include <vector>
+#include "myvector.h"
+#include "mystring.h"
 
-#include "common/_required.h"
-
-inline bool str_empty(const char* p)
-{
-	return p==NULL || *p=='\0';
-}
-
-namespace util{
-
-//ŒŸõ
-char* strstr_skipliteral(const char* str1,const char* str2,const char* brackets);
-char* strristr(const char* str1,const char* str2,int begin);
-char* strristr(const char* str1,const char* str2);
-char* stristr(const char* str1,const char* str2);
-char* strchrs(const char* str,int c1,int c2);
-char* strchrs(const char* str,const char* chrs);
-char* strchrs2(const char* str,const char* chrs);
-
-//ˆÀ‘SƒRƒs[
-char* strsafecpy(char* str1, const char* str2, int str1_len);
-char* strsafecat(char* str1, const char* str2, int str1_size);
-char* strrsafecat(char* str1, const char* str2, int str1_size);
-char* strnsafecpy(char* str1, const char* str2, int copy_size, int str1_size);
-
-//’²®
-char* chomp(char* str);
-std::string cpp_chomp(const char* str);
-char* strtrim(char* str,const char* chs);
-char* strltrim(char* str,const char* chs);
-char* strrtrim(char* str,const char* chs);
-std::string strtrim(const char* str, const char* chs);
-int strlpad(char* str, int size);
-int strrpad(char* str, int size);
-
-//•¡»
-char* strndup(const char* str, int size);
-char* strdup_cpp(const char* str);
-
-//ƒoƒbƒtƒ@•t‚«•ÏŠ·
-char* tmp_itoa(int i);
-char* tmp_vsprintf(const char* format, va_list mark);
-char* tmp_sprintf(const char* format, ...);
-char* buf_vsprintf(char* buf,const char* format, va_list mark);
-char* buf_sprintf(char* buf,const char* format, ...);
-char* tmp_strcat(const char* str1, const char* str2);
-char* tmp_itoa_comma(int num,int step);
-
-//•ÏŠ·E’uŠ·
-char* uppercpy(char* str1, const char* str2);
-std::vector<std::string> strsplit(const char* str,char sep);
-int strreplace(char* str,int from,int to);
-int strreplace(char* str,const char* from,const char* to);
-int strreplace(char* str,const char* from,const char* to);
-int strsafereplace(char* str,const char* from,const char* to,int str_size);
-int strreplace_once(char* str,const char* from,const char* to);
-std::string cpp_strreplace(const std::string& src,const char* from,const char* to);
-
-//•¶š—ñ©¨”’l
-int atoi_radix(const char* str,int radix);
-const char* itoa_radix(int n,int radix,int ketapad=1);
-inline int atoi2(const char* str){ return atoi_radix(str,2); }
-inline int atoi4(const char* str){ return atoi_radix(str,4); }
-inline int atoi8(const char* str){ return atoi_radix(str,8); }
-inline int atoi16(const char* str){ return atoi_radix(str,16); }
-inline int atoi10(const char* str){ return atoi_radix(str,10); }
-inline const char* itoa2(int n,int ketapad=1){ return itoa_radix(n,2,ketapad); }
-inline const char* itoa4(int n,int ketapad=1){ return itoa_radix(n,4,ketapad); }
-inline const char* itoa8(int n,int ketapad=1){ return itoa_radix(n,8,ketapad); }
-inline const char* itoa16(int n,int ketapad=1){ return itoa_radix(n,16,ketapad); }
-inline const char* itoa10(int n,int ketapad=1){ return itoa_radix(n,10,ketapad); }
-
-//ƒpƒX
-bool ext_check(const char* path,const char* ext);
-void remove_ext(char* path,bool repeat=false);
-void remove_ftitle(char* path);
-void fextract(char* str);
-
-//ƒg[ƒNƒ“
-int get_token(char* str,char** token,int maxtoken);
-int alloc_token(const char* str,char** token,int maxtoken,const char* delimiters,const char* brackets);
-
-//“ú–{Œêˆ—
-inline bool KANJI1(unsigned char c){ return c>=0x81 && c<=0x9F || c>=0xE0 && c<=0xFC; }
-inline bool KANJI2(unsigned char c){ return c>=0x40 && c<=0xFC && c!=0x7F; }
-char* make_kanji(const char* str,char* kanji=0);
-char* kanji_strchr(const char* str,char* kanji,int c);
-char* kanji_strrchr(const char* str,char* kanji,int c);
-
-//ƒƒCƒ‹ƒhƒJ[ƒh
-bool wildmatch(const char* test,const char* pattern);
-
-// URLƒGƒ“ƒR[ƒh //
-std::string urlencode(const std::string& str);
-std::string urldecode(const std::string& str);
-
-// SHA-1ƒnƒbƒVƒ… //
-std::string sha1(const void* pData, int iLen);
-
-} //namespace util
-
-using namespace util;
+class mystring : public std::wstring{
+public:
+	mystring()                                         : std::wstring() {}
+	mystring(const std::wstring& str)                  : std::wstring(str) {}
+	mystring(const wchar_t* str)                       : std::wstring(str) {}
+	mystring(const wchar_t* begin, const wchar_t* end) : std::wstring(begin, end) {}
+	// æ“ä½œ //
+	myvector<mystring>		split(const mystring& chars) const;
+	mystring				replace(const mystring& before, const mystring& after) const;
+	mystring				replace_reg(const mystring& pattern, const mystring& after) const; // æ­£è¦è¡¨ç¾ã«ã‚ˆã‚‹ç½®æ›
+	mystring				trim(const mystring& chars = L" \t\r\n") const;
+	myvector<mystring>		match(const mystring& pattern) const;
+	bool					startsWith(const mystring& str) const;
+	// å¤‰æ› //
+	int						toInt() const;
+	mystring				toLower() const;
+};
 
 
-#include "md5.h"
+// æ–‡å­—ã‚³ãƒ¼ãƒ‰å¤‰æ› //
+std::wstring sjis2unicode(const std::string& str);
+std::string unicode2utf8(const std::wstring& wstr);
+// æ–‡å­—ã‚³ãƒ¼ãƒ‰å¤‰æ› //
+std::wstring atow(const std::string& str);
+std::string wtoa(const std::wstring& str);
+
+// æœ«å°¾æ”¹è¡Œå‰Šé™¤ //
+std::string Chomp(const std::string& str);
+
+// æ–‡å­—åˆ—åˆ†å‰² //
+std::vector<std::string> split(std::string str, char sep);
+
+// æ–‡å­—åˆ—ç½®æ› //
+std::string replace(const std::string& src,const char* from,const char* to);
+std::wstring wreplace(const std::wstring& src, const wchar_t* from, const wchar_t* to);
+
+// intâ†’æ–‡å­—åˆ— //
+std::string cpp_itoa(int i);
+std::wstring cpp_itow(int i);
+
+// ãƒˆãƒªãƒŸãƒ³ã‚° //
+std::string trim(std::string str, char c);

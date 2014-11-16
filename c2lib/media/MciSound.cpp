@@ -5,7 +5,7 @@
 //#include "c_StringList.h"
 //#include "f_window.h"
 //#include "c_App.h"
-#include "util/mywstring.h"
+#include "util/mywstring_funcs.h"
 #include <windows.h>
 using namespace util;
 

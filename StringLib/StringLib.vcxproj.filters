@@ -16,6 +16,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\regex">
+      <UniqueIdentifier>{d01bd8e8-7a3b-435f-bf58-b56c5073d842}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\auto_string.cpp">
@@ -30,16 +33,7 @@
     <ClCompile Include="src\cpp_swprintf.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="src\CRegex.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="src\md5.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="src\mystring.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
-    <ClCompile Include="src\mywstring.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="src\TStaticString.cpp">
@@ -49,6 +43,24 @@
       <Filter>ソース ファイル</Filter>
     </ClCompile>
     <ClCompile Include="src\CLightString.cpp">
+      <Filter>ソース ファイル\class</Filter>
+    </ClCompile>
+    <ClCompile Include="src\myvector.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\Regex.cpp">
+      <Filter>ソース ファイル\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\CRegex.cpp">
+      <Filter>ソース ファイル\regex</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mystring_funcs.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mywstring_funcs.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\mystring.cpp">
       <Filter>ソース ファイル\class</Filter>
     </ClCompile>
   </ItemGroup>
@@ -65,16 +77,7 @@
     <ClInclude Include="src\cpp_swprintf.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
-    <ClInclude Include="src\CRegex.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="src\md5.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mystring.h">
-      <Filter>ソース ファイル</Filter>
-    </ClInclude>
-    <ClInclude Include="src\mywstring.h">
       <Filter>ソース ファイル</Filter>
     </ClInclude>
     <ClInclude Include="src\TStaticString.h">
@@ -88,6 +91,24 @@
     </ClInclude>
     <ClInclude Include="StringLib.h">
       <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\myvector.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\Regex.h">
+      <Filter>ソース ファイル\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\CRegex.h">
+      <Filter>ソース ファイル\regex</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mystring_funcs.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mywstring_funcs.h">
+      <Filter>ソース ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\mystring.h">
+      <Filter>ソース ファイル\class</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

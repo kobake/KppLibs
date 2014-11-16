@@ -85,7 +85,10 @@
     <ClCompile Include="src\CRegex.cpp" />
     <ClCompile Include="src\md5.cpp" />
     <ClCompile Include="src\mystring.cpp" />
-    <ClCompile Include="src\mywstring.cpp" />
+    <ClCompile Include="src\mystring_funcs.cpp" />
+    <ClCompile Include="src\myvector.cpp" />
+    <ClCompile Include="src\mywstring_funcs.cpp" />
+    <ClCompile Include="src\Regex.cpp" />
     <ClCompile Include="src\TStaticString.cpp" />
     <ClCompile Include="src\wchar.cpp" />
     <ClCompile Include="src\CLightString.cpp" />
@@ -98,7 +101,10 @@
     <ClInclude Include="src\CRegex.h" />
     <ClInclude Include="src\md5.h" />
     <ClInclude Include="src\mystring.h" />
-    <ClInclude Include="src\mywstring.h" />
+    <ClInclude Include="src\mystring_funcs.h" />
+    <ClInclude Include="src\myvector.h" />
+    <ClInclude Include="src\mywstring_funcs.h" />
+    <ClInclude Include="src\Regex.h" />
     <ClInclude Include="src\TStaticString.h" />
     <ClInclude Include="src\wchar.h" />
     <ClInclude Include="src\CLightString.h" />

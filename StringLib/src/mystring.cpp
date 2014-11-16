@@ -1,426 +1,89 @@
-#include "mystring.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <stdarg.h>
-#include <ctype.h>
-#include "util/std.h"
-#include "mystring.h"
-#include "char.h"
-#include <vector>
-#include <string>
-#include <boost/uuid/sha1.hpp>
-
-using namespace std;
-
-namespace util{
+ï»¿#include "mystring.h"
+#include <Windows.h>
+#include "Regex.h"
 
 
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                           ŒŸõ                              //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-//¦“ü‚êq‚É‚Í‘Î‰‚µ‚È‚¢
-char* strstr_skipliteral(const char* str1,const char* str2,const char* brackets)
+std::wstring sjis2unicode(const std::string& str)
 {
-	int nbrackets=(int)strlen(brackets);
-	char* p=(char*)str1,*q; int str2len=(int)strlen(str2);
-	while(*p!='\0'){
-		if(q=strchr((char*)brackets,*p)){
-			q=strchr(p+1,*q);
-			if(q==NULL){
-				break;
-			}else{
-				p=q+1;
-			}
-		}else{
-			if(strncmp(p,str2,str2len)==0){
-				return p;
-			}else{
-				p++;
-			}
-		}
-	}
-	return NULL;
+	int n = ::MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.length(), NULL, 0);
+	std::vector<wchar_t> vbuf(n + 1);
+	wchar_t* buf = &vbuf[0];
+	::MultiByteToWideChar(CP_ACP, 0, str.c_str(), str.length(), buf, n);
+	buf[n] = 0;
+	return buf;
 }
 
-char* strristr(const char* str1,const char* str2,int begin)
+std::string unicode2utf8(const std::wstring& wstr)
 {
-	if(begin==-1)return strristr(str1,str2);
-	int c=str2[0];
-	int len_str2=(int)strlen(str2);
-	char* p=(char*)&str1[begin]-len_str2;
-	while(p>=str1){
-		if(strnicmp(p,str2,len_str2)==0)
-			return p;
-		p--;
-	}
-	return NULL;
-}
-
-char* strristr(const char* str1,const char* str2)
-{
-	int c=str2[0];
-	int len_str2=(int)strlen(str2);
-	char* p=strchr((char*)str1,'\0')-len_str2;
-	while(p>=str1){
-		if(strnicmp(p,str2,len_str2)==0)
-			return p;
-		p--;
-	}
-	return NULL;
-}
-
-char* stristr(const char* str1,const char* str2)
-{
-	int c=str2[0];
-	int len_str2=(int)strlen(str2);
-	char* p=(char*)str1;
-	while(*p!='\0'){
-		if(strnicmp(p,str2,len_str2)==0)
-			return p;
-		p++;
-	}
-	return NULL;
-}
-
-char* strchrs(const char* str,int c1,int c2)
-{
-	const char* p=str;
-	while(1){
-		if(*p==c1)return (char*)p;
-		if(*p==c2)return (char*)p;
-		if(*p=='\0')return NULL;
-		p++;
-	}
-	return NULL;
-}
-
-//Œ©‚Â‚©‚ç‚È‚©‚Á‚½‚çNULL‚ğ•Ô‚·
-char* strchrs(const char* str,const char* chrs)
-{
-	const char* p=str;
-	const char* q;
-	while(*p){
-		q=chrs;
-		while(*q){
-			if(*p==*q)return (char*)p;
-			q++;
-		}
-		p++;
-	}
-	return NULL;
-}
-
-//Œ©‚Â‚©‚ç‚È‚©‚Á‚½‚çI’[‚ğ•Ô‚·
-char* strchrs2(const char* str,const char* chrs)
-{
-	const char* p=str;
-	const char* q;
-	while(*p){
-		q=chrs;
-		while(*q){
-			if(*p==*q)return (char*)p;
-			q++;
-		}
-		p++;
-	}
-	return (char*)p;
-}
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                       ˆÀ‘SƒRƒs[                            //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-char* strsafecpy(char* str1, const char* str2, int str1_size)
-{
-	int str2_size=(int)strlen(str2)+1;
-	if(str2_size<=str1_size){
-		memmove(str1, str2, str2_size);
-	}else{
-		memmove(str1, str2, str1_size-1); str1[str1_size-1]='\0';
-	}
-	return str1;
-}
-
-char* strsafecat(char* str1, const char* str2, int str1_size)
-{
-	int str2_size=(int)strlen(str2)+1;
-	char* p=strchr(str1, '\0');
-	int str1_rest=str1_size-(int)(p-str1);
-	if(str2_size<=str1_rest){ //û‚Ü‚é
-		memmove(p, str2, str2_size);
-	}else{ //û‚Ü‚ç‚È‚¢
-		memmove(p, str2, str1_rest-1); p[str1_rest-1]='\0';
-	}
-	return str1;
-}
-
-char* strrsafecat(char* str1, const char* str2, int str1_size)
-{
-	int str2_len=(int)strlen(str2);
-	char* p=strchr(str1, '\0');
-	int str1_len=(int)(p-str1);
-	int str1_rest=str1_size-1-str1_len;
-	//û‚Ü‚é
-	if(str2_len<=str1_rest){
-		memmove(str1+str2_len,str1,str1_len+1); //ƒXƒ‰ƒCƒh
-		memmove(str1, str2, str2_len);
-	}
-	//û‚Ü‚ç‚È‚¢(Œã‚ë‚ğí‚é)
-	else{
-		int slide_len=str1_size-1-str2_len;
-		//Œ³‚Ìstr1‚Ì‰E’[‚ğí‚é
-		if(slide_len>0){
-			memmove(str1+str2_len,str1,slide_len+1); //ƒXƒ‰ƒCƒh
-			memmove(str1,str2,str2_len);
-			str1[str1_size-1]='\0';
-		}
-		//Œ³‚Ìstr1‚ª‚·‚×‚Ä‚Í‚İo‚éê‡
-		else{
-			memmove(str1,str2,str1_size-1);
-			str1[str1_size-1]='\0';
-		}
-	}
-	return str1;
-}
-
-//###copy_size ‚ª strlen(str2)‚æ‚è‘å‚«‚­‚Ä‚à strlen(str2)ˆÈ~‚Ìƒ[ƒƒNƒŠƒA‚Ís‚í‚È‚¢
-char* strnsafecpy(char* str1, const char* str2, int copy_size, int str1_size)
-{
-	if(copy_size<str1_size){ //I’[‚É'\0‚ğ•t‚¯‚é‚±‚Æ‚ğ•ÛØ‚·‚é
-		memmove(str1, str2, copy_size);
-		str1[copy_size]='\0';
-	}else{
-		memmove(str1, str2, str1_size-1); //ˆì‚ê‚½I’[‚ÍÌ‚Ä‚é
-		str1[str1_size-1]='\0';
-	}
-	return str1;
-}
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                            ’²®                             //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-//I’[‚Ì‰üs‚ğæ‚ê‚é‚¾‚¯æ‚é
-char* chomp(char* str)
-{
-	char* p=strchr(str, '\0');
-	while(p-1>=str && (*(p-1)=='\n' || *(p-1)=='\r'))p--;
-	*p=0;
-	return str;
-}
-
-std::string cpp_chomp(const char* str)
-{
-	vector<char> buf(str, str+strlen(str)+1);
-	char* pStart = &buf[0];
-	char* p = &buf[buf.size()-1];
-	while(p-1>=pStart && (*(p-1)=='\r' || *(p-1)=='\n'))p--;
-	if(p>=pStart)*p='\0';
+	std::vector<char> buf(wstr.length() * 3 + 2);
+	int n = ::WideCharToMultiByte(CP_UTF8, 0, wstr.c_str(), (int)wstr.length(), &buf[0], (int)buf.size(), NULL, NULL); 
+	buf[n] = 0;
 	return &buf[0];
 }
 
-std::string strtrim(const char* str,const char* chs)
+std::wstring atow(const std::string& str)
 {
-	std::vector<char> v(strlen(str)+1);
-	strcpy(&v[0], str);
-	strtrim(&v[0], chs);
-	return &v[0];
+	std::vector<wchar_t> buf(str.length() + 1);
+	int n = ::MultiByteToWideChar(CP_ACP, 0, str.c_str(), (int)str.length(), &buf[0], (int)buf.size());
+	buf[n] = 0;
+	return &buf[0];
+}
+std::string wtoa(const std::wstring& str)
+{
+	std::vector<char> buf(str.length() * 3 + 2);
+	int n = ::WideCharToMultiByte(CP_ACP, 0, str.c_str(), (int)str.length(), &buf[0], (int)buf.size(), NULL, NULL);
+	buf[n] = 0;
+	return &buf[0];
 }
 
-char* strtrim(char* str,const char* chs)
+myvector<mystring> mystring::match(const mystring& pattern) const
 {
-	strrtrim(str,chs);
-	strltrim(str,chs);
-	return str;
+	Regex reg(pattern);
+	return reg.Match(*this);
 }
 
-char* strltrim(char* str,const char* chs)
+bool mystring::startsWith(const mystring& str) const
 {
-	char* p=str;
+	const wchar_t* p = this->c_str();
+	return wcsstr(p, str.c_str()) == p;
+}
+
+// æœ«å°¾æ”¹è¡Œå‰Šé™¤
+std::string Chomp(const std::string& str)
+{
+	const char* s = str.c_str();
+	const char* p = strchr(s, '\0');
+	if(p - 1 >= s && (*(p - 1) == '\r' || *(p - 1) == '\n')){
+		p--;
+	}
+	return std::string(s, p);
+}
+
+
+// æ–‡å­—åˆ—åˆ†å‰² //
+std::vector<std::string> split(std::string str, char sep)
+{
+	std::vector<std::string> ret;
+	const char* pStr = str.c_str();
+	const char* p = pStr;
 	while(*p){
-		if(strchr(chs,*p))p++;
-		else break;
-	}
-	if(p>str){
-		memmove(str,p,strlen(p)+1);
-	}
-	return str;
-}
-
-char* strrtrim(char* str,const char* chs)
-{
-	char* p=strchr(str,'\0')-1;
-	while(p>=str){
-		if(strchr(chs,*p))p--;
-		else break;
-	}
-	p++;
-	*p='\0';
-	return str;
-}
-
-int strlpad(char* str, int length)
-{
-	int sp=length-(int)strlen(str);
-	if(sp>0){
-		memmove(str+sp, str, strlen(str)+1);
-		char* p=str;
-		for(int i=0;i<sp;i++){
-			*p++=' ';
+		const char* q = strchr(p, sep);
+		if(q){
+			std::string s(p, q);
+			ret.push_back(s);
+			p = q + 1;
 		}
-	}
-	return tmax(0, sp);
-}
-
-int strrpad(char* str, int length)
-{
-	int sp=length-(int)strlen(str);
-	if(sp>0){
-		char* p=strchr(str, '\0');
-		for(int i=0;i<sp;i++){
-			*p++=' ';
-		}
-		*p++='\0';
-	}
-	return tmax(0, sp);
-}
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                            •¡»                             //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-char* strndup(const char* str, int size)
-{
-	char* ret=(char*)malloc(size+1);
-	strncpy(ret, str, size); ret[size]='\0';
-	return ret;
-}
-
-//new[]”Å
-char* strdup_cpp(const char* str)
-{
-	int n=(int)strlen(str);
-	char* ret=new char[n+1];
-	strcpy(ret, str);
-	return ret;
-}
-
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                     ƒoƒbƒtƒ@•t‚«•ÏŠ·                        //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-char* tmp_strcat(const char* str1, const char* str2)
-{
-	static char tmp[_MAX_PATH*2+2];
-	strsafecpy(tmp, str1, countof(tmp));
-	strsafecat(tmp, str2, countof(tmp));
-	return tmp;
-}
-
-char* tmp_itoa(int i)
-{
-	static char tmp[32];
-	itoa(i, tmp, 10);
-	return tmp;
-}
-
-char* tmp_vsprintf(const char* format, va_list mark)
-{
-	static char buffer[1024];
-	vsprintf(buffer, format, mark);
-	return buffer;
-}
-
-char* tmp_sprintf(const char* format, ...)
-{
-	va_list mark;
-	va_start(mark, format);
-	char* ret=tmp_vsprintf(format, mark);
-	va_end(mark);
-	return ret;
-}
-
-char* buf_vsprintf(char* buffer,const char* format, va_list mark)
-{
-	vsprintf(buffer, format, mark);
-	return buffer;
-}
-
-char* buf_sprintf(char* buffer,const char* format, ...)
-{
-	va_list mark;
-	va_start(mark, format);
-	char* ret=buf_vsprintf(buffer, format, mark);
-	va_end(mark);
-	return ret;
-}
-
-char* tmp_itoa_comma(int num,int step)
-{
-	static char str[256]; char* p; int p_len;
-	itoa(num,str,10);
-	p=strchr(str,'\0'); p_len=0;
-	while(1){
-		p-=step; p_len+=step;
-		if(p>=str+1){
-			memmove(p+1,p,p_len+1);
-			*p=','; p_len++;
-		}else{
+		else{
+			std::string s(p);
+			ret.push_back(s);
 			break;
 		}
 	}
-	return str;
-}
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                         •ÏŠ·E’uŠ·                          //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-char* uppercpy(char* str1, const char* str2)
-{
-	char* p=str1;
-	const char* q=str2;
-	while(*q!='\0')*p++=toupper(*q++);
-	*p++='\0';
-	return str1;
-}
-
-//•ªŠ„
-vector<string> strsplit(const char* str,char sep)
-{
-	std::vector<std::string> ret;
-	const char* p=str;
-	const char* q;
-	int str_len=(int)strlen(str);
-	while(1){
-		q=strchr(p,sep);
-		if(q==0)q=strchr(p, '\0');
-		ret.push_back(std::string(p,q));
-		if(*q == '\0')break;
-		p=q+1;
-	}
 	return ret;
 }
 
-int strreplace(char* str,int from,int to)
-{
-	int ret=0;
-	char* p=str;
-	while((p=strchr(p,from))!=NULL){
-		*p++=to;
-		ret++;
-	}
-	return ret;
-}
-
-
-std::string cpp_strreplace(const std::string& src,const char* from,const char* to)
+// æ–‡å­—åˆ—ç½®æ› //
+std::string replace(const std::string& src,const char* from,const char* to)
 {
 	const char* p=src.c_str();
 	int src_len=(int)src.length();
@@ -430,15 +93,41 @@ std::string cpp_strreplace(const std::string& src,const char* from,const char* t
 	while(1){
 		const char* q=strstr(p,from);
 		if(q){
-			//p`q‚ğret‚É’Ç‰Á
+			//pï½qã‚’retã«è¿½åŠ 
 			ret.append(p,q);
-			//to‚ğret‚É’Ç‰Á
+			//toã‚’retã«è¿½åŠ 
 			ret.append(to,to+to_len);
-			//p‚ği‚ß‚é
+			//pã‚’é€²ã‚ã‚‹
 			p=q+from_len;
 		}
 		else{
-			//p`\0‚ğret‚É’Ç‰Á
+			//pï½\0ã‚’retã«è¿½åŠ 
+			ret.append(p);
+			break;
+		}
+	}
+	return ret;
+}
+// æ–‡å­—åˆ—ç½®æ› //
+std::wstring wreplace(const std::wstring& src, const wchar_t* from, const wchar_t* to)
+{
+	const wchar_t* p = src.c_str();
+	int src_len  = (int)src.length();
+	int from_len = (int)wcslen(from);
+	int to_len   = (int)wcslen(to);
+	std::wstring ret;
+	while(1){
+		const wchar_t* q=wcsstr(p,from);
+		if(q){
+			//pï½qã‚’retã«è¿½åŠ 
+			ret.append(p,q);
+			//toã‚’retã«è¿½åŠ 
+			ret.append(to,to+to_len);
+			//pã‚’é€²ã‚ã‚‹
+			p = q+from_len;
+		}
+		else{
+			//pï½\0ã‚’retã«è¿½åŠ 
 			ret.append(p);
 			break;
 		}
@@ -446,572 +135,110 @@ std::string cpp_strreplace(const std::string& src,const char* from,const char* t
 	return ret;
 }
 
-//¦ƒoƒbƒtƒ@ƒTƒCƒY‚Í‹C‚É‚µ‚È‚¢‚Ì‚Å’ˆÓ
-/*
-int strreplace(char* str,const char* from,const char* to)
+int mystring::toInt() const
 {
-	int cnt=0;
-	size_t nfrom=strlen(from);
-	size_t nto=strlen(to);
-	char* p=str;
-	char* q0;
-	char* q1;
-	while(1){
-		p=strstr(p,from);
-		if(p){
-			//ƒqƒbƒg”‰ÁZ
-			cnt++;
-			//ƒƒ‚ƒŠˆÚ“®
-			q0=p+nfrom;
-			q1=p+nto;
-			memmove(q1,q0,strlen(q0)+1);
-			//’uŠ·
-			memcpy(p,to,nto);
-			//Ÿ‚ÌŒŸõˆÊ’u
-			p=q1;
-		}else{
-			break;
-		}
-	}
-	return cnt;
-}
-*/
-int strreplace(char* str,const char* from,const char* to)
-{
-	int ret=0;
-	char* p=str;
-	int str_len=(int)strlen(str);
-	int from_len=(int)strlen(from);
-	int to_len=(int)strlen(to);
-	while(p=strstr(p,from)){
-		memmove(p+to_len,p+from_len,str_len-(p+from_len-str)+1);
-		str_len-=from_len-to_len;
-		memmove(p,to,to_len);
-		p+=to_len;
-		ret++;
-	}
-	return ret;
-}
-
-int strsafereplace(char* str,const char* from,const char* to,int str_size)
-{
-	char* p=str;
-	int str_len=(int)strlen(str);
-	int from_len=(int)strlen(from);
-	int to_len=(int)strlen(to);
-	int e;
-	int ret=0;
-	while(p=strstr(p,from)){
-		ret++;
-		if(from_len>=to_len){ //Œ¸‚é
-			memmove(p+to_len,p+from_len,str_len-(p+from_len-str)+1);
-			str_len-=from_len-to_len;
-			memmove(p,to,to_len);
-			p+=to_len;
-		}else{ //‘‚¦‚é
-			e=0;
-			if(str_len+to_len-from_len>str_size-1)e=str_len+to_len-from_len-(str_size-1);
-			memmove(p+to_len,p+from_len,str_len-(p+from_len-str)+1-e);
-			str_len+=to_len-from_len-e;
-			if(p+to_len-str>str_size-1)e=(int)(p+to_len-str-(str_size-1));
-			memmove(p,to,to_len-e);
-			p+=to_len-e;
-			if(p-str>=str_size)break;
-		}
-	}
-	str[str_size-1]='\0';
-	return ret;
+	return _wtoi(this->c_str());
 }
 
 
-int strreplace_once(char* str,const char* from,const char* to)
+// intâ†’æ–‡å­—åˆ— //
+std::string cpp_itoa(int i)
 {
-	int ret=0;
-	char* p=str;
-	int str_len=(int)strlen(str);
-	int from_len=(int)strlen(from);
-	int to_len=(int)strlen(to);
-	if(p=strstr(p,from)){
-		memmove(p+to_len,p+from_len,str_len-(p+from_len-str)+1);
-		str_len-=from_len-to_len;
-		memmove(p,to,to_len);
-		p+=to_len;
-		ret++;
-	}
-	return ret;
+	char buf[32];
+	sprintf(buf, "%d", i);
+	return buf;
 }
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                     •¶š—ñ©¨”’l                          //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-//###radix‚âbits‚ª0‚Å‚È‚¢‚±‚Æ‚ğƒAƒT[ƒg‚·‚é•K—v‚ ‚é‚©‚à
-
-//‰ºˆÊƒrƒbƒg”•ª‚Ìƒ}ƒXƒN‚ğì‚é
-int bits_mask(int bits)
+std::wstring cpp_itow(int i)
 {
-	int n=0;
-	for(int i=0;i<bits;i++){
-		n<<=1;
-		n|=1;
-	}
-	return n;
-}
-
-//‰ºˆÊƒrƒbƒg”‚ğ”‚¦‚é
-int count_bits(int n)
-{
-	int ret=0;
-	while(n!=0){
-		n>>=1;
-		ret++;
-	}
-	return ret;
-}
-
-//‰ºˆÊŒ…”‚ğ”‚¦‚é
-static int count_keta(int n,int radix)
-{
-	int ret=0;
-	while(n!=0){
-		n/=radix;
-		ret++;
-	}
-	return ret;
-}
-
-
-//Œ…ˆì‚ê‚Ì“®ì‚Í–¢’è‹`
-int atoi_radix(const char* str,int radix)
-{
-	const char* p=str;
-	int ret=0;
-	int i;
-	while(*p){
-		i=ctoi_radix(*p++,radix);
-		if(i==-1)break;
-		ret*=radix;
-		ret+=i;
-	}
-	return ret;
-}
-
-//
-const char* itoa_radix(int n,int radix,int ketapad)
-{
-	static char buf[64];
-	//Œ…”’²‚×‚é
-	int keta=count_keta(n,radix);
-	if(keta==0)keta=1;
-	if(keta<ketapad)keta=ketapad;
-	//•ÏŠ·
-	int k;
-	char* p=&buf[keta];
-	*p--='\0';
-	for(int i=0;i<keta;i++){
-		k=n%radix;
-		*p--=itoc_radix(k,radix);
-		n/=radix;
-	}
+	wchar_t buf[32];
+	swprintf(buf, L"%d", i);
 	return buf;
 }
 
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                            ƒpƒX                             //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-bool ext_check(const char* path,const char* ext)
+// ãƒˆãƒªãƒŸãƒ³ã‚° //
+std::string trim(std::string str, char c)
 {
-	const char* p=strchr(path,'\0')-strlen(ext);
-	if(p<path)return false;
-	if(stricmp(p,ext)!=0)return false; //‘å•¶š¬•¶š‚ğ‹æ•Ê‚µ‚È‚¢
-	return true;
-}
-
-void remove_ext(char* path,bool repeat)
-{
-	//‚·‚×‚Ä‚ÌŠg’£q‚ğÁ‚·
-	if(repeat){
-		char* p=strchr(path,'.');
-		if(p)*p='\0';
-	}
-	//ÅŒã‚ÌŠg’£q‚Ì‚İÁ‚·
-	else{
-		char* p=strrchr(path,'.');
-		if(p)*p='\0';
-	}
-}
-
-void remove_ftitle(char* path)
-{
-	char* p=strrchr(path,'/');
-	if(p){
-		*(p+1)='\0';
-	}
-}
-
-//"../"‚ğ“WŠJ
-void fextract(char* str)
-{
-	while(1){
-		char* q=strstr(str,"/../");
-		if(q){
-			char* q2=q-1;
-			while(q2>=str && *q2!='/')q2--;
-			if(q2>=str){
-				memmove(q2+1,q+4,strlen(q+4)+1);
-			}else{
-				break;
-//				memmove(str,q+4,strlen(q+4)+1);
-			}
-		}else{
-			break;
-		}
-	}
-}
-
-
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                         ƒg[ƒNƒ“                            //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-int get_token(char* str,char** token,int maxtoken)
-{
-	int ntoken=0;
-	char* p=str;
-	char* begin,*end;
-	while(*p!='\0' && ntoken<maxtoken){
-		while(*p==' ')p++;
-		begin=p;
-		while(*p!=' ' && *p!='\0')p++;
-		end=p;
-		if(*end!='\0'){
-			*end='\0';
-			p++;
-		}
-		if(*begin!='\0'){
-			token[ntoken++]=begin;
-		}
-	}
-	return ntoken;
-}
-
-int alloc_token(const char* str,char** token,int maxtoken,const char* delimiters,const char* brackets)
-{
-	if(delimiters==NULL)delimiters=" ";
-	if(brackets==NULL)brackets="";
-	int ndelimiters=(int)strlen(delimiters);
-	int nbrackets=(int)strlen(brackets);
-	int ntoken=0;
-	char* p=(char*)str,*q;
-	char* begin,*end;
-	while(*p!='\0' && ntoken<maxtoken){
-		if(q=strchr((char*)brackets,*p)){
-			begin=p;
-			q=strchr(p+1,*q);
-			if(q==NULL){
-				break;
-			}else{
-				p=q+1;
-				end=p;
-				token[ntoken++]=strndup(begin,(int)(end-begin));
-			}
-		}else if(strchr(delimiters,*p)!=NULL){
-			p++; //ƒXƒy[ƒX‚ğƒXƒLƒbƒv
-		}else{
-			begin=p;
-			while(strchr(delimiters,*p)==NULL && strchr(brackets,*p)==NULL && *p!='\0')p++; //Ÿ‚ÌƒXƒy[ƒXorƒŠƒeƒ‰ƒ‹‚Ü‚Åi‚Ş
-			end=p;
-			token[ntoken++]=strndup(begin,(int)(end-begin));
-		}
-	}
-	return ntoken;
-}
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                        “ú–{Œêˆ—                           //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-char* make_kanji(const char* str,char* kanji)
-{
-	if(kanji==NULL)kanji=(char*)malloc(strlen(str)+1);
-	const char* p=str;
-	char* q=kanji;
-	int k=0;
-	while(*p!='\0'){
-		if(k==0){
-			if(KANJI1(*p))*q='\1';
-			else *q='\0';
-		}else if(k==1){
-			if(KANJI2(*p))*q='\2';
-			else *q='\0';
-		}else if(k==2){
-			if(KANJI1(*p))*q='\1';
-			else *q='\0';
-		}
-		k=*q;
+	const char* p = str.c_str();
+	while(*p == c){
 		p++;
-		q++;
 	}
-	*q='\0';
-	return kanji;
+	const char* q = strchr(p, '\0');
+	while(q - 1 >= p && *(q - 1) == c){
+		q--;
+	}
+	return std::string(p, q);
 }
 
-char* kanji_strchr(const char* str,char* _kanji,int c)
+// è¦‹ã¤ã‹ã‚‰ãªã‹ã£ãŸã‚‰NULLã‚’è¿”ã™
+wchar_t* wcschrs(const wchar_t* str,const wchar_t* chrs)
 {
-	char* ret=NULL;
-	char* kanji=_kanji;
-	if(kanji==NULL)kanji=make_kanji(str,NULL);
-	//‚Ü‚¸ c ‚Ì”»’è
-	unsigned char c1=((unsigned char*)&c)[1];
-	unsigned char c2=((unsigned char*)&c)[0];
-	//ŒŸõ
-	const unsigned char* p=(unsigned char*)str;
-	const unsigned char* k=(unsigned char*)kanji;
-	if(c1==0){
-		c1=c2;
-		//1ƒoƒCƒg•¶š
-		while(*p!='\0'){
-			if(*p==c1 && *k=='\0'){ ret=(char*)p; goto end; }
-			p++;
-			k++;
+	const wchar_t* p=str;
+	const wchar_t* q;
+	while(*p){
+		q=chrs;
+		while(*q){
+			if(*p==*q)return (wchar_t*)p;
+			q++;
 		}
-	}else{
-		//2ƒoƒCƒg•¶š
-		int flag=0;
-		while(*p!='\0'){
-			if(*p==c1 && *k=='\1'){ flag=1; }
-			else if(flag!=0 && *p==c2 && *k=='\2'){ ret=(char*)(p-1); goto end; }
-			else{ flag=0; }
-			p++;
-			k++;
-		}
+		p++;
 	}
-end:
-	if(_kanji==NULL)free(kanji);
+	return NULL;
+}
+
+myvector<mystring> mystring::split(const mystring& _seps) const
+{
+	const wchar_t* str = this->c_str();
+	const wchar_t* seps = _seps.c_str();
+	const wchar_t* p = str;
+	const wchar_t* q;
+	int wcs_len = (int)wcslen(str);
+	myvector<mystring> ret;
+	while(*p){
+		q = wcschrs(p, seps);
+		if(q == 0)q = wcschr(p,L'\0');
+		ret.push_back(mystring(p, q));
+		if(*q == L'\0')break;
+		p = q + 1;
+	}
 	return ret;
 }
 
-char* kanji_strrchr(const char* str,char* _kanji,int c)
+mystring mystring::replace(const mystring& before, const mystring& after) const
 {
-	char* ret=NULL;
-	char* kanji=_kanji;
-	if(kanji==NULL)kanji=make_kanji(str,NULL);
-	//‚Ü‚¸ c ‚Ì”»’è
-	unsigned char c1=((unsigned char*)&c)[1];
-	unsigned char c2=((unsigned char*)&c)[0];
-	//ŒŸõ
-	int str_len=(int)strlen(str);
-	const unsigned char* p=(unsigned char*)&str[str_len-1];
-	const unsigned char* k=(unsigned char*)&kanji[str_len-1];
-	if(c1==0){
-		c1=c2;
-		//1ƒoƒCƒg•¶š
-		while(p>=(const unsigned char*)str){
-			if(*p==c1 && *k=='\0'){ ret=(char*)p; goto end; }
-			p--;
-			k--;
-		}
-	}else{
-		//2ƒoƒCƒg•¶š
-		int flag=0;
-		while(p>=(const unsigned char*)str){
-			if(*p==c2 && *k=='\2'){ flag=1; }
-			else if(flag!=0 && *p==c1 && *k=='\1'){ ret=(char*)p; goto end; }
-			else{ flag=0; }
-			p--;
-			k--;
-		}
+	return wreplace(*this, before.c_str(), after.c_str());
+}
+
+// æ­£è¦è¡¨ç¾ã«ã‚ˆã‚‹ç½®æ›
+mystring mystring::replace_reg(const mystring& pattern, const mystring& after) const
+{
+	Regex reg(pattern);
+	return reg.Replace(*this, after);
+}
+
+mystring mystring::trim(const mystring& _chars) const
+{
+	const wchar_t* chars = _chars.c_str();
+	const wchar_t* p = this->c_str();
+	// å·¦å´å‰Šã‚Š
+	while(wcschr(chars, *p)){
+		p++;
 	}
-end:
-	if(_kanji==NULL)free(kanji);
-	return ret;
-}
-
-
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                      ƒƒCƒ‹ƒhƒJ[ƒh                         //
-// -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-//QlURL
-//http://www.hcn.zaq.ne.jp/no-ji/lib/fnamecmp.c
-
-//!ƒƒCƒ‹ƒhƒJ[ƒh‚Æ‚Ìˆê’vŒŸØBƒVƒ“ƒOƒ‹ƒoƒCƒg‚É‚Ì‚İ‘Î‰
-/*!
-@param test    ‘ÎÛ•¶š—ñ
-@param pattern ƒƒCƒ‹ƒhƒJ[ƒh
-@retval        ˆê’v‚µ‚Ä‚¢‚ê‚Îtrue
-*/
-bool wildmatch(const char* test,const char* pattern)
-{
-//	printf("Filename_compare(%s %s)\n", test,pattern);
-
-	const char* p=test;
-	const char* q=pattern;
-
-	//	ƒpƒ^[ƒ“‚ÌÅ‰‚Ì•¶š‚É‚æ‚èê‡•ª‚¯
-	switch( *q ) {
-	case '\0':
-		// ƒpƒ^[ƒ“‚ª‹ó‚Ì‚Æ‚«Aƒtƒ@ƒCƒ‹–¼‚à‹ó‚È‚ç(TRUE)B
-		// ‚»‚¤‚Å‚È‚¢‚È‚çA(FALSE)‚ğ•Ô‚·B
-		return *p=='\0';
-	case '*':
-		// * ‚Ì‚Æ‚«A *ˆÈ~‚Ì•¶š—ñ‚ÆA‰½•¶š‚©“Ç‚İ”ò‚Î‚µ‚½
-		// ŒŸ¸ƒtƒ@ƒCƒ‹–¼‚Å”äŠr‚·‚éB‚à‚µA‚»‚êˆÈ~‚ªˆê’v‚µ‚Ä‚¢‚é
-		// ‚È‚ç(TRUE)‚ğ•Ô‚·B
-		while(*p){
-			if(wildmatch(p,q+1))return true;
-			p++;
-		}
-		// ‚±‚±‚É—ˆ‚½‚Æ‚«Atest‚Í‚·‚×‚Ä“Ç‚İ”ò‚Î‚µ‚Ä‚¢‚éB
-		// * ‚ÌŒã‚É•¶š‚ª‚È‚¯‚ê‚ÎA—¼•û‹ó‚È‚Ì‚Å(TRUE)‚ğ•Ô‚·B
-		// * ‚ÌŒã‚É•¶š‚ªc‚Á‚Ä‚¢‚ê‚ÎAˆê’v‚µ‚È‚©‚Á‚½‚±‚Æ‚É‚È‚èA
-		// (FALSE)‚ğ•Ô‚·B
-		return *(q+1)=='\0';
-	case '?':
-		// I’[‚É’B‚µ‚Ä‚½‚çƒ_ƒ
-		if(*p=='\0')return false;
-		// ‚»‚ê‚¼‚ê‚P•¶š‚¸‚Â“Ç‚İ”ò‚Î‚µA”äŠr‚·‚éB
-		return wildmatch(p+1,q+1);
-	default:
-		// ƒƒCƒ‹ƒhƒJ[ƒhˆÈŠO‚Ì’Êí‚Ì•¶š‚Ì‚Æ‚«‚É‚ÍA‘å•¶š¬•¶š‚ğ
-		// –³‹‚µ‚Ä”äŠr‚·‚éBˆá‚Á‚Ä‚¢‚ê‚Î(FALSE)‚ğ•Ô‚·B
-		if(toupper(*p)!=toupper(*q))return false;
-		// “¯‚¶‚È‚çAŸ‚Ì•¶š‚ğ”äŠr‚·‚éB
-		return wildmatch(p+1,q+1);
+	// å³å´å‰Šã‚Š
+	const wchar_t* q = wcschr(p, L'\0');
+	while(q - 1 >= p && wcschr(chars, *(q - 1))){
+		q--;
 	}
-	//	‚±‚±‚É—ˆ‚é‚±‚Æ‚Í‚È‚¢B
-	return false;
+	// çµæœ
+	return mystring(p, q);
 }
 
-
-/*
-	URLƒGƒ“ƒR[ƒh
-
-	•û–@‚Í‚¢‚½‚Á‚ÄŠÈ’P‚ÅAASCIIƒR[ƒh‚Ì[a-zA-Z0-9-_.!~*'()]‚É‘Î‰‚·‚éƒoƒCƒg‚Í‚»‚Ì‚Ü‚Ü‚Æ‚µA
-	‚»‚êˆÈŠO‚Å”¼ŠpƒXƒy[ƒX‚Íu+v‚ÉA‚»‚êˆÈŠO‚ğ16i”•\‹L‚É’¼‚µ‚Äu%1fv‚Ì‚æ‚¤‚É•\Œ»‚·‚éƒGƒ“ƒR[ƒhŒ`®‚Å‚·B
-*/
-static bool noconvert_table[256];
-
-static void urlencode_init()
+mystring mystring::toLower() const
 {
-	static int init = 0;
-	if(init)return;
-	for(int i = 0; i < 256; i++){
-		char c = (char)((unsigned char)i);
-		bool noconvert = false;
-		if(c >= 'A' && c <= 'Z')noconvert = true;
-		else if(c >= 'a' && c <= 'z')noconvert = true;
-		else if(c >= '0' && c <= '9')noconvert = true;
-//		else if(strchr("=&", c))noconvert = true;
-//		else if(strchr(".-_*", c))noconvert = true; //u*v‚à–³•ÏŠ·HH//
-		noconvert_table[i] = noconvert;
+	mystring buf;
+	wchar_t* p = (wchar_t*)buf.c_str();
+	while(*p){
+		*p = tolower(*p);
+		p++;
 	}
-	init = 1;
-}
-
-inline bool NO_CONVERT(char c)
-{
-	return noconvert_table[(unsigned char)c];
-}
-
-std::string urlencode(const std::string& str)
-{
-	urlencode_init();
-	std::vector<char> vBuf(str.length() * 3 + 1);
-	char* pBuf = &vBuf[0];
-	char* p = pBuf;
-	const char* q = str.c_str();
-	while(*q){
-		if(NO_CONVERT(*q)){
-			*p++ = *q++;
-		}
-		else if(*q == ' '){
-			*p++ = '+';
-			q++;
-		}
-		else{
-			*p++ = '%';
-			sprintf(p, "%02x", (unsigned char)*q);	//###”ñŒø—¦
-			p += 2;
-			q++;
-		}
-	}
-	*p++ = '\0';
-	return pBuf;
-}
-
-/*
-	URLƒfƒR[ƒh
-*/
-
-// '0'-'9' ¨ 0`9
-// 'A'-'F' ¨ 10`15
-static int ctoi_table[256];
-
-inline int ctoi16(char c)
-{
-	return ctoi_table[(unsigned char)c];
-}
-
-static void urldecode_init()
-{
-	static int init = 0;
-	if(init)return;
-	for(int i = 0; i < 256; i++){
-		ctoi_table[i] = ctoi_radix((char)((unsigned char)i), 16);
-	}
-	init = 1;
-}
-
-std::string urldecode(const std::string& str)
-{
-	urldecode_init();
-	std::vector<char> vBuf(str.length() + 1);
-	char* pBuf = &vBuf[0];
-	char* p = pBuf;
-	const char* q = str.c_str();
-	while(*q){
-		if(*q == '%'){
-			q++;
-			if(q[0] && q[1]){
-				char c = (ctoi16(q[0]) << 4) | (ctoi16(q[1]) << 0);
-				*p++ = c;
-				q += 2;
-			}
-			else{
-				*p++ = '%';
-			}
-		}
-		else if(*q == '+'){
-			*p++ = ' ';
-			q++;
-		}
-		else{
-			*p++ = *q++;
-		}
-	}
-	*p++ = '\0';
-	return pBuf;
-}
-
-// SHA-1ƒnƒbƒVƒ… //
-std::string sha1(const void* pData, int iLen)
-{
-	boost::uuids::detail::sha1 s;
-	unsigned int d[5];
-	s.process_bytes(pData, iLen);
-	s.get_digest(d);
-	char buf[41];
-	sprintf(buf, "%08x%08x%08x%08x%08x", d[0], d[1], d[2], d[3], d[4]);
 	return buf;
 }
-
-} //namespace util
-
-
-
