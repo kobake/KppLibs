@@ -77,104 +77,104 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\util\array.cpp" />
-    <ClCompile Include="..\util\CConfFile.cpp" />
-    <ClCompile Include="..\game\Sprite.cpp" />
-    <ClCompile Include="..\opengl\math\Vec3.cpp">
+    <ClCompile Include="src\util\array.cpp" />
+    <ClCompile Include="src\util\CConfFile.cpp" />
+    <ClCompile Include="src\game\Sprite.cpp" />
+    <ClCompile Include="src\opengl\math\Vec3.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\media\MciSound.cpp" />
-    <ClCompile Include="..\std\mem.cpp" />
-    <ClCompile Include="..\std\myexception.cpp" />
-    <ClCompile Include="..\std\StdError.cpp" />
-    <ClCompile Include="..\util\BitSet.cpp" />
-    <ClCompile Include="..\util\CCommandLine.cpp" />
-    <ClCompile Include="..\util\CCommandLine_Old.cpp" />
-    <ClCompile Include="..\util\CDateTime.cpp" />
-    <ClCompile Include="..\util\CIdGenerator.cpp" />
-    <ClCompile Include="..\util\CIntFormat.cpp" />
-    <ClCompile Include="..\util\CPersonalTime.cpp" />
-    <ClCompile Include="..\util\file.cpp">
+    <ClCompile Include="src\media\MciSound.cpp" />
+    <ClCompile Include="src\std\mem.cpp" />
+    <ClCompile Include="src\std\myexception.cpp" />
+    <ClCompile Include="src\std\StdError.cpp" />
+    <ClCompile Include="src\util\BitSet.cpp" />
+    <ClCompile Include="src\util\CCommandLine.cpp" />
+    <ClCompile Include="src\util\CCommandLine_Old.cpp" />
+    <ClCompile Include="src\util\CDateTime.cpp" />
+    <ClCompile Include="src\util\CIdGenerator.cpp" />
+    <ClCompile Include="src\util\CIntFormat.cpp" />
+    <ClCompile Include="src\util\CPersonalTime.cpp" />
+    <ClCompile Include="src\util\file.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\util\mem.cpp">
+    <ClCompile Include="src\util\mem.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\util\rand.cpp" />
-    <ClCompile Include="..\util\SingleCursor.cpp" />
-    <ClCompile Include="..\util\std.cpp">
+    <ClCompile Include="src\util\rand.cpp" />
+    <ClCompile Include="src\util\SingleCursor.cpp" />
+    <ClCompile Include="src\util\std.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
     </ClCompile>
-    <ClCompile Include="..\util\TimeWatch.cpp" />
-    <ClCompile Include="..\util\Input.cpp" />
-    <ClCompile Include="..\util\CIniFile.cpp" />
-    <ClCompile Include="..\util\CJson.cpp" />
-    <ClCompile Include="..\design\_design_test.cpp" />
-    <ClCompile Include="..\design\CNamable.cpp" />
-    <ClCompile Include="..\design\CObserver.cpp" />
-    <ClCompile Include="..\common\CAppInfo.cpp" />
-    <ClCompile Include="..\common\sys.cpp" />
+    <ClCompile Include="src\util\TimeWatch.cpp" />
+    <ClCompile Include="src\util\Input.cpp" />
+    <ClCompile Include="src\util\CIniFile.cpp" />
+    <ClCompile Include="src\util\CJson.cpp" />
+    <ClCompile Include="src\design\_design_test.cpp" />
+    <ClCompile Include="src\design\CNamable.cpp" />
+    <ClCompile Include="src\design\CObserver.cpp" />
+    <ClCompile Include="src\common\CAppInfo.cpp" />
+    <ClCompile Include="src\common\sys.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\util\CConfFile.h" />
-    <ClInclude Include="..\game\Sprite.h" />
-    <ClInclude Include="..\opengl\math\Vec3.h" />
-    <ClInclude Include="..\media\MciSound.h" />
-    <ClInclude Include="..\id\class.h" />
-    <ClInclude Include="..\id\error.h" />
-    <ClInclude Include="..\id\menu.h" />
-    <ClInclude Include="..\id\res.h" />
-    <ClInclude Include="..\sdk\lib_win.h" />
-    <ClInclude Include="..\sdk\libfwd_win.h" />
-    <ClInclude Include="..\std\_required.h" />
-    <ClInclude Include="..\std\mem.h" />
-    <ClInclude Include="..\std\myexception.h" />
-    <ClInclude Include="..\std\StdError.h" />
-    <ClInclude Include="..\util\_required.h" />
-    <ClInclude Include="..\util\AbTable.h" />
-    <ClInclude Include="..\util\array.h" />
-    <ClInclude Include="..\util\BitSet.h" />
-    <ClInclude Include="..\util\CCommandLine.h" />
-    <ClInclude Include="..\util\CCommandLine_Old.h" />
-    <ClInclude Include="..\util\CDateTime.h" />
-    <ClInclude Include="..\util\CIdGenerator.h" />
-    <ClInclude Include="..\util\CIntFormat.h" />
-    <ClInclude Include="..\util\CPersonalTime.h" />
-    <ClInclude Include="..\util\file.h" />
-    <ClInclude Include="..\util\mem.h" />
-    <ClInclude Include="..\util\rand.h" />
-    <ClInclude Include="..\util\SingleCursor.h" />
-    <ClInclude Include="..\util\static_vector.h" />
-    <ClInclude Include="..\util\std.h" />
-    <ClInclude Include="..\util\TimeWatch.h" />
-    <ClInclude Include="..\util\base\Obj2.h" />
-    <ClInclude Include="..\util\base\Obj3.h" />
-    <ClInclude Include="..\util\loop.h" />
-    <ClInclude Include="..\util\Input.h" />
-    <ClInclude Include="..\util\list_ex.h" />
-    <ClInclude Include="..\util\TStaticQueue.h" />
-    <ClInclude Include="..\util\vector_ex.h" />
-    <ClInclude Include="..\util\CIniFile.h" />
-    <ClInclude Include="..\util\CJson.h" />
-    <ClInclude Include="..\design\CNamable.h" />
-    <ClInclude Include="..\design\CObserver.h" />
-    <ClInclude Include="..\design\DefOrClass.h" />
-    <ClInclude Include="..\design\THeap.h" />
-    <ClInclude Include="..\design\TInstanceHolder.h" />
-    <ClInclude Include="..\design\TSingleInstance.h" />
-    <ClInclude Include="..\design\TSingleton.h" />
-    <ClInclude Include="..\design\Chain.h" />
-    <ClInclude Include="..\design\ChainEx.h" />
-    <ClInclude Include="..\util\SimpleChain.h" />
-    <ClInclude Include="..\design\TChain.h" />
-    <ClInclude Include="..\common\_required.h" />
-    <ClInclude Include="..\common\CAppInfo.h" />
-    <ClInclude Include="..\common\sys.h" />
-    <ClInclude Include="..\BaseLib.h" />
+    <ClInclude Include="src\util\CConfFile.h" />
+    <ClInclude Include="src\game\Sprite.h" />
+    <ClInclude Include="src\opengl\math\Vec3.h" />
+    <ClInclude Include="src\media\MciSound.h" />
+    <ClInclude Include="src\id\class.h" />
+    <ClInclude Include="src\id\error.h" />
+    <ClInclude Include="src\id\menu.h" />
+    <ClInclude Include="src\id\res.h" />
+    <ClInclude Include="src\sdk\lib_win.h" />
+    <ClInclude Include="src\sdk\libfwd_win.h" />
+    <ClInclude Include="src\std\_required.h" />
+    <ClInclude Include="src\std\mem.h" />
+    <ClInclude Include="src\std\myexception.h" />
+    <ClInclude Include="src\std\StdError.h" />
+    <ClInclude Include="src\util\_required.h" />
+    <ClInclude Include="src\util\AbTable.h" />
+    <ClInclude Include="src\util\array.h" />
+    <ClInclude Include="src\util\BitSet.h" />
+    <ClInclude Include="src\util\CCommandLine.h" />
+    <ClInclude Include="src\util\CCommandLine_Old.h" />
+    <ClInclude Include="src\util\CDateTime.h" />
+    <ClInclude Include="src\util\CIdGenerator.h" />
+    <ClInclude Include="src\util\CIntFormat.h" />
+    <ClInclude Include="src\util\CPersonalTime.h" />
+    <ClInclude Include="src\util\file.h" />
+    <ClInclude Include="src\util\mem.h" />
+    <ClInclude Include="src\util\rand.h" />
+    <ClInclude Include="src\util\SingleCursor.h" />
+    <ClInclude Include="src\util\static_vector.h" />
+    <ClInclude Include="src\util\std.h" />
+    <ClInclude Include="src\util\TimeWatch.h" />
+    <ClInclude Include="src\util\base\Obj2.h" />
+    <ClInclude Include="src\util\base\Obj3.h" />
+    <ClInclude Include="src\util\loop.h" />
+    <ClInclude Include="src\util\Input.h" />
+    <ClInclude Include="src\util\list_ex.h" />
+    <ClInclude Include="src\util\TStaticQueue.h" />
+    <ClInclude Include="src\util\vector_ex.h" />
+    <ClInclude Include="src\util\CIniFile.h" />
+    <ClInclude Include="src\util\CJson.h" />
+    <ClInclude Include="src\design\CNamable.h" />
+    <ClInclude Include="src\design\CObserver.h" />
+    <ClInclude Include="src\design\DefOrClass.h" />
+    <ClInclude Include="src\design\THeap.h" />
+    <ClInclude Include="src\design\TInstanceHolder.h" />
+    <ClInclude Include="src\design\TSingleInstance.h" />
+    <ClInclude Include="src\design\TSingleton.h" />
+    <ClInclude Include="src\design\Chain.h" />
+    <ClInclude Include="src\design\ChainEx.h" />
+    <ClInclude Include="src\util\SimpleChain.h" />
+    <ClInclude Include="src\design\TChain.h" />
+    <ClInclude Include="src\common\_required.h" />
+    <ClInclude Include="src\common\CAppInfo.h" />
+    <ClInclude Include="src\common\sys.h" />
+    <ClInclude Include="src\BaseLib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

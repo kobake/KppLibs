@@ -2,15 +2,15 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseLib", "BaseLib.vcxproj", "{BFAD9E9A-F51C-4498-86ED-6CA20031D699}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseSample", "..\BaseSample\BaseSample.vcxproj", "{24A59A49-CA7D-4802-BC36-4AC8E4C1CFE6}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "BaseSample", "BaseSample\BaseSample.vcxproj", "{24A59A49-CA7D-4802-BC36-4AC8E4C1CFE6}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DebugLib", "..\..\DebugLib\DebugLib.vcxproj", "{1F26589B-FF9D-47A5-87FB-3D7041AD11CA}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DebugLib", "..\DebugLib\DebugLib.vcxproj", "{1F26589B-FF9D-47A5-87FB-3D7041AD11CA}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringLib", "..\..\StringLib\StringLib.vcxproj", "{287ECC83-7837-4E07-B62F-73BDF10B6341}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "StringLib", "..\StringLib\StringLib.vcxproj", "{287ECC83-7837-4E07-B62F-73BDF10B6341}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogLib", "..\..\LogLib\LogLib.vcxproj", "{C89A6591-D5D7-45C1-9B10-CF89F10AF5B1}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LogLib", "..\LogLib\LogLib.vcxproj", "{C89A6591-D5D7-45C1-9B10-CF89F10AF5B1}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IoLib", "..\..\IoLib\IoLib.vcxproj", "{BB458969-5AC9-4F24-8EC0-E0440CCFDA70}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "IoLib", "..\IoLib\IoLib.vcxproj", "{BB458969-5AC9-4F24-8EC0-E0440CCFDA70}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
