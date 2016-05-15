@@ -14,6 +14,7 @@
     <ProjectGuid>{BB458969-5AC9-4F24-8EC0-E0440CCFDA70}</ProjectGuid>
     <RootNamespace>IoLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>KppIo</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

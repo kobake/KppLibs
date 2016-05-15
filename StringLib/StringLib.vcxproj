@@ -14,6 +14,7 @@
     <ProjectGuid>{287ECC83-7837-4E07-B62F-73BDF10B6341}</ProjectGuid>
     <RootNamespace>StringLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>KppString</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">

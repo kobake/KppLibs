@@ -7,4 +7,5 @@
 #include "src/auto_string.h"
 #include "src/charset.h"
 #include "src/CRegex.h"
+#include "src/Regex.h"
 #include "src/CLightString.h"
