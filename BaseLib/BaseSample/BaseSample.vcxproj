@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{24A59A49-CA7D-4802-BC36-4AC8E4C1CFE6}</ProjectGuid>
-    <RootNamespace>c2libSample</RootNamespace>
+    <RootNamespace>BaseSample</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -103,7 +103,7 @@
       <Project>{287ecc83-7837-4e07-b62f-73bdf10b6341}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\_workspace\c2lib.vcxproj">
+    <ProjectReference Include="..\_workspace\BaseLib.vcxproj">
       <Project>{bfad9e9a-f51c-4498-86ed-6ca20031d699}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

@@ -44,7 +44,7 @@ static void _init()
 }
 
 //mainóp
-void c2lib::Init(int argc,wchar_t* argv[],ASSERT_HANDLE pfAssertHandle)
+void BaseLib::Init(int argc,wchar_t* argv[],ASSERT_HANDLE pfAssertHandle)
 {
 	if(g_bInit)return;
 	g_bInit = true;
@@ -54,7 +54,7 @@ void c2lib::Init(int argc,wchar_t* argv[],ASSERT_HANDLE pfAssertHandle)
 }
 
 //WinMainóp
-void c2lib::Init(HINSTANCE hInst,HINSTANCE hPrevInst,LPWSTR lpCmdLine,int nCmdShow,ASSERT_HANDLE pfAssertHandle)
+void BaseLib::Init(HINSTANCE hInst,HINSTANCE hPrevInst,LPWSTR lpCmdLine,int nCmdShow,ASSERT_HANDLE pfAssertHandle)
 {
 	if(g_bInit)return;
 	g_bInit = true;
@@ -65,7 +65,7 @@ void c2lib::Init(HINSTANCE hInst,HINSTANCE hPrevInst,LPWSTR lpCmdLine,int nCmdSh
 }
 
 //DllMainóp
-void c2lib::Init(HINSTANCE hInst, DWORD fdwReason, PVOID pvReserved,ASSERT_HANDLE pfAssertHandle)
+void BaseLib::Init(HINSTANCE hInst, DWORD fdwReason, PVOID pvReserved,ASSERT_HANDLE pfAssertHandle)
 {
 	if(g_bInit)return;
 	g_bInit = true;
@@ -75,7 +75,7 @@ void c2lib::Init(HINSTANCE hInst, DWORD fdwReason, PVOID pvReserved,ASSERT_HANDL
 	debugInit(DEBUG_OUT_MSGBOX, pfAssertHandle);
 }
 
-void c2lib::InitCom()
+void BaseLib::InitCom()
 {
 	//COMèâä˙âª
 	HRESULT ret=CoInitialize(NULL);
@@ -83,7 +83,7 @@ void c2lib::InitCom()
 }
 
 
-HINSTANCE c2lib::GetInstance()
+HINSTANCE BaseLib::GetInstance()
 {
 	return g_hInst;
 }

@@ -1,4 +1,4 @@
-#include <c2lib.h>
+#include <BaseLib.h>
 #include <LogLib.h>
 #include "util/CJson.h"
 
@@ -8,7 +8,7 @@
 
 int wmain(int argc, wchar_t* argv[])
 {
-	c2lib::Init(argc, argv);
+	BaseLib::Init(argc, argv);
 	CLogManager::Instance()->Init();
 
 	// json“Ç‚İ‚İƒTƒ“ƒvƒ‹ //

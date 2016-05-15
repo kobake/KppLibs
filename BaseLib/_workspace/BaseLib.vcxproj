@@ -12,7 +12,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{BFAD9E9A-F51C-4498-86ED-6CA20031D699}</ProjectGuid>
-    <RootNamespace>c2lib</RootNamespace>
+    <RootNamespace>BaseLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -174,7 +174,7 @@
     <ClInclude Include="..\common\_required.h" />
     <ClInclude Include="..\common\CAppInfo.h" />
     <ClInclude Include="..\common\sys.h" />
-    <ClInclude Include="..\c2lib.h" />
+    <ClInclude Include="..\BaseLib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

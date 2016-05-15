@@ -305,7 +305,7 @@
     <ClInclude Include="..\common\sys.h">
       <Filter>基本\common</Filter>
     </ClInclude>
-    <ClInclude Include="..\c2lib.h" />
+    <ClInclude Include="..\BaseLib.h" />
     <ClInclude Include="..\util\CConfFile.h">
       <Filter>基本\util\conf</Filter>
     </ClInclude>

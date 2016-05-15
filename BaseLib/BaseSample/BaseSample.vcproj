@@ -2,9 +2,9 @@
 <VisualStudioProject
 	ProjectType="Visual C++"
 	Version="8.00"
-	Name="c2libSample"
+	Name="BaseSample"
 	ProjectGUID="{24A59A49-CA7D-4802-BC36-4AC8E4C1CFE6}"
-	RootNamespace="c2libSample"
+	RootNamespace="BaseSample"
 	Keyword="Win32Proj"
 	>
 	<Platforms>

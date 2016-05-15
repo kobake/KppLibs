@@ -5,7 +5,7 @@
 //#include <DebugLib.h> // ASSERT_HANDLE
 typedef void (*ASSERT_HANDLE)();
 
-namespace c2lib{
+namespace BaseLib{
 
 	// -- -- -- -- 初期化 -- -- -- -- //
 	//main用
@@ -36,5 +36,5 @@ namespace c2lib{
 	// -- -- -- -- インターフェース -- -- -- --
 	HINSTANCE GetInstance();
 
-} //namespace c2lib
+} //namespace BaseLib
 

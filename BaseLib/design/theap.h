@@ -1,6 +1,6 @@
 #pragma once
 
-//c2lib‚ÖˆÚs—\’è
+//base‚ÖˆÚs—\’è
 template <class T> class THeap{
 public:
 	THeap()
