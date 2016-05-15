@@ -103,7 +103,7 @@ void CDialogPanel::Create(int nResourceId, HWND hwndParent)
 		//ウィンドウ作成
 		g_instant_pCreatingInstance = this; //###ちょっと汚いけど、一時的にグローバル変数に this を保存
 		HWND hwnd_tmp = ::CreateDialog(
-			c2lib::GetInstance(),
+			BaseLib::GetInstance(),
 			MAKEINTRESOURCE(nResourceId),
 			hwndParent,
 			CDialog_DialogProc

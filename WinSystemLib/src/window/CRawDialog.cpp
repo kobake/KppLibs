@@ -44,5 +44,5 @@ int CDialog::CreateModal(int dialogResourceId, HWND hwndParent)
 {
 	assert(!g_temporaryDialog);
 	g_temporaryDialog = this;
-	return ::DialogBox(c2lib::GetInstance(), MAKEINTRESOURCE(dialogResourceId), hwndParent, S_DialogProc);
+	return ::DialogBox(BaseLib::GetInstance(), MAKEINTRESOURCE(dialogResourceId), hwndParent, S_DialogProc);
 }

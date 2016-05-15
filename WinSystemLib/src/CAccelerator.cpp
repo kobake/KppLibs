@@ -3,7 +3,7 @@
 
 CAccelerator::CAccelerator(int nId)
 {
-	m_hAccel = ::LoadAccelerators(c2lib::GetInstance(), MAKEINTRESOURCE(nId));
+	m_hAccel = ::LoadAccelerators(BaseLib::GetInstance(), MAKEINTRESOURCE(nId));
 }
 
 CAccelerator::~CAccelerator()
