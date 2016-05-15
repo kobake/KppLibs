@@ -55,6 +55,9 @@
     <Filter Include="基本\common">
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
     </Filter>
+    <Filter Include="old">
+      <UniqueIdentifier>{9aea7f1e-3688-4f6d-a856-7d4a33086f9f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\game\Sprite.cpp">
@@ -143,6 +146,24 @@
     </ClCompile>
     <ClCompile Include="src\util\array.cpp">
       <Filter>基本\util</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\c_IDManager.cpp">
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\c_JavaFileStream.cpp">
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\f_base.cpp">
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\f_java.cpp">
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\t_test.cpp">
+      <Filter>old</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\t_test2.cpp">
+      <Filter>old</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -305,9 +326,72 @@
     <ClInclude Include="src\common\sys.h">
       <Filter>基本\common</Filter>
     </ClInclude>
-    <ClInclude Include="src\BaseLib.h" />
     <ClInclude Include="src\util\CConfFile.h">
       <Filter>基本\util\conf</Filter>
     </ClInclude>
+    <ClInclude Include="src\old\c_IDManager.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\c_JavaFileStream.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\f_base.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\f_java.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_c.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_c_message.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_c_window.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_com.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_f.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_id.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_stl.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_sys.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\include_t.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\stl_ex_vector.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\t_base.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\t_Chain.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\t_Chain2.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\t_Chain3.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\t_SimpleList.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\t_Table2D.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\type.h">
+      <Filter>old</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseLib.h" />
   </ItemGroup>
 </Project>

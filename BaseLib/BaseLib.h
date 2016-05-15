@@ -1,4 +1,4 @@
 #pragma once
 
-#include "common/_required.h"
-#include "common/CAppInfo.h"
+#include "src/common/_required.h"
+#include "src/common/CAppInfo.h"

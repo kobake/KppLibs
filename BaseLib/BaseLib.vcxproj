@@ -48,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..;../../IoLib;../../LogLib;../../StringLib;../../DebugLib;C:\boost_1_55_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;./src;../IoLib;../LogLib;../StringLib;../DebugLib;C:\boost_1_55_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;NOMINMAX;STRICT;WINVER=0x0501;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,7 +64,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..;../../IoLib;../../LogLib;../../StringLib;../../DebugLib;C:\boost_1_55_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;./src;../IoLib;../LogLib;../StringLib;../DebugLib;C:\boost_1_55_0;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;NOMINMAX;STRICT;WINVER=0x0501;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -77,6 +77,12 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="src\old\c_IDManager.cpp" />
+    <ClCompile Include="src\old\c_JavaFileStream.cpp" />
+    <ClCompile Include="src\old\f_base.cpp" />
+    <ClCompile Include="src\old\f_java.cpp" />
+    <ClCompile Include="src\old\t_test.cpp" />
+    <ClCompile Include="src\old\t_test2.cpp" />
     <ClCompile Include="src\util\array.cpp" />
     <ClCompile Include="src\util\CConfFile.cpp" />
     <ClCompile Include="src\game\Sprite.cpp" />
@@ -120,6 +126,28 @@
     <ClCompile Include="src\common\sys.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BaseLib.h" />
+    <ClInclude Include="src\old\c_IDManager.h" />
+    <ClInclude Include="src\old\c_JavaFileStream.h" />
+    <ClInclude Include="src\old\f_base.h" />
+    <ClInclude Include="src\old\f_java.h" />
+    <ClInclude Include="src\old\include_c.h" />
+    <ClInclude Include="src\old\include_com.h" />
+    <ClInclude Include="src\old\include_c_message.h" />
+    <ClInclude Include="src\old\include_c_window.h" />
+    <ClInclude Include="src\old\include_f.h" />
+    <ClInclude Include="src\old\include_id.h" />
+    <ClInclude Include="src\old\include_stl.h" />
+    <ClInclude Include="src\old\include_sys.h" />
+    <ClInclude Include="src\old\include_t.h" />
+    <ClInclude Include="src\old\stl_ex_vector.h" />
+    <ClInclude Include="src\old\type.h" />
+    <ClInclude Include="src\old\t_base.h" />
+    <ClInclude Include="src\old\t_Chain.h" />
+    <ClInclude Include="src\old\t_Chain2.h" />
+    <ClInclude Include="src\old\t_Chain3.h" />
+    <ClInclude Include="src\old\t_SimpleList.h" />
+    <ClInclude Include="src\old\t_Table2D.h" />
     <ClInclude Include="src\util\CConfFile.h" />
     <ClInclude Include="src\game\Sprite.h" />
     <ClInclude Include="src\opengl\math\Vec3.h" />
@@ -174,7 +202,6 @@
     <ClInclude Include="src\common\_required.h" />
     <ClInclude Include="src\common\CAppInfo.h" />
     <ClInclude Include="src\common\sys.h" />
-    <ClInclude Include="src\BaseLib.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
