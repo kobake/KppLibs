@@ -1,10 +1,10 @@
 #if 0
 
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "MciSound.h"
 //#include "c_StringList.h"
 //#include "f_window.h"
-//#include "c_App.h"
+//#include <WinSystemLib.h>
 #include "util/mywstring_funcs.h"
 #include <windows.h>
 using namespace util;

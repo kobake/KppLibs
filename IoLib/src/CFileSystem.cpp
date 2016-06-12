@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CFileSystem.h"
 #include <direct.h> //_chdir
 #include <string>

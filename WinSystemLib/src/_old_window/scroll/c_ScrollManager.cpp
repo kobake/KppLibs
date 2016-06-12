@@ -1,7 +1,7 @@
-#include "include_sys.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
 #include "c_ScrollManager.h"
-#include "f_base.h"
-#include "util/std.h"
+#include "../c_Window.h"
 using namespace util;
 
 ScrollManager::ScrollManager(Window *_wnd,int _sb_kind)

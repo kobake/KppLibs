@@ -48,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>.;C:\boost_1_55_0;../../KppOldLib;../BaseLib;../WinSystemLib;../MathLib;../IoLib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;C:\boost_1_55_0;../BaseLib;../IoLib;../WinSystemLib;../MathLib;../IoLib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,7 +64,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>.;C:\boost_1_55_0;../../KppOldLib;../BaseLib;../WinSystemLib;../MathLib;../IoLib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.;C:\boost_1_55_0;../BaseLib;../IoLib;../WinSystemLib;../MathLib;../IoLib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -77,6 +77,12 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\old\c_Brush.h" />
+    <ClInclude Include="src\old\c_Font.h" />
+    <ClInclude Include="src\old\c_Graphics.h" />
+    <ClInclude Include="src\old\c_Icon.h" />
+    <ClInclude Include="src\old\c_ImageList.h" />
+    <ClInclude Include="src\old\f_drawobject.h" />
     <ClInclude Include="src\_fwd.h" />
     <ClInclude Include="src\_required.h" />
     <ClInclude Include="src\Brush.h" />
@@ -102,6 +108,11 @@
     <ClCompile Include="src\Brush.cpp" />
     <ClCompile Include="src\CDcPen.cpp" />
     <ClCompile Include="src\CFont.cpp" />
+    <ClCompile Include="src\old\c_Brush.cpp" />
+    <ClCompile Include="src\old\c_Font.cpp" />
+    <ClCompile Include="src\old\c_Icon.cpp" />
+    <ClCompile Include="src\old\c_ImageList.cpp" />
+    <ClCompile Include="src\old\f_drawobject.cpp" />
     <ClCompile Include="src\Pen.cpp" />
     <ClCompile Include="src\CBitmap.cpp" />
     <ClCompile Include="src\CDib.cpp" />

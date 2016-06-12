@@ -9,3 +9,6 @@
 #include "src/CRegex.h"
 #include "src/Regex.h"
 #include "src/CLightString.h"
+#include "src/mywstring_funcs.h"
+
+#include "src/old/c_StringList.h"

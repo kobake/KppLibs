@@ -129,7 +129,7 @@ typedef wchar_t WCHAR;
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 //                          ‚»‚Ì‘¼                             //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-#include "design/DefOrClass.h"
+#include "../design/DefOrClass.h"
 
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
@@ -145,8 +145,8 @@ typedef wchar_t WCHAR;
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 //                       ‚æ‚­Žg‚¤‹@”\                          //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-#include "common/sys.h"
-#include "std/myexception.h"
+#include "../common/sys.h"
+#include "../std/myexception.h"
 
 #if _MSV_VER < 1400
 	#define vsprintf_s _vsnprintf

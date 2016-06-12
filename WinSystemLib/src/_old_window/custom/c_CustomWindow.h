@@ -3,7 +3,7 @@ class CustomWindow;
 #ifndef _CustomWindow_
 #define _CustomWindow_
 
-#include "c_Window.h"
+#include "../c_Window.h"
 
 #define CUSTOMWINDOWF_KIND(option) (option & 0x0007)
 

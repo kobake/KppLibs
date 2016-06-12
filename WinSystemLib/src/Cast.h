@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sdk/libfwd_win.h"
+#include <BaseLib.h> //libfwd_win
 #include "../../MathLib/MathLib.h"
 
 math::CRect RECT2Rect(const RECT& rc);

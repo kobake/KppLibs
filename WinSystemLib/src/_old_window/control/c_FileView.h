@@ -2,8 +2,8 @@
 
 #pragma once
 
+#include <GraphicsLib.h>
 #include "c_ListView.h"
-#include "c_ImageList.h"
 #include "c_FileList.h"
 #include "c_FileName.h"
 #include "c_Menu.h"

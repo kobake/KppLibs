@@ -1,5 +1,8 @@
 #pragma once
 
+#include <Windows.h>
+#include <CommCtrl.h>
+
 class Icon;
 class App;
 

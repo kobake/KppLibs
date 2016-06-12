@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "std/myexception.h"
+#include <BaseLib.h>
 using namespace std;
 
 

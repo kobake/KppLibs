@@ -1,9 +1,6 @@
-class ProgressBar;
+#pragma once
 
-#ifndef DEF_PROGRESS_BAR
-#define DEF_PROGRESS_BAR
-
-#include "c_Window.h"
+#include "../_old_window/c_Window.h"
 
 class ProgressBar : public Window{
 public:
@@ -12,9 +9,3 @@ public:
 	void setRange(int min,int max);
 	void setPos(int pos);
 };
-
-
-
-
-
-#endif

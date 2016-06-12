@@ -1,28 +1,28 @@
-class Menu;
+class OldMenu;
 class PopupMenu;
 
 #ifndef _Menu_
 #define _Menu_
 
-#include "c_Window.h"
+#include "../_old_window/c_Window.h"
 
-class Menu{
+class OldMenu{
 protected:
 	HMENU hMenu;
 	bool hMenu_is_created;
-	Menu **submenu;
+	OldMenu **submenu;
 	int nsubmenu;
 public:
 	//コンストラクタ・デストラクタ
-	Menu(HMENU _hMenu);
-	Menu();
-	virtual ~Menu();
+	OldMenu(HMENU _hMenu);
+	OldMenu();
+	virtual ~OldMenu();
 	//環境設定
 	void adjustTo(Window *wnd);
 	//項目管理
 	BOOL insertItem(int index,const wchar *new_caption,int new_id,int _option=0);
-	Menu *setSubMenu(int index,Menu *_submenu);
-	Menu *setSubMenu(int index);
+	OldMenu *setSubMenu(int index,OldMenu *_submenu);
+	OldMenu *setSubMenu(int index);
 	//項目操作
 	void		enableItemByID(int id,bool b);
 	void		checkItemByID(int id,bool b);
@@ -32,7 +32,7 @@ public:
 	int popup(Window *owner,bool sync=true);
 };
 
-class PopupMenu : public Menu{
+class PopupMenu : public OldMenu{
 public:
 	PopupMenu();
 };
@@ -51,8 +51,8 @@ struct MENUDEF{
 	int state;
 };
 
-//Menu *CreateDefMenu(MENUDEF *list,int nlist);
-Menu *CreateDefMenu(MENUDEF *list,bool popup);
+//OldMenu *CreateDefMenu(MENUDEF *list,int nlist);
+OldMenu *CreateDefMenu(MENUDEF *list,bool popup);
 
 
 #endif

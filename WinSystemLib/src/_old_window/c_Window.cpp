@@ -1,12 +1,10 @@
-#include "include_sys.h"
-#include "c_App.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
+#include "../_old_app/c_App.h"
 #include "c_Window.h"
 #include "f_window.h"
 #include <StringLib.h>
-#include "f_debug.h"
-#include "common/_required.h"
-#include "id/class.h"
-#include "id/menu.h"
+#include <DebugLib.h>
 #include <ShellAPI.h>
 #include <GraphicsLib.h>
 #include <Windows.h>
@@ -229,7 +227,7 @@ void Window::onClientSize(int w,int h)
 // ** ** ** ** ウィンドウ操作 ** ** ** ** //
 
 #include "c_Screen.h"
-#include "c_App.h"
+#include "../_old_app/c_App.h"
 void Window::setClientSize(int w,int h)
 {
 	int ww=(w-rcClient.right);

@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CIconLoader.h"
 #include <string>
 #include <ShellAPI.h>

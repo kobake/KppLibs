@@ -1,6 +1,6 @@
 #pragma once
 
-#include "design/TSingleton.h"
+#include <BaseLib.h> // TSingleton
 #include <string>
 #include <stdarg.h>
 #include "CLogStream.h"

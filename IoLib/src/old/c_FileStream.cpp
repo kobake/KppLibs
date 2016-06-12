@@ -1,10 +1,9 @@
+#include <BaseLib.h>
 #include <windows.h>
 #include <cstdio>
 #include <string>
-using namespace std;
-#include "common/_required.h"
 #include "c_FileStream.h"
-#include "t_base.h"
+using namespace std;
 
 
 //       Å¶íçà”éñçÄÅ¶         //

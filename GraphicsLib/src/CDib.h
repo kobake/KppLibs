@@ -2,11 +2,10 @@
 
 #include <windows.h>
 #include <GraphicsLib.h> // Type
-#include "std/myexception.h"
+#include <BaseLib.h>
 #include "CImage.h"
-#include "sdk/libfwd_win.h"
+#include <BaseLib.h> // libfwd_win
 #include <IoLib.h> //InputData
-#include "std/mem.h"
 
 class CColor;
 

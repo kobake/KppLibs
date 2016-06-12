@@ -4,7 +4,7 @@
 #include <string.h>
 #include <stdarg.h>
 #include <ctype.h>
-#include "util/std.h"
+#include <BaseLib.h>
 #include "mywstring_funcs.h"
 #include "wchar.h"
 

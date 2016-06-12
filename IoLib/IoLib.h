@@ -15,3 +15,6 @@
 #include "src/CFolder.h"
 #include "src/CFileSystem.h"
 #include "src/CProtocolPath.h"
+#include "src/file.h"
+
+#include "src/old/c_FileStream.h"

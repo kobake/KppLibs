@@ -1,7 +1,6 @@
 #include <windows.h>
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "c_RectCursor.h"
-#include "util/std.h"
 
 RectCursor::RectCursor()
 {

@@ -1,9 +1,9 @@
+#include <BaseLib.h>
 #include <windows.h>
 #include <string>
 using namespace std;
-#include "c_App.h"
+#include "../../_old_app/c_App.h"
 #include "c_ComboBox.h"
-#include "id/class.h"
 
 ComboBox::ComboBox(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 : Window(CID_COMBO_BOX,0,_parent,_option | WINDOWF_TABSTOP,_id)

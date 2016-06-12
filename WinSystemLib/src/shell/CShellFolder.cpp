@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CShellFolder.h"
 #include "CMalloc.h"
 #include <comutil.h> //_bstr_t

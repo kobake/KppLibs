@@ -1,10 +1,7 @@
-class ListView;
+#pragma once
 
-#ifndef DEF_LIST_VIEW
-#define DEF_LIST_VIEW
-
-#include "c_Window.h"
-#include "t_Chain.h"
+#include "../c_Window.h"
+#include <BaseLib.h> // t_Chain
 
 class ListView : public Window{
 protected:
@@ -35,9 +32,3 @@ public:
 	virtual LRESULT onSize(UINT msg,WPARAM wParam,LPARAM lParam);
 	virtual LRESULT onFocus(UINT msg,WPARAM wParam,LPARAM lParam);
 };
-
-
-
-
-
-#endif

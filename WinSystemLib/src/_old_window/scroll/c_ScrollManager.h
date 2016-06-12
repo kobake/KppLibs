@@ -1,7 +1,4 @@
-class ScrollManager;
-
-#ifndef _ScrollManager_
-#define _ScrollManager_
+#pragma once
 
 class Window;
 
@@ -23,8 +20,4 @@ public:
 	void setPos(int pos);
 	void enable(bool e);
 };
-
-#include "c_Window.h"
-
-#endif
 

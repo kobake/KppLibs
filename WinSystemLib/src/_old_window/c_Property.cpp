@@ -1,14 +1,15 @@
-#include "include_sys.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
+#include <GraphicsLib.h> // Font
 #include "c_Property.h"
-#include "c_CustomWindow.h"
-#include "c_Label.h"
-#include "c_Button.h"
+#include "custom/c_CustomWindow.h"
+#include "control/c_Label.h"
+#include "control/c_Button.h"
 #include "c_Screen.h"
 #include <StringLib.h>
-#include "c_EditField.h"
-#include "c_ComboBox.h"
-#include "id/class.h"
-#include "c_App.h"
+#include "control/c_EditField.h"
+#include "control/c_ComboBox.h"
+#include "../_old_app/c_App.h"
 using namespace util;
 
 static PropertyRList *property_list,*property_list_org;

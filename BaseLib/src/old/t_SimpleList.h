@@ -1,8 +1,4 @@
-
-
-
-#ifndef DEF_SIMPLE_LIST
-#define DEF_SIMPLE_LIST
+#pragma once
 
 #define SIMPLE_LIST_UNIT_SIZE 16
 
@@ -196,7 +192,3 @@ template <class T> int SimpleList<T>::indexOf(const T& value)
 	}
 	return -1;
 }
-
-
-#endif
-

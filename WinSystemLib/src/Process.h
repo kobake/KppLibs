@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sdk/libfwd_win.h" //HANDLE
+#include <BaseLib.h> // libfwd_win(HANDLE)
 
 class ProcessSystem{
 public:

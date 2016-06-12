@@ -1,4 +1,4 @@
 #pragma once
 
-#include "common/_required.h"
+#include <BaseLib.h>
 #include <windows.h>

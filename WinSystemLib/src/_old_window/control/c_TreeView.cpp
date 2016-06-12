@@ -1,14 +1,14 @@
 #include <windows.h>
 #include <commctrl.h>
 #include <string>
-using namespace std;
+#include <BaseLib.h>
 #include "c_TreeView.h"
-#include "id/class.h"
-#include "c_App.h"
+#include "../../_old_app/c_App.h"
+#include "../f_window.h"
+using namespace std;
 
 LRESULT CALLBACK WndProcTreeView(HWND hwndTree,UINT msg,WPARAM wParam,LPARAM lParam);
 
-#include "f_window.h"
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- --  コンストラクタ・デストラクタ  -- -- -- -- -- -- -- -- -- -- -- -- -- //
@@ -63,8 +63,7 @@ void TreeView::useImage(bool _use_image)
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- アイテム管理 -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-#include "f_debug.h"
+#include <DebugLib.h>
 
 TreeItem TreeView::insertItem(TreeItem *parent,const wchar *text,int image)
 {
@@ -395,7 +394,7 @@ void TreeView::expandItem(TreeItem *item)
 // -- -- -- -- -- -- -- -- -- -- -- -- メッセージ処理  -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
-#include "f_debug.h"
+#include <DebugLib.h>
 
 LRESULT CALLBACK WndProcTreeView(HWND hwndTree,UINT msg,WPARAM wParam,LPARAM lParam)
 {

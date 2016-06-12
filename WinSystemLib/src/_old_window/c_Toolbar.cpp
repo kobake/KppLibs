@@ -1,9 +1,9 @@
-#include "include_sys.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
 #include "c_Toolbar.h"
-#include "id/class.h"
 #include <GraphicsLib.h>
 #include "src/CBitmap.h"
-#include "c_App.h"
+#include "../_old_app/c_App.h"
 
 Toolbar::Toolbar(TBBUTTON *button_param,int button_num,int bmp_id,int bmp_num,Window *_parent,int _option,int _id)
 : Window(CID_TOOLBAR,0,_parent,_option,_id)

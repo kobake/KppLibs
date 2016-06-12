@@ -48,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>C:\boost_1_55_0;../BaseLib;../ThreadLib;../DebugLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\boost_1_55_0;../BaseLib;../ThreadLib;../DebugLib;../IoLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -65,7 +65,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>C:\boost_1_55_0;../BaseLib;../ThreadLib;../DebugLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\boost_1_55_0;../BaseLib;../ThreadLib;../DebugLib;../IoLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -89,6 +89,8 @@
     <ClCompile Include="src\mystring_funcs.cpp" />
     <ClCompile Include="src\myvector.cpp" />
     <ClCompile Include="src\mywstring_funcs.cpp" />
+    <ClCompile Include="src\old\c_StringList.cpp" />
+    <ClCompile Include="src\old\stl_ex_string.cpp" />
     <ClCompile Include="src\Regex.cpp" />
     <ClCompile Include="src\TStaticString.cpp" />
     <ClCompile Include="src\wchar.cpp" />
@@ -105,6 +107,8 @@
     <ClInclude Include="src\mystring_funcs.h" />
     <ClInclude Include="src\myvector.h" />
     <ClInclude Include="src\mywstring_funcs.h" />
+    <ClInclude Include="src\old\c_stringlist.h" />
+    <ClInclude Include="src\old\stl_ex_string.h" />
     <ClInclude Include="src\Regex.h" />
     <ClInclude Include="src\TStaticString.h" />
     <ClInclude Include="src\wchar.h" />

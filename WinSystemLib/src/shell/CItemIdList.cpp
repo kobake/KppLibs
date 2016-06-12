@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CItemIdList.h"
 #include "CMalloc.h"
 #include "CShellFolder.h"

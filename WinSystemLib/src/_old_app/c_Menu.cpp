@@ -1,13 +1,13 @@
-#include "include_sys.h"
+#include <BaseLibOld.h>
 #include "c_Menu.h"
 
-Menu *CreateDefMenu(MENUDEF *list,bool popup)
+OldMenu *CreateDefMenu(MENUDEF *list,bool popup)
 {
-	Menu *tmp[16]; int itmp=0;
+	OldMenu *tmp[16]; int itmp=0;
 	if(popup){
 		tmp[0]=new PopupMenu();
 	}else{
-		tmp[0]=new Menu();
+		tmp[0]=new OldMenu();
 	}
 	for(int i=0;(list[i].state & KMENU_END) == 0;i++){
 		tmp[itmp]->insertItem(-1,list[i].name,list[i].id,list[i].state);
@@ -21,10 +21,10 @@ Menu *CreateDefMenu(MENUDEF *list,bool popup)
 	return tmp[0];
 }
 
-Menu *CreateDefMenu(MENUDEF *list,int nlist)
+OldMenu *CreateDefMenu(MENUDEF *list,int nlist)
 {
-	Menu *tmp[16]; int itmp=0;
-	tmp[0]=new Menu();
+	OldMenu *tmp[16]; int itmp=0;
+	tmp[0]=new OldMenu();
 	for(int i=0;i<nlist;i++){
 		tmp[itmp]->insertItem(-1,list[i].name,list[i].id,list[i].state);
 		if(list[i].state & KMENU_POPUP){
@@ -41,7 +41,7 @@ Menu *CreateDefMenu(MENUDEF *list,int nlist)
 // -- -- -- -- -- -- -- -- -- -- --  コンストラクタ・デストラクタ  -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
-Menu::Menu(HMENU _hMenu)
+OldMenu::OldMenu(HMENU _hMenu)
 {
 	hMenu=_hMenu;
 	hMenu_is_created=false;
@@ -49,7 +49,7 @@ Menu::Menu(HMENU _hMenu)
 	nsubmenu=0;
 }
 
-Menu::Menu()
+OldMenu::OldMenu()
 {
 	hMenu=CreateMenu();
 	hMenu_is_created=true;
@@ -64,7 +64,7 @@ PopupMenu::PopupMenu()
 	nsubmenu=0;
 }
 
-Menu::~Menu()
+OldMenu::~OldMenu()
 {
 	for(int i=0;i<nsubmenu;i++)setSubMenu(i,NULL);
 	free(submenu); submenu=NULL;
@@ -77,7 +77,7 @@ Menu::~Menu()
 // -- -- -- -- -- -- -- -- -- -- -- -- 環境設定 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
-void Menu::adjustTo(Window *wnd)
+void OldMenu::adjustTo(Window *wnd)
 {
 	SetMenu(wnd->getHWND(),hMenu);
 }
@@ -86,7 +86,7 @@ void Menu::adjustTo(Window *wnd)
 // -- -- -- -- -- -- -- -- -- -- -- -- 項目管理 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
-BOOL Menu::insertItem(int index,const wchar *new_caption,int new_id,int _option)
+BOOL OldMenu::insertItem(int index,const wchar *new_caption,int new_id,int _option)
 {
 	int nitem=GetMenuItemCount(hMenu);
 	if(index==-1)index=nitem;
@@ -110,8 +110,8 @@ BOOL Menu::insertItem(int index,const wchar *new_caption,int new_id,int _option)
 	BOOL ret=InsertMenuItem(hMenu,index,TRUE,&mii);
 	if(ret){
 		nsubmenu++;
-		submenu=(Menu**)realloc(submenu,sizeof(Menu*)*nsubmenu);
-		memmove(&submenu[index+1],&submenu[index],sizeof(Menu*)*(nsubmenu-index-1));
+		submenu=(OldMenu**)realloc(submenu,sizeof(OldMenu*)*nsubmenu);
+		memmove(&submenu[index+1],&submenu[index],sizeof(OldMenu*)*(nsubmenu-index-1));
 		submenu[index]=NULL;
 	}
 	return ret;
@@ -119,7 +119,7 @@ BOOL Menu::insertItem(int index,const wchar *new_caption,int new_id,int _option)
 
 
 
-Menu *Menu::setSubMenu(int index,Menu *_submenu)
+OldMenu *OldMenu::setSubMenu(int index,OldMenu *_submenu)
 {
 	if(index==-1){
 		index=nsubmenu-1;
@@ -151,10 +151,10 @@ Menu *Menu::setSubMenu(int index,Menu *_submenu)
 	}
 }
 
-Menu *Menu::setSubMenu(int index)
+OldMenu *OldMenu::setSubMenu(int index)
 {
-	Menu *new_submenu=new Menu();
-	Menu *ret=setSubMenu(index,new_submenu);
+	OldMenu *new_submenu=new OldMenu();
+	OldMenu *ret=setSubMenu(index,new_submenu);
 	if(ret==NULL){
 		delete new_submenu;
 	}
@@ -165,16 +165,16 @@ Menu *Menu::setSubMenu(int index)
 // -- -- -- -- -- -- -- -- -- -- -- -- 項目操作 -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
-void Menu::enableItemByID(int id,bool b)
+void OldMenu::enableItemByID(int id,bool b)
 {
 	EnableMenuItem(hMenu,id,MF_BYCOMMAND | (b?MF_ENABLED:MF_GRAYED));
 }
-void Menu::checkItemByID(int id,bool b)
+void OldMenu::checkItemByID(int id,bool b)
 {
 	CheckMenuItem(hMenu,id,MF_BYCOMMAND | (b?MF_CHECKED:MF_UNCHECKED));
 }
 
-void Menu::setItemTextByID(int id,const wchar *text)
+void OldMenu::setItemTextByID(int id,const wchar *text)
 {
 	MENUITEMINFO mii;
 	mii.cbSize=sizeof(MENUITEMINFO);
@@ -184,7 +184,7 @@ void Menu::setItemTextByID(int id,const wchar *text)
 	SetMenuItemInfo(hMenu,id,FALSE,&mii);
 }
 
-const wchar* Menu::getItemTextByID(int id)
+const wchar* OldMenu::getItemTextByID(int id)
 {
 	static wchar buf[256];
 	MENUITEMINFO mii;
@@ -207,7 +207,7 @@ const wchar* Menu::getItemTextByID(int id)
 // -- -- -- -- -- -- -- -- -- -- -- -- -- 動作  -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
-int Menu::popup(Window *owner,bool sync)
+int OldMenu::popup(Window *owner,bool sync)
 {
 	POINT pt; GetCursorPos(&pt);
 	UINT flag=

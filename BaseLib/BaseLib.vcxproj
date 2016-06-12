@@ -78,7 +78,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\old\c_IDManager.cpp" />
-    <ClCompile Include="src\old\c_JavaFileStream.cpp" />
     <ClCompile Include="src\old\f_base.cpp" />
     <ClCompile Include="src\old\f_java.cpp" />
     <ClCompile Include="src\old\t_test.cpp" />
@@ -101,10 +100,6 @@
     <ClCompile Include="src\util\CIdGenerator.cpp" />
     <ClCompile Include="src\util\CIntFormat.cpp" />
     <ClCompile Include="src\util\CPersonalTime.cpp" />
-    <ClCompile Include="src\util\file.cpp">
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
-      <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
-    </ClCompile>
     <ClCompile Include="src\util\mem.cpp">
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
       <ObjectFileName Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(IntDir)%(Filename)1.obj</ObjectFileName>
@@ -127,8 +122,10 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseLib.h" />
+    <ClInclude Include="BaseLibCom.h" />
+    <ClInclude Include="BaseLibOld.h" />
+    <ClInclude Include="BaseLibType.h" />
     <ClInclude Include="src\old\c_IDManager.h" />
-    <ClInclude Include="src\old\c_JavaFileStream.h" />
     <ClInclude Include="src\old\f_base.h" />
     <ClInclude Include="src\old\f_java.h" />
     <ClInclude Include="src\old\include_c.h" />
@@ -172,7 +169,6 @@
     <ClInclude Include="src\util\CIdGenerator.h" />
     <ClInclude Include="src\util\CIntFormat.h" />
     <ClInclude Include="src\util\CPersonalTime.h" />
-    <ClInclude Include="src\util\file.h" />
     <ClInclude Include="src\util\mem.h" />
     <ClInclude Include="src\util\rand.h" />
     <ClInclude Include="src\util\SingleCursor.h" />

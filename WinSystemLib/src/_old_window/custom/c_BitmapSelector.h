@@ -1,10 +1,10 @@
 #pragma once
 
-#include "c_ScrollManager.h"
-#include "c_RectCursor.h"
-#include "c_Window.h"
-#include "t_Table2D.h"
-#include "c_ScrollDataWindow.h"
+#include "../scroll/c_ScrollManager.h"
+#include "../../map/c_RectCursor.h"
+#include "../c_Window.h"
+#include <BaseLib.h> // t_Table2D
+#include "../scroll/c_ScrollDataWindow.h"
 #include <GraphicsLib.h> //CDib
 
 class BitmapSelector : public ScrollDataWindow{

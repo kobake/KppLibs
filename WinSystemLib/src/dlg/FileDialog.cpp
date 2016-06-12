@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "FileDialog.h"
 #include <StringLib.h>
 #include <shlobj.h>

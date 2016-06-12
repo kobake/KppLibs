@@ -3,7 +3,7 @@ class Button;
 #ifndef DEF_BUTTON
 #define DEF_BUTTON
 
-#include "c_Window.h"
+#include "../c_Window.h"
 
 #define BUTTONF_KIND(option) (option &	0x0003)
 #define BUTTONF_KIND_NORMALBUTTON		0x0000

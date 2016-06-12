@@ -3,7 +3,7 @@
 #include "CRawDialog.h"
 #include "CWindowClass.h"
 #include <vector>
-#include "util/vector_ex.h"
+#include <BaseLib.h> // vector_ex
 
 /*
 „¡„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„¢

@@ -1,10 +1,10 @@
 #pragma once
 
-#include "c_Window.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
+#include "../_old_window/c_Window.h"
+#include "../_old_window/c_Screen.h"
 #include "c_Accelerator.h"
-#include "t_base.h"
-#include "c_Screen.h"
-#include <WinSystemLib.h> // ini
 #include <ShellAPI.h> // NOTIFYICONDATA
 #include <vector>
 class Icon;
@@ -87,9 +87,6 @@ public:
 	virtual ~Library();
 	int init();
 };
-
-#include "c_Icon.h"
-
 
 
 extern App *app;

@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CDib.h"
 #include <StringLib.h>
 #include <windows.h>

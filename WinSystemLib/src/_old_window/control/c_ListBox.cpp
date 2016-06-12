@@ -1,9 +1,9 @@
 #include <windows.h>
 #include <string>
-using namespace std;
-#include "c_App.h"
+#include "../../_old_app/c_App.h"
 #include "c_ListBox.h"
-#include "id/class.h"
+#include <BaseLib.h>
+using namespace std;
 
 ListBox::ListBox(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 : Window(CID_LIST_BOX,0,_parent,_option | WINDOWF_TABSTOP,_id)

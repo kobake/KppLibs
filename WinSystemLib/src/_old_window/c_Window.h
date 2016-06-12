@@ -1,6 +1,5 @@
 #pragma once
 
-#include "common/_required.h"
 
 #include <vector>
 
@@ -43,8 +42,7 @@
 									((WINDOWF_BORDER(option) & WINDOWF_BORDER_SINGLE)?WS_BORDER:0)
 #define GET_WIN_EX_STYLE(option)	((WINDOWF_BORDER(option) & WINDOWF_BORDER_CLIENTEDGE)?WS_EX_CLIENTEDGE:0)
 
-#include "include_c_message.h"
-#include "t_SimpleList.h"
+#include <BaseLibOld.h> //#include "include_c_message.h"
 
 class CGraphics;
 class CDcGraphics;
@@ -247,9 +245,3 @@ public:
 	int testflag; //デバッグ用
 
 };
-
-#include "c_Icon.h"
-#include "c_Graphics.h"
-#include "c_ScrollManager.h"
-
-

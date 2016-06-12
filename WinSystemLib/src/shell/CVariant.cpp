@@ -1,7 +1,7 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CVariant.h"
 #include <StringLib.h>
-#include "util/std.h"
+#include <BaseLib.h>
 
 std::wstring CVariant::ToString() const
 {

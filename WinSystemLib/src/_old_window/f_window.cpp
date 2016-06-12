@@ -1,6 +1,6 @@
+#include <BaseLib.h>
 #include <windows.h>
 #include <cstdio>
-#include "common/_required.h"
 #include "f_window.h"
 
 HWND CreateAWindow(HINSTANCE hInst,HINSTANCE hPrevInst,const wchar* classname,WNDPROC wndproc,HBRUSH hBrush,HICON hIcon,const wchar* szMenu,DWORD ex_style,DWORD style,const wchar *caption,int x,int y,int w,int h,HWND parent,HMENU hMenu)

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "design/TSingleton.h"
+#include "../design/TSingleton.h"
 #include <string>
 
 class CModuleInfo{

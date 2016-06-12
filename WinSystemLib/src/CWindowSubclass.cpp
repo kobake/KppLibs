@@ -1,8 +1,7 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CWindowSubclass.h"
 #include <map>
 #include <vector>
-#include "util/vector_ex.h"
 using namespace std;
 
 struct WindowInfo{

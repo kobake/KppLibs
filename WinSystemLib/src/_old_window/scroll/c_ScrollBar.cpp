@@ -1,11 +1,10 @@
+#include <BaseLib.h>
 #include <windows.h>
 #include <string>
-#include "common/_required.h"
 using namespace std;
 #include "c_ScrollBar.h"
-#include "c_CustomWindow.h"
-#include "id/class.h"
-#include "c_App.h"
+#include "../custom/c_CustomWindow.h"
+#include "../../_old_app/c_App.h"
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- --  コンストラクタ・デストラクタ  -- -- -- -- -- -- -- -- -- -- -- -- -- //

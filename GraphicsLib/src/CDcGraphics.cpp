@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CDcGraphics.h"
 // #include <Cast.h> //WinSystemLib
 #include <WinSystemLib.h>

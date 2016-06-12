@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#pragma once
 
 #include <cstdio>
 #include <ctime>
@@ -25,5 +25,4 @@
 #include <map>
 
 using namespace std;
-
 

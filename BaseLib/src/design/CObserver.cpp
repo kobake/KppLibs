@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CObserver.h"
 #include <map>
 using namespace std;

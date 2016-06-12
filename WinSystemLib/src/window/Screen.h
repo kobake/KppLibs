@@ -1,6 +1,6 @@
 #pragma once
 
-#include "design/TSingleton.h"
+#include <BaseLib.h> // TSingleton
 #include "../../../MathLib/MathLib.h" //CRect
 
 class Screen : public TSingleton<Screen>{

@@ -1,9 +1,6 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include <windows.h>
 #include "c_MapScreen.h"
-#include "f_base.h"
-//#include "win/Cast.h"
-#include <WinSystemLib.h>
 
 MapScreen::MapScreen()
 {

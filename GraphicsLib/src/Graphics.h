@@ -1,9 +1,9 @@
 #pragma once
 
+#include <BaseLib.h>
 #include <windows.h> //###
 #include <vector>
 #include <string>
-#include "common/_required.h"
 using namespace std;
 
 #include "Type.h"

@@ -12,7 +12,7 @@ wchar_t* tmp_buffer();
 #include <map>
 #include <winsock2.h> //windows.h‚æ‚è‘O‚É‚È‚¢‚Æƒ_ƒ
 #include <windows.h> //UINT
-#include "util/std.h" //tmin
+#include <BaseLib.h> //tmin
 
 #ifndef _countof
 #define _countof(A) (sizeof(A) / sizeof(A[0]))

@@ -23,14 +23,6 @@
     <Filter Include="ソース ファイル\path">
       <UniqueIdentifier>{49af6bc2-dc21-4cdd-86cd-03a81696a94c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
-    <Filter Include="リソース ファイル">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav</Extensions>
-    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\_required.h">
@@ -84,9 +76,13 @@
     <ClInclude Include="src\CProtocolPath.h">
       <Filter>ソース ファイル\path</Filter>
     </ClInclude>
-    <ClInclude Include="IoLib.h">
-      <Filter>ヘッダー ファイル</Filter>
+    <ClInclude Include="IoLib.h" />
+    <ClInclude Include="src\file.h">
+      <Filter>ソース ファイル</Filter>
     </ClInclude>
+    <ClInclude Include="src\old\c_FileDetail.h" />
+    <ClInclude Include="src\old\c_FileList.h" />
+    <ClInclude Include="src\old\c_FileStream.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CFile.cpp">
@@ -136,6 +132,18 @@
     </ClCompile>
     <ClCompile Include="src\CProtocolPath.cpp">
       <Filter>ソース ファイル\path</Filter>
+    </ClCompile>
+    <ClCompile Include="src\file.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\c_FileDetail.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\c_FileList.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\c_FileStream.cpp">
+      <Filter>ソース ファイル</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

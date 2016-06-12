@@ -48,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../IoLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,7 +64,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../IoLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -77,6 +77,11 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="IoLib.h" />
+    <ClInclude Include="src\file.h" />
+    <ClInclude Include="src\old\c_FileDetail.h" />
+    <ClInclude Include="src\old\c_FileList.h" />
+    <ClInclude Include="src\old\c_FileStream.h" />
     <ClInclude Include="src\_required.h" />
     <ClInclude Include="src\CFile.h" />
     <ClInclude Include="src\CFileSystem.h" />
@@ -94,13 +99,16 @@
     <ClInclude Include="src\CTextStream.h" />
     <ClInclude Include="src\CFilePath.h" />
     <ClInclude Include="src\CProtocolPath.h" />
-    <ClInclude Include="IoLib.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\CFile.cpp" />
     <ClCompile Include="src\CFileSystem.cpp" />
+    <ClCompile Include="src\file.cpp" />
     <ClCompile Include="src\Io.cpp" />
     <ClCompile Include="src\InputData.cpp" />
+    <ClCompile Include="src\old\c_FileDetail.cpp" />
+    <ClCompile Include="src\old\c_FileList.cpp" />
+    <ClCompile Include="src\old\c_FileStream.cpp" />
     <ClCompile Include="src\OutputData.cpp" />
     <ClCompile Include="src\CFolder.cpp" />
     <ClCompile Include="src\FileFind.cpp" />

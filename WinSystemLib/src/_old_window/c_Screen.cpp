@@ -1,6 +1,6 @@
-#include "include_sys.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
 #include "c_Screen.h"
-#include "id/class.h"
 
 
 Screen::Screen()

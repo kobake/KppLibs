@@ -1,6 +1,6 @@
 #include "_required.h"
 #include "MixerControl.h"
-#include "std/myexception.h"
+#include <BaseLib.h> // myexception
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 //               コンストラクタ・デストラクタ                  //

@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CFileShell.h"
 #include "../CWinSystem.h"
 #include <IoLib.h> // CFilePath

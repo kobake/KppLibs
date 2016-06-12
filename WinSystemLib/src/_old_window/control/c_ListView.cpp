@@ -2,10 +2,10 @@
 #include <commctrl.h>
 #include <string>
 using namespace std;
-#include "c_App.h"
+#include "../../_old_app/c_App.h"
 #include "c_ListView.h"
-#include "f_window.h"
-#include "id/class.h"
+#include "../f_window.h"
+#include <BaseLib.h>
 #include <StringLib.h>
 using namespace util;
 

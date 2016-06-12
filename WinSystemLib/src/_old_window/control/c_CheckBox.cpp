@@ -1,9 +1,9 @@
+#include <BaseLib.h>
 #include <windows.h>
 #include <string>
 using namespace std;
-#include "c_App.h"
+#include "../../_old_app/c_App.h"
 #include "c_CheckBox.h"
-#include "id/class.h"
 
 CheckBox::CheckBox(const wchar* caption,int x,int y,int w,int h,Window *_parent,int _option,int _id)
 : Window(CID_CHECK_BOX,0,_parent,_option | WINDOWF_TABSTOP,_id)

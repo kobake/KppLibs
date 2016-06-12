@@ -14,6 +14,7 @@
     <ProjectGuid>{1F26589B-FF9D-47A5-87FB-3D7041AD11CA}</ProjectGuid>
     <RootNamespace>DebugLib</RootNamespace>
     <Keyword>Win32Proj</Keyword>
+    <ProjectName>KppDebug</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
@@ -47,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../c2lib;../StringLib;../DebugLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../DebugLib;../IoLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,7 +65,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../%40%40c2lib;../StringLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../DebugLib;../IoLib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -83,6 +84,9 @@
     <ClCompile Include="src\debug_static.cpp" />
     <ClCompile Include="src\DebugSystem.cpp" />
     <ClCompile Include="src\MemoryCheck.cpp" />
+    <ClCompile Include="src\old\dbg_message.cpp" />
+    <ClCompile Include="src\old\dbg_treeview.cpp" />
+    <ClCompile Include="src\old\f_debug.cpp" />
     <ClCompile Include="src\WindowsKeyName.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -91,6 +95,8 @@
     <ClInclude Include="src\debug_static.h" />
     <ClInclude Include="src\DebugSystem.h" />
     <ClInclude Include="src\MemoryCheck.h" />
+    <ClInclude Include="src\old\dbg_common.h" />
+    <ClInclude Include="src\old\f_debug.h" />
     <ClInclude Include="src\WindowsKeyName.h" />
     <ClInclude Include="DebugLib.h" />
     <ClInclude Include="DebugLib_Assert.h" />

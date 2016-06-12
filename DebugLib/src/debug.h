@@ -1,7 +1,7 @@
 #pragma once
 
+#include <BaseLib.h> // LTEXT
 #include "DebugSystem.h"
-#include "common/_required.h" //LTEXT
 
 #ifdef assert
 	#undef assert

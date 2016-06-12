@@ -1,10 +1,6 @@
-class FileDetail;
+#pragma once
 
-#ifndef _FileDetail_
-#define _FileDetail_
-
-
-#include "c_SystemTime.h"
+#include <BaseLib.h> //c_SystemTime
 
 class FileDetail{
 protected:
@@ -24,6 +20,3 @@ public:
 	wchar *getTitle();
 	wchar *getExt();
 };
-
-#endif
-

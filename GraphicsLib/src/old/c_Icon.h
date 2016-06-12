@@ -1,5 +1,6 @@
 #pragma once
 
+#include <windows.h>
 class App;
 
 class Icon{

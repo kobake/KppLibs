@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../../ThreadLib/src/CCriticalSection.h"
+#include "../ThreadLib/src/CCriticalSection.h"
 
 template <class T> class TSingleton{
 public:

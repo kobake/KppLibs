@@ -7,7 +7,7 @@
 
 class Font{
 protected:
-	wchar face[LF_FACESIZE];
+	wchar_t face[LF_FACESIZE];
 	int point;
 	int height;
 	int width;
@@ -15,13 +15,13 @@ protected:
 	HFONT hFont;
 public:
 	void _init_v();
-	Font(const wchar *_face,int _point,int _option=0);
-	Font(const wchar *_face,int _height,int _width,int _option=0);
+	Font(const wchar_t *_face,int _point,int _option=0);
+	Font(const wchar_t *_face,int _height,int _width,int _option=0);
 	virtual ~Font();
 public:
 	operator HFONT() const;
 public:
-	int getTextWidth(wchar *str);
+	int getTextWidth(wchar_t *str);
 };
 
 

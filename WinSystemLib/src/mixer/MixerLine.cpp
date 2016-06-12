@@ -1,6 +1,6 @@
 #include "_required.h"
 #include "MixerLine.h"
-#include "util/AbTable.h"
+#include <BaseLib.h> // AbTable
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 //               コンストラクタ・デストラクタ                  //

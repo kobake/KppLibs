@@ -1,9 +1,8 @@
-#include "include_sys.h"
-#include "c_App.h"
-#include "c_EditBase.h"
-#include "include_c_message.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
 #include <StringLib.h>
-#include "id/class.h"
+#include "../../_old_app/c_App.h"
+#include "c_EditBase.h"
 using namespace util;
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //

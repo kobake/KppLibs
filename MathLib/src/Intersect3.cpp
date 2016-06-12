@@ -5,7 +5,6 @@
 #include "Vec3.h"
 #include "Aabb3.h"
 #include "Segment3.h"
-#include "util/std.h"
 
 #define EPSILON 0.001 //##“K“–
 #define tabs util::tabs

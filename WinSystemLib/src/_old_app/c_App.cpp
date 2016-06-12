@@ -1,12 +1,11 @@
-#include "include_sys.h"
-#include "c_App.h"
-#include "common/_required.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
+#include "../_old_app/c_App.h"
 #include <StringLib.h>
-#include "c_Screen.h"
+#include "../_old_window/c_Screen.h"
 
 #include <GraphicsLib.h>
 #include <StringLib.h>
-#include "util/CIniFile.h"
 #include "src/CBitmap.h"
 
 App *app;

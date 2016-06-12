@@ -1,7 +1,7 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CFile.h"
 #include "CFileStream.h"
-#include "util/file.h"
+#include "file.h"
 using namespace std;
 
 void CFile::ReadFileBytes(std::vector<unsigned char>* pvBuf) const

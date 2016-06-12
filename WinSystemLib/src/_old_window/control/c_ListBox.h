@@ -3,7 +3,7 @@ class ListBox;
 #ifndef DEF_LIST_BOX
 #define DEF_LIST_BOX
 
-#include "c_Window.h"
+#include "../c_Window.h"
 
 class ListBox : public Window{
 public:

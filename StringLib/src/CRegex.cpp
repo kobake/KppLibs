@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CRegex.h"
 #include <boost/regex.hpp>
 #include <string>

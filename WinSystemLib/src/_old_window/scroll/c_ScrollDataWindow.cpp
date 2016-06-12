@@ -1,13 +1,13 @@
 #include <windows.h>
 #include <string>
-#include "common/_required.h"
-using namespace std;
-#include "c_App.h"
+#include <BaseLib.h>
+#include "../../_old_app/c_App.h"
 #include "c_ScrollDataWindow.h"
-#include "f_base.h"
-#include "f_window.h"
-#include "id/class.h"
+#include "../f_window.h"
+#include "../../map/c_RectCursor.h"
+#include "c_ScrollManager.h"
 
+using namespace std;
 static RectCursor old_cursor;
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //

@@ -3,7 +3,7 @@ class Label;
 #ifndef DEF_LABEL
 #define DEF_LABEL CTL_CLASS_BEGIN+6
 
-#include "c_Window.h"
+#include "../c_Window.h"
 
 #define LABELF_ALIGN(option) (option & 0x0003)
 #define LABELF_ALIGN_LEFT		0x0000 // 0000 0000 0000 0000

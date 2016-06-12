@@ -3,7 +3,7 @@ class ColorBox;
 #ifndef DEF_COLOR_BOX
 #define DEF_COLOR_BOX
 
-#include "c_Window.h"
+#include "../c_Window.h"
 
 class ColorBox : public Window{
 protected:

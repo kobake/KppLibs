@@ -3,7 +3,8 @@
 #include "CRawWindow.h"
 #include "CWindowClass.h"
 #include <vector>
-#include "util/vector_ex.h"
+#include <BaseLib.h>
+
 
 /*
 „¡„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„Ÿ„¢

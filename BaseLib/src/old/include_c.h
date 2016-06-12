@@ -1,4 +1,5 @@
-#include "c_App.h"
+/*
+#include <WinSystemLib.h>
 #include "c_BitmapSelector.h"
 #include "c_Brush.h"
 #include "c_Button.h"
@@ -12,7 +13,6 @@
 #include "c_EditField.h"
 #include "c_FileStream.h"
 #include "c_Font.h"
-#include "c_Graphics.h"
 #include "c_Icon.h"
 #include "c_IDManager.h"
 #include "c_ImageList.h"
@@ -38,3 +38,4 @@
 
 #include "include_c_message.h"
 #include "include_c_window.h"
+*/

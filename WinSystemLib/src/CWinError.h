@@ -1,7 +1,7 @@
 #pragma once
 
 #include <wchar.h>
-#include "sdk/libfwd_win.h"
+#include <BaseLib.h> // libfwd_win
 
 class CWinError{
 public:

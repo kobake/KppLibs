@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CTimer.h"
 
 //タイマーIDとTimer*の関連付け

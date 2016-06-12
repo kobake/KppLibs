@@ -50,7 +50,6 @@ public:
 	}*/
 };
 
-#include "c_Graphics.h"
 #include "c_VirtualMap.h"
 #include "c_RectCursor.h"
 

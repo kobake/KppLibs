@@ -1,2 +1,2 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CInputStream.h"

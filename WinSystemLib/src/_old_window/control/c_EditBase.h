@@ -3,7 +3,7 @@ class EditBase;
 #ifndef _EditBase_
 #define _EditBase_
 
-#include "c_Window.h"
+#include "../c_Window.h"
 
 #define EDITF_KIND(option) (option &	0x0003)		// 0000 0000 0000 0011
 #define EDITF_KIND_FIELD				0x0000		// 0000 0000 0000 0000

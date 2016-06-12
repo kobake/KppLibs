@@ -1,7 +1,7 @@
-#include "include_sys.h"
+#include <BaseLib.h>
+#include <BaseLibOld.h>
 #include "c_App.h"
 #include "c_ProgressBar.h"
-#include "id/class.h"
 
 ProgressBar::ProgressBar(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 : Window(CID_PROGRESS_BAR,0,_parent,_option,_id)

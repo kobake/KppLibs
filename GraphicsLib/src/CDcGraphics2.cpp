@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include <windows.h>
 #include "CDcGraphics2.h"
 //#include "CImage.h"
@@ -9,7 +9,7 @@
 #include <StringLib.h>
 #include "CImage.h"
 // #include <Cast.h> //WinSystemLib
-#include "std/myexception.h"
+#include <BaseLib.h>
 using namespace util;
 using namespace math;
 

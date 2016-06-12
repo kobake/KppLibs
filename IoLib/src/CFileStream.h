@@ -1,6 +1,6 @@
 #pragma once
 
-#include "std/mem.h"
+#include <BaseLib.h> // mem
 
 #include "CInputStream.h"
 

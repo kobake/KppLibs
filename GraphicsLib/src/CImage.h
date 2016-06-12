@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sdk/libfwd_win.h"
+#include <BaseLib.h>
 #include "../../MathLib/MathLib.h"
 #include <windows.h>
 

@@ -99,9 +99,6 @@
     <ClCompile Include="src\util\CPersonalTime.cpp">
       <Filter>基本\util</Filter>
     </ClCompile>
-    <ClCompile Include="src\util\file.cpp">
-      <Filter>基本\util</Filter>
-    </ClCompile>
     <ClCompile Include="src\util\mem.cpp">
       <Filter>基本\util</Filter>
     </ClCompile>
@@ -148,9 +145,6 @@
       <Filter>基本\util</Filter>
     </ClCompile>
     <ClCompile Include="src\old\c_IDManager.cpp">
-      <Filter>old</Filter>
-    </ClCompile>
-    <ClCompile Include="src\old\c_JavaFileStream.cpp">
       <Filter>old</Filter>
     </ClCompile>
     <ClCompile Include="src\old\f_base.cpp">
@@ -234,9 +228,6 @@
       <Filter>基本\util</Filter>
     </ClInclude>
     <ClInclude Include="src\util\CPersonalTime.h">
-      <Filter>基本\util</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\file.h">
       <Filter>基本\util</Filter>
     </ClInclude>
     <ClInclude Include="src\util\mem.h">
@@ -332,9 +323,6 @@
     <ClInclude Include="src\old\c_IDManager.h">
       <Filter>old</Filter>
     </ClInclude>
-    <ClInclude Include="src\old\c_JavaFileStream.h">
-      <Filter>old</Filter>
-    </ClInclude>
     <ClInclude Include="src\old\f_base.h">
       <Filter>old</Filter>
     </ClInclude>
@@ -393,5 +381,8 @@
       <Filter>old</Filter>
     </ClInclude>
     <ClInclude Include="BaseLib.h" />
+    <ClInclude Include="BaseLibCom.h" />
+    <ClInclude Include="BaseLibOld.h" />
+    <ClInclude Include="BaseLibType.h" />
   </ItemGroup>
 </Project>

@@ -19,6 +19,5 @@ public:
 void drawMap(CDcGraphics *g,RECT *_rcUpdate,VirtualMap *map,int map_x,int map_y,const CColor& side_color=CColor(0,0,0));
 void drawMap(CDcGraphics *g,int _dst_x,int _dst_y,int _dst_w,int _dst_h,VirtualMap *map,int src_x,int src_y,const CColor& side_color=CColor(0,0,0));
 
-#include "c_Graphics.h"
 
 

@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include <DebugLib.h>
 #include "CMemoryStream.h"
 #include <string>

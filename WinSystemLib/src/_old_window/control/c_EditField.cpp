@@ -1,12 +1,11 @@
+#include <BaseLib.h>
 #include <windows.h>
 #include <string>
-using namespace std;
-#include "c_App.h"
+#include "../../_old_app/c_App.h"
 #include "c_EditField.h"
-#include "include_c_message.h"
 #include <StringLib.h>
-
-#include "f_debug.h"
+#include <DebugLib.h>
+using namespace std;
 
 
 

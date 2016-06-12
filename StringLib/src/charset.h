@@ -1,6 +1,6 @@
 #pragma once
 
-#include "common/_required.h" // uchar
+#include <BaseLib.h> // uchar
 
 //---------------------------------------------------------------------------
 // SJIS2UTF8N()

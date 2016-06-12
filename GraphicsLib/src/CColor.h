@@ -1,6 +1,6 @@
 #pragma once
 
-#include "sdk/libfwd_win.h"
+#include "src/sdk/libfwd_win.h"
 
 enum ColorType{
 	Win,

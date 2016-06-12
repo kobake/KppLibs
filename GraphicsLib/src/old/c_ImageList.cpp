@@ -1,6 +1,6 @@
-#include "include_sys.h"
 #include "c_ImageList.h"
-#include "c_App.h"
+#include <WinSystemLib.h> // c_App.h
+#include "c_Icon.h"
 
 ImageList::ImageList(int cx,int cy,int init_size,int max_size)
 {

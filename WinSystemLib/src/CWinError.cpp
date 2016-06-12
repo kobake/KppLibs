@@ -1,6 +1,5 @@
 #include "_required.h"
 #include "CWinError.h"
-#include "std/myexception.h"
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 //               コンストラクタ・デストラクタ                  //

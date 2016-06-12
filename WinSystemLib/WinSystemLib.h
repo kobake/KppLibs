@@ -20,7 +20,12 @@
 
 #include "src/shell/CContextMenu.h"
 
-#include "src/ini.h"
-
 #include "src/CTrayIcon.h"
 #include "src/Cast.h"
+
+// old
+#include "src/_old_app/c_App.h"
+
+#include "src/_old_window/custom/c_CustomWindow.h"
+
+#include "src/Menu.h"

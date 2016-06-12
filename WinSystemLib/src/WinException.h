@@ -1,6 +1,6 @@
 #pragma once
 
-#include "std/myexception.h"
+#include <BaseLib.h> // myexception
 
 //!GetLastErrorを元にwhat()を構築する例外クラス
 class WinException : public wexception{

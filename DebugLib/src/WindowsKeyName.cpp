@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "WindowsKeyName.h"
 #include <windows.h>
 #include <StringLib.h>
@@ -6,33 +6,6 @@
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 //                     名前検索サポート                        //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-
-template <class T> struct NAME_VALUE_PAIR
-{
-	wchar_t* name;
-	T value;
-};
-
-template <class T> T name_to_value(const wchar_t* name,T def_value,NAME_VALUE_PAIR<T> name_value_table[])
-{
-	int i;
-	for(i=0;name_value_table[i].name!=NULL;i++){
-		if(strcmp(name,name_value_table[i].name)==0){
-			return name_value_table[i].value;
-		}
-	}
-	return def_value;
-}
-template <class T> const wchar_t* value_to_name(T value,const wchar_t* def_name,NAME_VALUE_PAIR<T> name_value_table[])
-{
-	int i;
-	for(i=0;name_value_table[i].name!=NULL;i++){
-		if(value==name_value_table[i].value){
-			return name_value_table[i].name;
-		}
-	}
-	return def_name;
-}
 
 
 

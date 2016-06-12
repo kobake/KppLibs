@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include <StringLib.h> // fextract2
+#include "../StringLib/src/mywstring_funcs.h" // fextract2
 
 /*
 	http://yahoo.com/abc/def

@@ -1,4 +1,3 @@
-#include "include_sys.h"
 #include "stl_ex_string.h"
 
 void ex_string::removeQuote()
@@ -31,13 +30,13 @@ int ex_string::toInt()
 	return _wtoi(c_str());
 }
 
-ex_string ex_string::replace(const wstring& from,const wstring& to) const
+ex_string ex_string::replace(const std::wstring& from,const std::wstring& to) const
 {
 	int n,m=0;
-	wstring ret=L"";
+	std::wstring ret=L"";
 	while(1){
 		n=find(from,m);
-		if(n!=wstring::npos){
+		if(n!=std::wstring::npos){
 			ret+=substr(0,n);
 			ret+=to;
 			m=n+from.length();

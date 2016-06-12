@@ -63,6 +63,12 @@
     <ClCompile Include="src\mystring.cpp">
       <Filter>ソース ファイル\class</Filter>
     </ClCompile>
+    <ClCompile Include="src\old\c_StringList.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="src\old\stl_ex_string.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\auto_string.h">
@@ -109,6 +115,12 @@
     </ClInclude>
     <ClInclude Include="src\mystring.h">
       <Filter>ソース ファイル\class</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\c_stringlist.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="src\old\stl_ex_string.h">
+      <Filter>ヘッダー ファイル</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

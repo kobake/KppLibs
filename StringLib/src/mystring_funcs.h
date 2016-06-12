@@ -1,10 +1,9 @@
 #pragma once
 
+#include <BaseLib.h>
 #include <stdarg.h>
 #include <string>
 #include <vector>
-
-#include "common/_required.h"
 
 inline bool str_empty(const char* p)
 {

@@ -1,3 +1,5 @@
+#include <BaseLibType.h>
+
 #ifdef _DEBUG
 
 void debugprintf(const wchar *format,...);

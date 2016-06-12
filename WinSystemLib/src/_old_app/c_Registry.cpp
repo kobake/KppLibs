@@ -1,9 +1,8 @@
+#include <BaseLibOld.h>
 #include <windows.h>
-#include "common/_required.h"
 #include "c_Registry.h"
-#include "t_base.h"
 #include <StringLib.h>
-#include "util/std.h"
+#include <BaseLibOld.h>
 #include <string.h>
 #include <wchar.h>
 #include <stdlib.h>

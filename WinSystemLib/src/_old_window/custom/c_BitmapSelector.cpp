@@ -2,12 +2,13 @@
 #include <cstdio>
 #include <string>
 using namespace std;
-#include "c_App.h"
-#include "c_BitmapSelector.h"
-#include "f_base.h"
-#include "f_window.h"
-#include "util/std.h"
+
+#include <BaseLib.h>
+#include <BaseLibOld.h>
 #include <GraphicsLib.h>
+#include "../../_old_app/c_App.h"
+#include "c_BitmapSelector.h"
+#include "../f_window.h"
 
 
 void BitmapSelector::drawData(CDcGraphics *g,int xoff,int yoff)

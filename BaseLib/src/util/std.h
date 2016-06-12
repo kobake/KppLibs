@@ -1,7 +1,7 @@
 #pragma once
 
 #include <string>
-#include "std/myexception.h"
+#include "../std/myexception.h"
 using namespace std;
 
 //É}ÉNÉçî≈ min,max

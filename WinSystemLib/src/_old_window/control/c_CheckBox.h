@@ -3,7 +3,7 @@ class CheckBox;
 #ifndef DEF_CHECK_BOX
 #define DEF_CHECK_BOX
 
-#include "c_Window.h"
+#include "../c_Window.h"
 
 class CheckBox : public Window{
 public:

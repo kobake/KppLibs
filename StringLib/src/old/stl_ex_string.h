@@ -1,17 +1,19 @@
 #pragma once
 
-class ex_string : public wstring{
+#include <string>
+
+class ex_string : public std::wstring{
 public:
 	void removeQuote();
 	void removeLf();
 	void removeCrlf();
-	ex_string replace(const wstring& from,const wstring& to) const;
-	wstring::iterator last(){ return end()-1; }
-	wstring::iterator first(){ return begin(); }
+	ex_string replace(const std::wstring& from,const std::wstring& to) const;
+	std::wstring::iterator last(){ return end()-1; }
+	std::wstring::iterator first(){ return begin(); }
 	int toInt();
-	ex_string(const wchar *p,size_type n) : wstring(p,n) { }
-	ex_string(const wstring& s) : wstring(s) { }
-	ex_string() : wstring() { }
-	ex_string(const wchar *p) : wstring(p) { }
+	ex_string(const wchar_t *p,size_type n) : std::wstring(p,n) { }
+	ex_string(const std::wstring& s) : std::wstring(s) { }
+	ex_string() : std::wstring() { }
+	ex_string(const wchar_t *p) : std::wstring(p) { }
 };
 

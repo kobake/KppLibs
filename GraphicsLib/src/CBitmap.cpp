@@ -1,4 +1,4 @@
-#include "common/_required.h"
+#include <BaseLib.h>
 #include "CBitmap.h"
 
 CBitmap::CBitmap(HINSTANCE hInst,int id)

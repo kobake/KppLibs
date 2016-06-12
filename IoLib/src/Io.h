@@ -5,7 +5,8 @@
 
 //IoFlag operator | (IoFlag n,IoFlag m);
 
-#include "std/myexception.h"
+#include <BaseLib.h> // myexception
+#include <BaseLibOld.h>
 
 class Io{
 public:

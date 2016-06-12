@@ -5,8 +5,8 @@ class CharsProperty;
 #ifndef DEF_PROPERTY
 #define DEF_PROPERTY
 
-#include "c_Window.h"
-#include "c_StringList.h"
+#include <StringLib.h> // c_StringList
+#include "./c_Window.h"
 #include "c_PropertyRList.h"
 
 bool PropertyDialog(const wchar *caption,int x,int y,int w,int h,Window *owner,CHECKPROC _checkproc,Property *_property,...);

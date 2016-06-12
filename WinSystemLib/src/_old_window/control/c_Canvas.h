@@ -3,8 +3,8 @@ class Canvas;
 #ifndef _Canvas_
 #define _Canvas_
 
-#include "c_Window.h"
-#include "c_Graphics.h"
+#include <GraphicsLib.h>
+#include "../c_Window.h"
 
 typedef void (*MOUSEPROC)(Window*,UINT,int,int);
 

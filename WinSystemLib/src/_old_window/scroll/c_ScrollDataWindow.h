@@ -7,9 +7,9 @@
 #define CURSOR_SIMPLE	0
 #define CURSOR_INVERT	1
 
-#include "t_Table2D.h"
-#include "c_Window.h"
+#include <BaseLib.h> // t_Table2D
 #include <GraphicsLib.h> //Pen
+#include "../c_Window.h"
 
 class ScrollManager;
 class RectCursor;
@@ -66,8 +66,4 @@ public:
 protected:
 	void repaintCursorRect(RectCursor *cursor);
 };
-
-#include "c_ScrollManager.h"
-#include "c_RectCursor.h"
-
 

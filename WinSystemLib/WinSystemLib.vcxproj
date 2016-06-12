@@ -48,7 +48,7 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../IoLib;../LogLib;C:\boost_1_55_0;../ThreadLib;../DebugLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../IoLib;../LogLib;../MathLib;../GraphicsLib;C:\boost_1_55_0;../ThreadLib;../DebugLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;WIN32_LEAN_AND_MEAN;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <MinimalRebuild>true</MinimalRebuild>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -64,7 +64,7 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <ClCompile>
-      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../IoLib;../LogLib;C:\boost_1_55_0;../ThreadLib;../DebugLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>../BaseLib;../StringLib;../IoLib;../LogLib;../MathLib;../GraphicsLib;C:\boost_1_55_0;../ThreadLib;../DebugLib;../../_lib/mysql-c/include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PrecompiledHeader>
@@ -77,7 +77,42 @@
     </Lib>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="src\map\c_MapScreen.h" />
+    <ClInclude Include="src\map\c_RectCursor.h" />
+    <ClInclude Include="src\map\c_RectList.h" />
+    <ClInclude Include="src\map\c_VirtualMap.h" />
     <ClInclude Include="src\_fwd.h" />
+    <ClInclude Include="src\_old_app\c_Accelerator.h" />
+    <ClInclude Include="src\_old_app\c_App.h" />
+    <ClInclude Include="src\_old_app\c_Menu.h" />
+    <ClInclude Include="src\_old_app\c_ProgressBar.h" />
+    <ClInclude Include="src\_old_app\c_Registry.h" />
+    <ClInclude Include="src\_old_app\f_mouse.h" />
+    <ClInclude Include="src\_old_window\control\c_Button.h" />
+    <ClInclude Include="src\_old_window\control\c_Canvas.h" />
+    <ClInclude Include="src\_old_window\control\c_CheckBox.h" />
+    <ClInclude Include="src\_old_window\control\c_ColorBox.h" />
+    <ClInclude Include="src\_old_window\control\c_ComboBox.h" />
+    <ClInclude Include="src\_old_window\control\c_EditBase.h" />
+    <ClInclude Include="src\_old_window\control\c_EditBox.h" />
+    <ClInclude Include="src\_old_window\control\c_EditField.h" />
+    <ClInclude Include="src\_old_window\control\c_FileView.h" />
+    <ClInclude Include="src\_old_window\control\c_Label.h" />
+    <ClInclude Include="src\_old_window\control\c_ListBox.h" />
+    <ClInclude Include="src\_old_window\control\c_ListView.h" />
+    <ClInclude Include="src\_old_window\control\c_TreeItem.h" />
+    <ClInclude Include="src\_old_window\control\c_TreeView.h" />
+    <ClInclude Include="src\_old_window\custom\c_BitmapSelector.h" />
+    <ClInclude Include="src\_old_window\custom\c_CustomWindow.h" />
+    <ClInclude Include="src\_old_window\c_Property.h" />
+    <ClInclude Include="src\_old_window\c_PropertyRList.h" />
+    <ClInclude Include="src\_old_window\c_Screen.h" />
+    <ClInclude Include="src\_old_window\c_Toolbar.h" />
+    <ClInclude Include="src\_old_window\c_Window.h" />
+    <ClInclude Include="src\_old_window\f_window.h" />
+    <ClInclude Include="src\_old_window\scroll\c_ScrollBar.h" />
+    <ClInclude Include="src\_old_window\scroll\c_ScrollDataWindow.h" />
+    <ClInclude Include="src\_old_window\scroll\c_ScrollManager.h" />
     <ClInclude Include="src\_required.h" />
     <ClInclude Include="src\CAccelerator.h" />
     <ClInclude Include="src\Cast.h" />
@@ -87,7 +122,6 @@
     <ClInclude Include="src\CTrayIcon.h" />
     <ClInclude Include="src\CWinError.h" />
     <ClInclude Include="src\CWinSystem.h" />
-    <ClInclude Include="src\ini.h" />
     <ClInclude Include="src\Module.h" />
     <ClInclude Include="src\mymsg.h" />
     <ClInclude Include="src\Process.h" />
@@ -141,6 +175,10 @@
     <ClCompile Include="src\CTrayIcon.cpp" />
     <ClCompile Include="src\CWinError.cpp" />
     <ClCompile Include="src\CWinSystem.cpp" />
+    <ClCompile Include="src\map\c_MapScreen.cpp" />
+    <ClCompile Include="src\map\c_RectCursor.cpp" />
+    <ClCompile Include="src\map\c_RectList.cpp" />
+    <ClCompile Include="src\map\c_VirtualMap.cpp" />
     <ClCompile Include="src\Module.cpp" />
     <ClCompile Include="src\Process.cpp" />
     <ClCompile Include="src\WinException.cpp" />
@@ -173,6 +211,37 @@
     <ClCompile Include="src\window\CRawDialog.cpp" />
     <ClCompile Include="src\window\CDialogPanel.cpp" />
     <ClCompile Include="src\window\CWindow.cpp" />
+    <ClCompile Include="src\_old_app\c_Accelerator.cpp" />
+    <ClCompile Include="src\_old_app\c_App.cpp" />
+    <ClCompile Include="src\_old_app\c_Menu.cpp" />
+    <ClCompile Include="src\_old_app\c_ProgressBar.cpp" />
+    <ClCompile Include="src\_old_app\c_Registry.cpp" />
+    <ClCompile Include="src\_old_app\f_mouse.cpp" />
+    <ClCompile Include="src\_old_window\control\c_Button.cpp" />
+    <ClCompile Include="src\_old_window\control\c_Canvas.cpp" />
+    <ClCompile Include="src\_old_window\control\c_CheckBox.cpp" />
+    <ClCompile Include="src\_old_window\control\c_ColorBox.cpp" />
+    <ClCompile Include="src\_old_window\control\c_ComboBox.cpp" />
+    <ClCompile Include="src\_old_window\control\c_EditBase.cpp" />
+    <ClCompile Include="src\_old_window\control\c_EditBox.cpp" />
+    <ClCompile Include="src\_old_window\control\c_EditField.cpp" />
+    <ClCompile Include="src\_old_window\control\c_FileView.cpp" />
+    <ClCompile Include="src\_old_window\control\c_Label.cpp" />
+    <ClCompile Include="src\_old_window\control\c_ListBox.cpp" />
+    <ClCompile Include="src\_old_window\control\c_ListView.cpp" />
+    <ClCompile Include="src\_old_window\control\c_TreeItem.cpp" />
+    <ClCompile Include="src\_old_window\control\c_TreeView.cpp" />
+    <ClCompile Include="src\_old_window\custom\c_BitmapSelector.cpp" />
+    <ClCompile Include="src\_old_window\custom\c_CustomWindow.cpp" />
+    <ClCompile Include="src\_old_window\c_Property.cpp" />
+    <ClCompile Include="src\_old_window\c_PropertyRList.cpp" />
+    <ClCompile Include="src\_old_window\c_Screen.cpp" />
+    <ClCompile Include="src\_old_window\c_Toolbar.cpp" />
+    <ClCompile Include="src\_old_window\c_Window.cpp" />
+    <ClCompile Include="src\_old_window\f_window.cpp" />
+    <ClCompile Include="src\_old_window\scroll\c_ScrollBar.cpp" />
+    <ClCompile Include="src\_old_window\scroll\c_ScrollDataWindow.cpp" />
+    <ClCompile Include="src\_old_window\scroll\c_ScrollManager.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

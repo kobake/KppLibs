@@ -1,10 +1,7 @@
-class ScrollBar;
+#pragma once
 
-#ifndef _ScrollBar_
-#define _ScrollBar_
-
-#include "c_Window.h"
-#include "c_Graphics.h"
+#include <GraphicsLib.h>
+#include "../c_Window.h"
 
 
 #define SCROLLBARF_KIND(option) (option & 0x0001)
@@ -19,5 +16,3 @@ public:
 	~ScrollBar();
 	//
 };
-
-#endif

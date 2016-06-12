@@ -1,11 +1,10 @@
+#include <BaseLib.h>
 #include <windows.h>
 #include <string>
 using namespace std;
-#include "common/_required.h"
 #include "c_ColorBox.h"
-#include "f_window.h"
-#include "c_App.h"
-#include "id/class.h"
+#include "../f_window.h"
+#include "../../_old_app/c_App.h"
 /*
 LRESULT CALLBACK WndProcColorBox(HWND hwnd,UINT msg,WPARAM wParam,LPARAM lParam)
 {

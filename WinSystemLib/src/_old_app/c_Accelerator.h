@@ -1,10 +1,10 @@
+#pragma once
+
 class Accelerator;
 
-#ifndef DEF_ACCELERATOR
-#define DEF_ACCELERATOR
 
-#include "c_Window.h"
-
+#include "../_old_window/c_Window.h"
+class App;
 
 #define ACCELF_CONTROL	1
 #define ACCELF_SHIFT	2
@@ -55,5 +55,3 @@ BEGIN
     "Z",            IDM_EDIT_UNDO,          VIRTKEY, CONTROL, NOINVERT
 END
 */
-#endif
-

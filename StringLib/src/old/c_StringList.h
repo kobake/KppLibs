@@ -1,7 +1,7 @@
 #pragma once
 
-#include "c_FileStream.h"
-#include "type.h"
+#include <BaseLib.h> // type.h
+#include <IoLib.h> // c_FileStream
 #include <list>
 using namespace std;
 

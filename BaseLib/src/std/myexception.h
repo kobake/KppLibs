@@ -2,7 +2,7 @@
 
 #include <string>
 #include <exception>
-#include "common/_required.h" //LTEXT
+//#include <BaseLib.h> //LTEXT
 
 //!ワイド文字列のwhatを実装する例外の規定クラス
 /*!

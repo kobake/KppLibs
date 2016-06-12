@@ -1,7 +1,7 @@
 #pragma once
 
-#include "c_Window.h"
-#include "c_ImageList.h"
+#include <GraphicsLib.h> // c_ImageList
+#include "../c_Window.h"
 
 #define TREEVIEWF_EDITLABELS	0x0001
 

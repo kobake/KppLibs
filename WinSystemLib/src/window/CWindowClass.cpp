@@ -1,7 +1,7 @@
 #include "_required.h"
 #include "CWindowClass.h"
 #include <StringLib.h>
-#include "std/myexception.h"
+#include <BaseLib.h>
 using namespace util;
 
 
