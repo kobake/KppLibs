@@ -26,3 +26,11 @@
 #include "src/old/t_SimpleList.h"
 #include "src/old/t_Chain.h"
 #include "src/old/t_Chain2.h"
+
+#include "src/util/CCommandLine.h"
+#include "src/design/TSingleton.h"
+
+#include "src/id/error.h"
+
+#include "src/id/res.h"
+

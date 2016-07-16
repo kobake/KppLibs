@@ -9,14 +9,14 @@ CustomWindow::CustomWindow(const wstring& caption,int x,int y,int w,int h,Window
 {
 	convertXYWH(&x,&y,&w,&h);
 	//ウィンドウクラスの登録
-	if(app->getPrevInstance()==NULL){
+	if(g_app->getPrevInstance()==NULL){
 		WNDCLASSEX wndclass;
 		wndclass.cbSize=sizeof(WNDCLASSEX);
 		wndclass.style=CS_HREDRAW | CS_VREDRAW;
 		wndclass.lpfnWndProc=DefWindowProc;
 		wndclass.cbClsExtra=0;
 		wndclass.cbWndExtra=0;
-		wndclass.hInstance=app->getInstance();
+		wndclass.hInstance=g_app->getInstance();
 		wndclass.hIcon=NULL;
 		wndclass.hCursor=LoadCursor(NULL,IDC_ARROW);
 		wndclass.hbrBackground=(HBRUSH)(COLOR_BTNFACE+1);
@@ -47,7 +47,7 @@ CustomWindow::CustomWindow(const wstring& caption,int x,int y,int w,int h,Window
 	style|=GET_WIN_STYLE(_option);
 	ex_style|=GET_WIN_EX_STYLE(_option);
 	//作成
-	hwnd=CreateWindowEx(ex_style,L"CustomWindow",caption.c_str(),style,x,y,w,h,getParent()->getHWND(),NULL,app->getInstance(),NULL);
+	hwnd=CreateWindowEx(ex_style,L"CustomWindow",caption.c_str(),style,x,y,w,h,getParent()->getHWND(),NULL,g_app->getInstance(),NULL);
 	_afterCreate();
 }
 CustomWindow::~CustomWindow()

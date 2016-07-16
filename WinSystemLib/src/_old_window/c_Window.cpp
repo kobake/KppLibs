@@ -9,6 +9,8 @@
 #include <GraphicsLib.h>
 #include <Windows.h>
 #include <MMSystem.h>
+#include "scroll/c_ScrollManager.h"
+#include <GraphicsLib.h> // Icon
 
 /*
 -- -- -- -- -- -- -- -- -- -- -- -- -- ƒ ƒ‚ -- -- -- -- -- -- -- -- -- -- -- -- -- -- --
@@ -190,7 +192,7 @@ int Window::messageBox(const wstring& text,const wstring& _caption,int type)
 		type=MB_OK;
 	}
 	if(caption.size()==0){
-		caption=app->getSoftName();
+		caption=g_app->getSoftName();
 	}
 	return MessageBox(hwnd,text.c_str(),caption.c_str(),type);
 }

@@ -1,10 +1,13 @@
-#include "include_sys.h"
-#include "id/res.h"
-#include "c_FileStream.h"
 #include "c_WaveSound.h"
 #include <Windows.h>
+
+#include <BaseLib.h>
+#include <IoLib.h>
+#include <WinSystemLib.h>
+
 #include <MMSystem.h>
-#include "c_App.h"
+
+//#include "c_App.h"
 
 // http://www13.plala.or.jp/kymats/study/MULTIMEDIA/LoadWaveFile/LoadWaveFile.cpp
 // PCM形式のWAVEファイルを読み込む

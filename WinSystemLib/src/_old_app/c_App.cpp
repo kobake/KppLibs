@@ -8,7 +8,7 @@
 #include <StringLib.h>
 #include "src/CBitmap.h"
 
-App *app;
+App* g_app;
 Screen *screen;
 
 App *AppCreate(HINSTANCE hInstance,HINSTANCE hPrevInstance);
@@ -29,7 +29,7 @@ int AppEnd();
 // -- -- -- -- -- -- --  プログラム開始 WinMain/wmain  -- -- -- -- -- -- -- -- //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
-#include "util/CCommandLine.h"
+#include <BaseLib.h>
 
 int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,int nCmdShow)
 {
@@ -41,18 +41,18 @@ int WINAPI WinMain(HINSTANCE hInstance,HINSTANCE hPrevInstance,LPSTR lpCmdLine,i
 	cmdline.Initialize(GetCommandLine());
 	screen=new Screen();
 	srand(GetTickCount());
-	app=AppCreate(hInstance,hPrevInstance);
-	ret=app->init();
+	g_app=AppCreate(hInstance,hPrevInstance);
+	ret=g_app->init();
 	if(ret!=0){
 		AppError(ret);
 		goto end;
 	}
 	ret=AppInit(cmdline.argc(),cmdline.argv(),nCmdShow); if(ret!=0)goto end;
-	ret=AppRoutine(); //app->windowsLoop();
+	ret=AppRoutine(); //g_app->windowsLoop();
 end:
 	AppEnd();
-	app->_doReserveationOnEnd();
-	delete app;
+	g_app->_doReserveationOnEnd();
+	delete g_app;
 	delete screen;
 	return ret;
 }
@@ -64,13 +64,13 @@ int call_wmain(int argc,const wchar *argv[])
 	int ret;
 	screen=new Screen();
 	srand((unsigned int)time(NULL));
-	app=AppCreate(NULL,NULL);
+	g_app=AppCreate(NULL,NULL);
 	ret=AppInit(argc,argv,0); if(ret!=0)goto end;
 	ret=AppRoutine();
 end:
 	AppEnd();
-	app->_doReserveationOnEnd();
-	delete app;
+	g_app->_doReserveationOnEnd();
+	delete g_app;
 	delete screen;
 	return ret;
 }

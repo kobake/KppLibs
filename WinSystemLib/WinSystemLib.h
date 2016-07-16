@@ -29,3 +29,8 @@
 #include "src/_old_window/custom/c_CustomWindow.h"
 
 #include "src/Menu.h"
+
+#include "src/_old_app/c_Menu.h"
+#include "src/_old_window/control/c_EditBox.h"
+#include "src/_old_window/control/c_EditField.h"
+#include "src/_old_window/control/c_Button.h"

@@ -10,7 +10,7 @@ ListBox::ListBox(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 {
 	convertXYWH(&x,&y,&w,&h);
 	hwnd=CreateWindowEx(WS_EX_CLIENTEDGE,L"LISTBOX",L"",
-		WS_VISIBLE | WS_CHILD | WS_VSCROLL | LBS_NOINTEGRALHEIGHT | LBS_NOTIFY,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+		WS_VISIBLE | WS_CHILD | WS_VSCROLL | LBS_NOINTEGRALHEIGHT | LBS_NOTIFY,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	_afterCreate();
 }
 

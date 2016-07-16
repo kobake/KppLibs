@@ -1,17 +1,16 @@
-ï»¿#pragma once
-#pragma execution_character_set("utf-8")
+#pragma once
 
 #include <vector>
 #include <string>
-#include "design/TSingleton.h"
+#include <BaseLib.h>
 
 /*
-	ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³å¼•æ•°ã‚’è§£é‡ˆã™ã‚‹ã€‚ï¼ˆå®Ÿè¡Œãƒ•ã‚¡ã‚¤ãƒ«åã¯é™¤ãï¼‰
+	ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“ˆø”‚ğ‰ğß‚·‚éBiÀsƒtƒ@ƒCƒ‹–¼‚Íœ‚­j
 
-	ã‚³ãƒãƒ³ãƒ‰ãƒ©ã‚¤ãƒ³ä¾‹:
+	ƒRƒ}ƒ“ƒhƒ‰ƒCƒ“—á:
 		hoge.exe /hide /path=aabb /path2="D:\tmp\hoge" /path3 hello.cpp world.cpp
 
-	ä½¿ç”¨ä¾‹:
+	g—p—á:
 		bool b = CCommandLine::Instance()->GetFlagBool(L"/hide");				// true
 		std::wstring s1 = CCommandLine::Instance()->GetFlagString(L"/path");	// aabb
 		std::wstring s2 = CCommandLine::Instance()->GetFlagString(L"/path2");	// D:\tmp\hoge
@@ -24,7 +23,7 @@ public:
 	void						Initialize(int argc, wchar_t* argv[]);
 	void						Initialize(const std::vector<std::wstring>& args);
 	
-	// ãƒ•ãƒ©ã‚° //
+	// ƒtƒ‰ƒO //
 	bool						GetFlagBool(const wchar_t* szKey) const;
 	int							FindParam(const wchar_t* szKey) const;
 	std::wstring				GetFlagString(const wchar_t* szKey) const;
@@ -33,13 +32,13 @@ public:
 	int							argc() const;
 	const wchar_t**				argv() const;
 
-	// å€¤ //
+	// ’l //
 	std::wstring				GetParam(int iIndex) const;
 	std::wstring				GetValuedParam(int iIndex) const;
 
-	// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ä»¥å¤–ã®ã™ã¹ã¦ã‚’è¿”ã™ (å®Ÿè¡Œãƒ•ã‚¡ã‚¤ãƒ«åã¯é™¤ã)
+	// ƒIƒvƒVƒ‡ƒ“ˆÈŠO‚Ì‚·‚×‚Ä‚ğ•Ô‚· (Àsƒtƒ@ƒCƒ‹–¼‚Íœ‚­)
 	const std::vector<std::wstring>&	GetValuedParams() const	{ return m_vValuedParameters; }
 private:
-	std::vector<std::wstring>	m_vParameters;			// å…¨ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ //
-	std::vector<std::wstring>	m_vValuedParameters;	// ã‚ªãƒ—ã‚·ãƒ§ãƒ³ä»¥å¤–ã®ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ //
+	std::vector<std::wstring>	m_vParameters;			// ‘Sƒpƒ‰ƒ[ƒ^ //
+	std::vector<std::wstring>	m_vValuedParameters;	// ƒIƒvƒVƒ‡ƒ“ˆÈŠO‚Ìƒpƒ‰ƒ[ƒ^ //
 };

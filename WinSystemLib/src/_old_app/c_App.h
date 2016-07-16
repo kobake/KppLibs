@@ -89,7 +89,7 @@ public:
 };
 
 
-extern App *app;
+extern App* g_app;
 
 class Screen;
 extern Screen *screen;

@@ -11,3 +11,5 @@
 #include "src/old/c_Graphics.h"
 #include "src/old/c_Font.h"
 #include "src/old/c_ImageList.h"
+
+#include "src/old/c_Icon.h"

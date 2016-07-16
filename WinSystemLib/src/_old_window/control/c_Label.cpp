@@ -38,7 +38,7 @@ Label::Label(const wchar* caption,int x,int y,int w,int h,Window *_parent,int _o
 	// -- -- ウィンドウ作成 -- -- //
 	convertXYWH(&x,&y,&w,&h);
 	hwnd=CreateWindowEx(exstyle,L"STATIC",caption,
-		style,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+		style,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	_afterCreate();
 }
 

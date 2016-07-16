@@ -81,9 +81,6 @@
     <ClCompile Include="src\util\BitSet.cpp">
       <Filter>基本\util</Filter>
     </ClCompile>
-    <ClCompile Include="src\util\CCommandLine.cpp">
-      <Filter>基本\util</Filter>
-    </ClCompile>
     <ClCompile Include="src\util\CCommandLine_Old.cpp">
       <Filter>基本\util</Filter>
     </ClCompile>
@@ -159,6 +156,9 @@
     <ClCompile Include="src\old\t_test2.cpp">
       <Filter>old</Filter>
     </ClCompile>
+    <ClCompile Include="src\util\CCommandLine.cpp">
+      <Filter>基本\util</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\game\Sprite.h">
@@ -210,9 +210,6 @@
       <Filter>基本\util</Filter>
     </ClInclude>
     <ClInclude Include="src\util\BitSet.h">
-      <Filter>基本\util</Filter>
-    </ClInclude>
-    <ClInclude Include="src\util\CCommandLine.h">
       <Filter>基本\util</Filter>
     </ClInclude>
     <ClInclude Include="src\util\CCommandLine_Old.h">
@@ -291,9 +288,6 @@
       <Filter>基本\design</Filter>
     </ClInclude>
     <ClInclude Include="src\design\TSingleInstance.h">
-      <Filter>基本\design</Filter>
-    </ClInclude>
-    <ClInclude Include="src\design\TSingleton.h">
       <Filter>基本\design</Filter>
     </ClInclude>
     <ClInclude Include="src\design\Chain.h">
@@ -384,5 +378,12 @@
     <ClInclude Include="BaseLibCom.h" />
     <ClInclude Include="BaseLibOld.h" />
     <ClInclude Include="BaseLibType.h" />
+    <ClInclude Include="src\design\TSingleton.h">
+      <Filter>基本\design</Filter>
+    </ClInclude>
+    <ClInclude Include="src\util\CCommandLine.h">
+      <Filter>基本\util</Filter>
+    </ClInclude>
+    <ClInclude Include="BaseLibRes.h" />
   </ItemGroup>
 </Project>

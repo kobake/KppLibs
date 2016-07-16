@@ -24,7 +24,7 @@ TreeView::TreeView(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 	//ツリーオーナー作成
 	hwnd=CreateWindowEx(0,L"STATIC",L"",
 		WS_CHILD | WS_VISIBLE,
-		x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+		x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	_afterCreate();
 	//スタイル
 	DWORD style=WS_CHILD | WS_VISIBLE | WS_MAXIMIZE |
@@ -34,7 +34,7 @@ TreeView::TreeView(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 	}
 	//ツリー作成
 	hwndTree=CreateWindowEx(WS_EX_CLIENTEDGE,WC_TREEVIEW,L"",
-		style,0,0,100,100,hwnd,(HMENU)getID(),app->getInstance(),NULL);
+		style,0,0,100,100,hwnd,(HMENU)getID(),g_app->getInstance(),NULL);
 	SetWindowLong(hwndTree,GWL_USERDATA,(LONG)this);
 	treeproc_org=(WNDPROC)SetWindowLong(hwndTree,GWL_WNDPROC,(LONG)WndProcTreeView);
 	//

@@ -124,6 +124,7 @@
     <ClInclude Include="BaseLib.h" />
     <ClInclude Include="BaseLibCom.h" />
     <ClInclude Include="BaseLibOld.h" />
+    <ClInclude Include="BaseLibRes.h" />
     <ClInclude Include="BaseLibType.h" />
     <ClInclude Include="src\old\c_IDManager.h" />
     <ClInclude Include="src\old\f_base.h" />

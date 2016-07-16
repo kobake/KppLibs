@@ -36,7 +36,7 @@ ColorBox::ColorBox(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 	convertXYWH(&x,&y,&w,&h);
 	hbrColor=NULL;
 	SetColor(RGB(0,0,0),FALSE);
-	hwnd=CreateWindowEx(WS_EX_CLIENTEDGE,L"STATIC",L"",WS_VISIBLE | WS_CHILD,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+	hwnd=CreateWindowEx(WS_EX_CLIENTEDGE,L"STATIC",L"",WS_VISIBLE | WS_CHILD,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	_afterCreate();
 	messageNotify(true);
 	//WndProcDef=(WNDPROC)SetWindowLong(hwnd,GWL_WNDPROC,(LONG)WndProcColorBox);

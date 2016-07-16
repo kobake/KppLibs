@@ -34,7 +34,7 @@ ScrollDataWindow::ScrollDataWindow(DWORD ex_style,DWORD style,const wstring& cap
 	setMouseMode(MOUSE_NONE);
 	//
 	convertXYWH(&x,&y,&w,&h);
-	hwnd=CreateAWindow(app->getInstance(),app->getPrevInstance(),L"winScroll",DefWindowProc,(HBRUSH)(COLOR_WINDOW+1),NULL,NULL,
+	hwnd=CreateAWindow(g_app->getInstance(),g_app->getPrevInstance(),L"winScroll",DefWindowProc,(HBRUSH)(COLOR_WINDOW+1),NULL,NULL,
 		ex_style,style,caption.c_str(),x,y,w,h,getParent()->getHWND(),NULL);
 	_afterCreate();
 	hscroll=new ScrollManager(this,SB_HORZ);

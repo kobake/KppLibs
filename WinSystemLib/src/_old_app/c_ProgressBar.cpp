@@ -8,7 +8,7 @@ ProgressBar::ProgressBar(int x,int y,int w,int h,Window *_parent,int _option,int
 {
 	convertXYWH(&x,&y,&w,&h);
 	hwnd=CreateWindowEx(0,PROGRESS_CLASS,L"",
-		WS_VISIBLE | WS_CHILD,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+		WS_VISIBLE | WS_CHILD,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	_afterCreate();
 }
 

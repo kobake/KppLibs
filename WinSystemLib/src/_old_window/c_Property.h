@@ -9,6 +9,7 @@ class CharsProperty;
 #include "./c_Window.h"
 #include "c_PropertyRList.h"
 
+class PropertyRList;
 bool PropertyDialog(const wchar *caption,int x,int y,int w,int h,Window *owner,CHECKPROC _checkproc,Property *_property,...);
 bool PropertyDialog(const wchar *caption,int x,int y,int w,int h,Window *owner,CHECKPROC _checkproc,PropertyRList *_property_list);
 

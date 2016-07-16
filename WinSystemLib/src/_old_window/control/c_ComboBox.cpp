@@ -12,7 +12,7 @@ ComboBox::ComboBox(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 	drop_h=100;
 	h=drop_h;
 	hwnd=CreateWindowEx(WS_EX_CLIENTEDGE,L"COMBOBOX",L"",
-		WS_VISIBLE | WS_CHILD | WS_VSCROLL | CBS_DROPDOWNLIST,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+		WS_VISIBLE | WS_CHILD | WS_VSCROLL | CBS_DROPDOWNLIST,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	SendMessage(hwnd,CB_SETDROPPEDWIDTH,100,0);
 	_afterCreate();
 }

@@ -33,7 +33,7 @@ ScrollBar::ScrollBar(int x,int y,int w,int h,Window *_parent,int _option,int _id
 	style|=GET_WIN_STYLE(_option);
 	ex_style|=GET_WIN_EX_STYLE(_option);
 	//ì¬
-	hwnd=CreateWindowEx(ex_style,L"SCROLLBAR",L"",WS_VISIBLE | WS_CHILD | style,x,y,w,h,getParent()->getHWND(),NULL,app->getInstance(),NULL);
+	hwnd=CreateWindowEx(ex_style,L"SCROLLBAR",L"",WS_VISIBLE | WS_CHILD | style,x,y,w,h,getParent()->getHWND(),NULL,g_app->getInstance(),NULL);
 	_afterCreate();
 	//
 	messageNotify(true);

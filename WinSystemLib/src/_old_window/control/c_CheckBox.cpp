@@ -10,7 +10,7 @@ CheckBox::CheckBox(const wchar* caption,int x,int y,int w,int h,Window *_parent,
 {
 	convertXYWH(&x,&y,&w,&h);
 	hwnd=CreateWindowEx(0,L"BUTTON",caption,
-		WS_VISIBLE | WS_CHILD | BS_CHECKBOX | BS_AUTOCHECKBOX,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+		WS_VISIBLE | WS_CHILD | BS_CHECKBOX | BS_AUTOCHECKBOX,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	_afterCreate();
 }
 

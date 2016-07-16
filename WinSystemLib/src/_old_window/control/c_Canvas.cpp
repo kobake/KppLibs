@@ -24,14 +24,14 @@ Canvas::Canvas(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 	convertXYWH(&x,&y,&w,&h);
 
 	//ウィンドウクラスの登録
-	if(app->getPrevInstance()==NULL){
+	if(g_app->getPrevInstance()==NULL){
 		WNDCLASSEX wndclass;
 		wndclass.cbSize=sizeof(WNDCLASSEX);
 		wndclass.style=CS_HREDRAW | CS_VREDRAW;
 		wndclass.lpfnWndProc=DefWindowProc;
 		wndclass.cbClsExtra=0;
 		wndclass.cbWndExtra=0;
-		wndclass.hInstance=app->getInstance();
+		wndclass.hInstance=g_app->getInstance();
 		wndclass.hIcon=NULL;
 		wndclass.hCursor=LoadCursor(NULL,IDC_ARROW);
 		wndclass.hbrBackground=(HBRUSH)(COLOR_BTNFACE+1);
@@ -48,13 +48,13 @@ Canvas::Canvas(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 	style|=GET_WIN_STYLE(_option);
 	ex_style|=GET_WIN_EX_STYLE(_option);
 	//作成
-	hwnd=CreateWindowEx(ex_style,L"CustomWindow",L"",WS_VISIBLE | WS_CHILD | style,x,y,w,h,getParent()->getHWND(),NULL,app->getInstance(),NULL);
+	hwnd=CreateWindowEx(ex_style,L"CustomWindow",L"",WS_VISIBLE | WS_CHILD | style,x,y,w,h,getParent()->getHWND(),NULL,g_app->getInstance(),NULL);
 	_afterCreate();
 
 
 //	hwnd=CreateWindowEx(GET_WIN_EX_STYLE(_option),L"STATIC",L"",
 //		WS_VISIBLE | WS_CHILD | GET_WIN_STYLE(_option),
-//		x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+//		x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 //	_afterCreate();
 	messageNotify(true);
 	paintByGraphics(true);

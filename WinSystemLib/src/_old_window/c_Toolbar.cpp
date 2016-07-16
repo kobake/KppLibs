@@ -15,7 +15,7 @@ Toolbar::Toolbar(TBBUTTON *button_param,int button_num,int bmp_id,int bmp_num,Wi
 		WS_CHILD | WS_VISIBLE, //ウィンドウスタイル
 		getID(), // コントロールID
 		bmp_num, //イメージの数
-		app->getInstance(),
+		g_app->getInstance(),
 		bmp_id,
 		button_param,
 		button_num, // ボタンの数

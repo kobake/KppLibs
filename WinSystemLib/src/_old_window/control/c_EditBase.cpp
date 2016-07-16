@@ -40,7 +40,7 @@ field:
 		hwnd=CreateWindowEx(WS_EX_CLIENTEDGE,L"Edit",L"",
 			WS_VISIBLE | WS_CHILD | 
 			ES_AUTOHSCROLL | flag_style,
-			x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+			x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	}else if(edit_kind==EDITF_KIND_BOX){
 		//ƒXƒNƒ[ƒ‹‘®«
 		int scroll_style=0;
@@ -54,7 +54,7 @@ field:
 		hwnd=CreateWindowEx(WS_EX_CLIENTEDGE,L"Edit",L"",
 			WS_VISIBLE | WS_CHILD |
 			ES_MULTILINE | ES_WANTRETURN | ES_NOHIDESEL | scroll_style | flag_style,
-			x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+			x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	}else{
 		edit_kind=EDITF_KIND_FIELD;
 		goto field;

@@ -15,7 +15,7 @@ Button::Button(const wchar* caption,int x,int y,int w,int h,Window *_parent,int 
 	if(BUTTONF_KIND(_option)==BUTTONF_KIND_DEFAULTBUTTON)style|=BS_DEFPUSHBUTTON;
 	//ì¬
 	hwnd=CreateWindowEx(0,L"BUTTON",caption,
-		style,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),app->getInstance(),NULL);
+		style,x,y,w,h,getParent()->getHWND(),(HMENU)getID(),g_app->getInstance(),NULL);
 	_afterCreate();
 }
 

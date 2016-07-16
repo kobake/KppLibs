@@ -29,13 +29,13 @@ ListView::ListView(int x,int y,int w,int h,Window *_parent,int _option,int _id)
 : Window(CID_LIST_VIEW,0,_parent,_option | WINDOWF_TABSTOP,_id)
 {
 	convertXYWH(&x,&y,&w,&h);
-	hwnd=CreateAWindow(app->getInstance(),app->getPrevInstance(),L"baseListView",DefWindowProc,(HBRUSH)(COLOR_BTNFACE+1),NULL,NULL,
+	hwnd=CreateAWindow(g_app->getInstance(),g_app->getPrevInstance(),L"baseListView",DefWindowProc,(HBRUSH)(COLOR_BTNFACE+1),NULL,NULL,
 		0,WS_VISIBLE | WS_CHILD,L"",x,y,w,h,getParent()->getHWND(),(HMENU)getID());
 	_afterCreate();
 	hwndList=CreateWindowEx(WS_EX_CLIENTEDGE,WC_LISTVIEW,L"",
-		WS_VISIBLE | WS_CHILD | LVS_REPORT | WS_MAXIMIZE | LVS_SHOWSELALWAYS,0,0,210,210,hwnd,(HMENU)getID(),app->getInstance(),NULL);
+		WS_VISIBLE | WS_CHILD | LVS_REPORT | WS_MAXIMIZE | LVS_SHOWSELALWAYS,0,0,210,210,hwnd,(HMENU)getID(),g_app->getInstance(),NULL);
 //	hwnd=hwndList=CreateWindowEx(WS_EX_CLIENTEDGE,WC_LISTVIEW,L"",
-//		WS_VISIBLE | WS_CHILD | LVS_REPORT | WS_MAXIMIZE | LVS_SHOWSELALWAYS,0,0,0,0,parent->getHWND(),(HMENU)id,app->getInstance(),NULL);
+//		WS_VISIBLE | WS_CHILD | LVS_REPORT | WS_MAXIMIZE | LVS_SHOWSELALWAYS,0,0,0,0,parent->getHWND(),(HMENU)id,g_app->getInstance(),NULL);
 //	_afterCreate();
 	messageNotify(true);
 }
