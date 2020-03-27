@@ -48,7 +48,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>WIN32;_DEBUG;_LIB;WINVER=0x0501;_WIN32_WINNT=0x0501;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../BaseLib;../DebugLib;../IoLib;../WinSystemLib;C:\boost_1_55_0</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\boost_1_62_0;../BaseLib;../DebugLib;../IoLib;../WinSystemLib;C:\boost_1_55_0</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -64,7 +64,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;NDEBUG;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>../BaseLib;../DebugLib;../IoLib;../WinSystemLib</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\boost_1_62_0;../BaseLib;../DebugLib;../IoLib;../WinSystemLib</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
