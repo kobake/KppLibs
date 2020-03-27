@@ -1,25 +1,25 @@
-#include "_required.h"
+ï»¿#include "_required.h"
 #include "CFilePath.h"
 #include <StringLib.h>
 using namespace util;
 using namespace std;
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//               ƒRƒ“ƒXƒgƒ‰ƒNƒ^EƒfƒXƒgƒ‰ƒNƒ^                  //
+//               ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ãƒ»ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿                  //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 CFilePath_Base::CFilePath_Base(const wchar_t* fpath, wchar_t cDelimiter)
 : m_cDelimiter(cDelimiter)
 {
-	m_delimiter=NULL;
-	m_extpos=NULL;
-	SetPath(fpath);
+    m_delimiter=NULL;
+    m_extpos=NULL;
+    SetPath(fpath);
 }
 CFilePath_Base::CFilePath_Base(const wchar_t* fdir,const wchar_t* ftitle, wchar_t cDelimiter)
 : m_cDelimiter(cDelimiter)
 {
-	m_delimiter=NULL;
-	m_extpos=NULL;
-	SetPath(fdir,ftitle);
+    m_delimiter=NULL;
+    m_extpos=NULL;
+    SetPath(fdir,ftitle);
 }
 
 CFilePath_Base::~CFilePath_Base()
@@ -28,166 +28,166 @@ CFilePath_Base::~CFilePath_Base()
 
 void CFilePath_Base::SetDelimiter(wchar_t cDelimiter)
 {
-	if(m_cDelimiter != cDelimiter){
-		wcsreplace(m_path, m_cDelimiter, cDelimiter);
-		m_cDelimiter = cDelimiter;
-	}
+    if(m_cDelimiter != cDelimiter){
+        wcsreplace(m_path, m_cDelimiter, cDelimiter);
+        m_cDelimiter = cDelimiter;
+    }
 }
 
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                           ‘ã“ü                              //
+//                           ä»£å…¥                              //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 void CFilePath_Base::Assign(const CFilePath_Base& f)
 {
-	//ƒRƒs[€”õ
-	int copylen=(int)wcslen(f.m_path)+1;
+    //ã‚³ãƒ”ãƒ¼æº–å‚™
+    int copylen=(int)wcslen(f.m_path)+1;
 
-	//ƒRƒs[
-	wmemcpy(m_path,f.m_path,copylen);
-	if(f.m_delimiter)m_delimiter=m_path+(f.m_delimiter-f.m_path); else m_delimiter = NULL;
-	if(f.m_extpos)m_extpos=m_path+(f.m_extpos-f.m_path); else m_extpos = NULL;
-	
-	//‘®«
-	this->m_cDelimiter = f.m_cDelimiter;
+    //ã‚³ãƒ”ãƒ¼
+    wmemcpy(m_path,f.m_path,copylen);
+    if(f.m_delimiter)m_delimiter=m_path+(f.m_delimiter-f.m_path); else m_delimiter = NULL;
+    if(f.m_extpos)m_extpos=m_path+(f.m_extpos-f.m_path); else m_extpos = NULL;
+    
+    //å±žæ€§
+    this->m_cDelimiter = f.m_cDelimiter;
 }
 
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                           Ý’è                              //
+//                           è¨­å®š                              //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
 void CFilePath_Base::SetPath(const wchar_t* fpath)
 {
-	wcssafecpy(m_path,fpath,countof(m_path));
-	_UpdateDelimiter();
+    wcssafecpy(m_path,fpath,countof(m_path));
+    _UpdateDelimiter();
 }
 
 void CFilePath_Base::SetPath(const wchar_t* fdir,const wchar_t* ftitle)
 {
-	wcssafecpy(m_path,fdir,countof(m_path));
-	if(*m_path!=L'\0' && *(wcschr(m_path,L'\0')-1)!=m_cDelimiter)wcscat_c(m_path,m_cDelimiter);
-	wcssafecat(m_path,ftitle,countof(m_path));
-	_UpdateDelimiter();
+    wcssafecpy(m_path,fdir,countof(m_path));
+    if(*m_path!=L'\0' && *(wcschr(m_path,L'\0')-1)!=m_cDelimiter)wcscat_c(m_path,m_cDelimiter);
+    wcssafecat(m_path,ftitle,countof(m_path));
+    _UpdateDelimiter();
 }
 
 void CFilePath_Base::SetDir(const wchar_t* fdir)
 {
-	wstring title = GetTitle();
-	SetPath(fdir, title.c_str());
+    wstring title = GetTitle();
+    SetPath(fdir, title.c_str());
 }
 
 void CFilePath_Base::SetTitle(const wchar_t* ftitle)
 {
-	if(m_delimiter!=NULL){
-		*m_delimiter = m_cDelimiter;
-		wcssafecpy(m_delimiter+1,ftitle,countof(m_path)-(m_delimiter-m_path+1));
-		_UpdateDelimiter();
-	}
-	else{
-		wcssafecpy(m_path,ftitle,countof(m_path));
-		_UpdateDelimiter();
-	}
+    if(m_delimiter!=NULL){
+        *m_delimiter = m_cDelimiter;
+        wcssafecpy(m_delimiter+1,ftitle,countof(m_path)-(m_delimiter-m_path+1));
+        _UpdateDelimiter();
+    }
+    else{
+        wcssafecpy(m_path,ftitle,countof(m_path));
+        _UpdateDelimiter();
+    }
 }
 
 void CFilePath_Base::SetExt(const wchar_t* ext)
 {
-	if(m_extpos!=NULL){
-		wcssafecpy(m_extpos+1,ext,countof(m_path)-(m_extpos-m_path+1));
-	}
-	else{
-		*m_delimiter = m_cDelimiter;
-		wcssafecat(m_path,L".",countof(m_path));
-		wcssafecat(m_path,ext,countof(m_path));
-		_UpdateDelimiter();
-	}
+    if(m_extpos!=NULL){
+        wcssafecpy(m_extpos+1,ext,countof(m_path)-(m_extpos-m_path+1));
+    }
+    else{
+        *m_delimiter = m_cDelimiter;
+        wcssafecat(m_path,L".",countof(m_path));
+        wcssafecat(m_path,ext,countof(m_path));
+        _UpdateDelimiter();
+    }
 }
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                           Žæ“¾                              //
+//                           å–å¾—                              //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 const wchar_t* CFilePath_Base::GetPath() const
 {
-	return m_path;
+    return m_path;
 }
 
 const wchar_t* CFilePath_Base::GetDir() const
 {
-	//ƒLƒƒƒbƒVƒ…XV
-	if(m_strDirCache.length()==0){
-		if(m_delimiter){
-			m_strDirCache.assign(m_path, m_delimiter);
-		}
-		else{
-			//‹ó”’‚Ì‚Ü‚Ü
-		}
-	}
-	return m_strDirCache.c_str();
+    //ã‚­ãƒ£ãƒƒã‚·ãƒ¥æ›´æ–°
+    if(m_strDirCache.length()==0){
+        if(m_delimiter){
+            m_strDirCache.assign(m_path, m_delimiter - m_path);
+        }
+        else{
+            //ç©ºç™½ã®ã¾ã¾
+        }
+    }
+    return m_strDirCache.c_str();
 }
 const wchar_t* CFilePath_Base::GetTitle() const
 {
-	if(m_delimiter!=NULL){
-		return m_delimiter+1;
-	}else{
-		return m_path;
-	}
+    if(m_delimiter!=NULL){
+        return m_delimiter+1;
+    }else{
+        return m_path;
+    }
 }
 const wchar_t* CFilePath_Base::GetExt() const
 {
-	if(m_extpos!=NULL){
-		return m_extpos;
-	}else{
-		return L"";
-	}
+    if(m_extpos!=NULL){
+        return m_extpos;
+    }else{
+        return L"";
+    }
 }
 
 std::wstring CFilePath_Base::GetTitleWithoutExt() const
 {
-	wstring str = GetTitle();
-	size_t n = str.find(L'.');
-	if(n==wstring::npos)return str;
-	str = str.substr(0, n);
-	return str;
+    wstring str = GetTitle();
+    size_t n = str.find(L'.');
+    if(n==wstring::npos)return str;
+    str = str.substr(0, n);
+    return str;
 }
 
 std::wstring CFilePath_Base::GetDrive() const
 {
-	if(wcslen(m_path)>=2 && m_path[1]==L':'){
-		int nDrive = m_path[0];
-		if(nDrive>=L'a' && nDrive<=L'z' || L'A' && nDrive<=L'Z'){
-			wchar_t ret[] = {nDrive, L':', L'\0'};
-			return ret;
-		}
-	}
-	return L"";
+    if(wcslen(m_path)>=2 && m_path[1]==L':'){
+        int nDrive = m_path[0];
+        if(nDrive>=L'a' && nDrive<=L'z' || L'A' && nDrive<=L'Z'){
+            wchar_t ret[] = {nDrive, L':', L'\0'};
+            return ret;
+        }
+    }
+    return L"";
 }
 
 
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
-//                         ‹æØ‚ê–Ú                            //
+//                         åŒºåˆ‡ã‚Œç›®                            //
 // -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- -- //
 
 void CFilePath_Base::_UpdateDelimiter()
 {
-	//ƒpƒX“à‚Ìu..v‚¨‚æ‚Ñu.v‚ð‰ðŒˆ
-	{
-		wstring tmp = fextract2(m_path, m_cDelimiter); //######•‰‰×‚É’ˆÓ
-		wcscpy(m_path, tmp.c_str());
-	}
+    //ãƒ‘ã‚¹å†…ã®ã€Œ..ã€ãŠã‚ˆã³ã€Œ.ã€ã‚’è§£æ±º
+    {
+        wstring tmp = fextract2(m_path, m_cDelimiter); //######è² è·ã«æ³¨æ„
+        wcscpy(m_path, tmp.c_str());
+    }
 
-	//###•K—v‚©‚È‚ŸEEE
-//	wcsreplace(m_path,L'/',L'\\');
+    //###å¿…è¦ã‹ãªããƒ»ãƒ»ãƒ»
+//  wcsreplace(m_path,L'/',L'\\');
 
-	//m_delimiter,m_extposXV
-	m_delimiter=wcsrchr(m_path, m_cDelimiter);
-	if(m_delimiter!=NULL){
-		m_extpos=wcschr(m_delimiter, L'.');
-	}
-	else{
-		m_extpos=wcschr(m_path,L'.');
-	}
+    //m_delimiter,m_extposæ›´æ–°
+    m_delimiter=wcsrchr(m_path, m_cDelimiter);
+    if(m_delimiter!=NULL){
+        m_extpos=wcschr(m_delimiter, L'.');
+    }
+    else{
+        m_extpos=wcschr(m_path,L'.');
+    }
 
-	//ƒLƒƒƒbƒVƒ…ƒNƒŠƒA
-	m_strDirCache = L"";
+    //ã‚­ãƒ£ãƒƒã‚·ãƒ¥ã‚¯ãƒªã‚¢
+    m_strDirCache = L"";
 }
 
